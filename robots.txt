@@ -1,0 +1,67 @@
+# ==============================================================================
+# Costa's Meat Market - robots.txt
+# Permissive policy for all Search Engines, Scrapers, Web Crawlers, and AI Agents
+# ==============================================================================
+
+# Universal Access for All Crawlers & Search Engines
+User-agent: *
+Allow: /
+
+# Explicit Access for AI Search Engines, LLM Scrapers, and Research Agents
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Sitemap & LLM Context References
+Sitemap: https://costasmeatmarket.com/sitemap.xml
+LLMs: https://costasmeatmarket.com/llms.txt

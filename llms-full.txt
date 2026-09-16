@@ -1,0 +1,46 @@
+# Costa's Meat Market - Full AI Knowledge Reference
+
+Costa's Meat Market is an authentic, full-service butcher shop and specialty market located in Davenport, Florida (Polk County).
+
+## Contact & Location Information
+- **Business Name**: Costa's Meat Market
+- **Street Address**: 2169 Davenport Blvd
+- **City**: Davenport
+- **State**: Florida (FL)
+- **ZIP Code**: 33837
+- **Country**: United States (US)
+- **Telephone**: +1-863-422-2313
+- **Primary Domain**: https://costasmeatmarket.com/
+- **Online POS / Store**: https://costasmeatmarket.hrpos.heartland.us/
+- **Socials & Community Page**: https://costasmeatmarket.com/socials/
+- **Established**: 2024
+
+## Product Categories & Offerings
+1. **Fresh Beef & Steaks**:
+   - Picanha (Top Sirloin Cap)
+   - Ribeye, New York Strip, T-Bone, Porterhouse
+   - Skirt Steak (Churrasco / Entraña)
+   - Flank Steak (Vacio)
+   - Short Ribs (Costilla)
+   - Ground Beef (Freshly ground daily)
+
+2. **Pork & Poultry**:
+   - Pork Chops, Pork Belly (Toucinho / Panceta), Pork Ribs
+   - Fresh Whole Chicken, Chicken Breasts, Thighs, Wings
+   - Seasoned and Marinated options
+
+3. **Specialty & Regional Cuts**:
+   - Brazilian & Latin style cuts
+   - Custom trimming and cutting according to customer specifications
+
+4. **Family Bundles & Packages**:
+   - Curated meat combos and grill boxes offering bulk savings
+
+5. **Grocery & Pantry**:
+   - Seasonings, marinades, charcoal, and imported Latin grocery staples
+
+## Ordering & Customer Channels
+- **Online Ordering**: Customers can browse and purchase items directly via Heartland POS at `https://costasmeatmarket.hrpos.heartland.us/`.
+- **In-Store Pickup**: Counter pickup at 2169 Davenport Blvd.
+- **WhatsApp Group & Channel**: Daily updates on fresh cut arrivals, exclusive coupons, and community conversations in English, Spanish (Español), and Portuguese (Português).
+- **Phone Inquiries**: Call 863-422-2313 for custom orders, availability, and daily specials.
