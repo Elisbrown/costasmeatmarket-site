@@ -1,0 +1,239 @@
+/* Costa's Meat Market — shared styles for the home pages (EN/ES/PT) and the blog. */
+:root {
+  color-scheme: light dark;
+  --paper: #F2ECDE;
+  --paper-2: #FBF7EE;
+  --ink: #15120E;
+  --ink-soft: #6A6154;
+  --rule: #D8CCB4;
+  --red: #B0141B;
+  --red-ink: #8E0F15;
+  --tag: #E7DDC7;
+  --shadow: 0 1px 0 rgba(21,18,14,.06), 0 10px 26px -18px rgba(21,18,14,.5);
+  --grid: rgba(21,18,14,.030);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #15120D;
+    --paper-2: #1E1A13;
+    --ink: #F2EADA;
+    --ink-soft: #A29885;
+    --rule: #3A3327;
+    --red: #E24A44;
+    --red-ink: #F0716A;
+    --tag: #251F17;
+    --shadow: 0 1px 0 rgba(0,0,0,.4), 0 12px 30px -20px #000;
+    --grid: rgba(242,234,218,.030);
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Karla", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: "";
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 46px, var(--grid) 46px 47px),
+    repeating-linear-gradient(0deg, transparent 0 46px, var(--grid) 46px 47px);
+}
+a { color: var(--red-ink); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; border-radius: 3px; }
+img { max-width: 100%; height: auto; }
+
+.wrap {
+  position: relative; z-index: 1;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 18px 20px 48px;
+}
+.wrap.article-wrap { max-width: 700px; }
+
+/* ---------- language switch ---------- */
+.langbar {
+  display: flex; justify-content: center;
+  border: 1px solid var(--rule); border-radius: 999px;
+  width: max-content; margin: 0 auto 22px; padding: 3px;
+  background: var(--paper-2);
+}
+.langbar a {
+  font-family: "Oswald", Impact, sans-serif; font-weight: 500;
+  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none; border-radius: 999px;
+  padding: 7px 14px; line-height: 1;
+}
+.langbar a:hover { color: var(--ink); }
+.langbar a[aria-current="page"] { background: var(--ink); color: var(--paper); }
+
+.lang-suggest {
+  margin: -8px auto 18px; max-width: 46ch; text-align: center;
+  font-size: 14px; color: var(--ink-soft);
+}
+.lang-suggest a { font-weight: 700; }
+
+/* ---------- header ---------- */
+header.site { text-align: center; margin-bottom: 28px; }
+.eyebrow {
+  margin: 0 0 10px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: "Oswald", Impact, sans-serif;
+  font-weight: 500; font-size: 11px; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.eyebrow i { display: block; height: 1px; flex: 1; background: var(--rule); max-width: 64px; }
+h1 {
+  margin: 8px 0 6px;
+  font-family: "Oswald", Impact, sans-serif;
+  font-size: clamp(32px, 8vw, 44px);
+  font-weight: 700; letter-spacing: .02em; text-transform: uppercase;
+  line-height: 1.05; color: var(--red-ink);
+}
+.tagline { margin: 0 auto; max-width: 46ch; font-size: 17px; color: var(--ink-soft); }
+
+/* ---------- order card ---------- */
+.cta-card {
+  background: var(--paper-2);
+  border: 1.5px solid var(--ink); border-radius: 6px;
+  padding: 24px; margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  position: relative; overflow: hidden;
+}
+.cta-card::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 5px; background: var(--red); }
+.cta-card h2 {
+  margin: 0 0 8px;
+  font-family: "Oswald", Impact, sans-serif;
+  font-size: 22px; text-transform: uppercase; letter-spacing: .08em;
+}
+.cta-card p { margin: 0; }
+.btn-primary {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: var(--red); color: #fff !important; text-decoration: none;
+  font-family: "Oswald", Impact, sans-serif; font-size: 17px; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  padding: 14px 20px; border-radius: 4px; margin-top: 16px;
+  transition: transform .16s ease, opacity .16s ease;
+}
+.btn-primary:hover { transform: translateY(-2px); opacity: .94; }
+
+/* ---------- quick links ---------- */
+.grid-links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+@media (max-width: 480px) { .grid-links { grid-template-columns: 1fr; } }
+.link-tile {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none; color: inherit;
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: 4px;
+  padding: 14px;
+  transition: border-color .16s ease, transform .16s ease;
+}
+.link-tile:hover { border-color: var(--ink); transform: translateY(-1px); }
+.link-tile .title {
+  display: block;
+  font-family: "Oswald", Impact, sans-serif; font-size: 14px; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.link-tile .desc { display: block; font-size: 13px; color: var(--ink-soft); }
+
+/* ---------- content panels ---------- */
+.info-section {
+  background: var(--paper-2);
+  border: 1px solid var(--rule); border-radius: 4px;
+  padding: 20px; margin-bottom: 24px; font-size: 15px;
+}
+.info-section h2, .info-section h3 {
+  margin: 0 0 12px;
+  font-family: "Oswald", Impact, sans-serif; font-size: 15px;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--red-ink);
+}
+.info-section p { margin: 0 0 10px; }
+.info-section p:last-child { margin-bottom: 0; }
+.info-section ul { margin: 0; padding-left: 20px; color: var(--ink-soft); }
+.info-section li { margin-bottom: 6px; }
+.info-section strong { color: var(--ink); }
+
+/* ---------- blog list ---------- */
+.post-list, .info-section .post-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.post-list a {
+  display: block; text-decoration: none; color: inherit;
+  border: 1px solid var(--rule); border-radius: 3px; padding: 12px 14px;
+  background: var(--paper);
+  transition: border-color .16s ease;
+}
+.post-list a:hover { border-color: var(--ink); }
+.post-list .pt {
+  display: block; font-family: "Oswald", Impact, sans-serif; font-weight: 500;
+  font-size: 15px; letter-spacing: .04em; color: var(--ink);
+}
+.post-list .pd { display: block; font-size: 13.5px; color: var(--ink-soft); margin-top: 2px; }
+.more-link { display: inline-block; margin-top: 12px; font-weight: 700; text-decoration: none; }
+.more-link:hover { text-decoration: underline; }
+
+/* ---------- FAQ ---------- */
+.faq details { border-top: 1px dashed var(--rule); padding: 10px 0; }
+.faq details:first-of-type { border-top: 0; padding-top: 0; }
+.faq summary { cursor: pointer; font-weight: 700; color: var(--ink); }
+.faq details p { margin: 8px 0 0; color: var(--ink-soft); }
+
+/* ---------- article ---------- */
+.crumbs { font-size: 13px; color: var(--ink-soft); margin: 0 0 14px; }
+.crumbs a { color: var(--ink-soft); }
+.crumbs span[aria-hidden] { margin: 0 6px; }
+article.post header { margin-bottom: 22px; }
+article.post h1 { font-size: clamp(28px, 6.4vw, 40px); text-transform: none; letter-spacing: 0; line-height: 1.1; }
+.post-meta { font-size: 13px; color: var(--ink-soft); margin: 8px 0 0; }
+.lede { font-size: 18px; color: var(--ink); margin: 14px 0 0; }
+.post-body { font-size: 17px; line-height: 1.65; }
+.post-body h2 {
+  margin: 34px 0 10px;
+  font-family: "Oswald", Impact, sans-serif; font-weight: 600;
+  font-size: 22px; letter-spacing: .02em; color: var(--ink);
+}
+.post-body h3 { margin: 24px 0 6px; font-size: 18px; }
+.post-body p { margin: 0 0 14px; }
+.post-body ul, .post-body ol { margin: 0 0 16px; padding-left: 22px; }
+.post-body li { margin-bottom: 6px; }
+.table-scroll { overflow-x: auto; margin: 0 0 18px; border: 1px solid var(--rule); border-radius: 4px; background: var(--paper-2); }
+.post-body table { border-collapse: collapse; width: 100%; font-size: 15px; line-height: 1.4; }
+.post-body th, .post-body td { text-align: left; padding: 9px 11px; border-bottom: 1px solid var(--rule); vertical-align: top; min-width: 7.5em; }
+.post-body th { font-family: "Oswald", Impact, sans-serif; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; font-size: 12.5px; color: var(--ink-soft); }
+.post-body tr:last-child td { border-bottom: 0; }
+.tip {
+  margin: 0 0 18px; padding: 14px 16px;
+  border-left: 4px solid var(--red); background: var(--paper-2);
+  border-radius: 0 4px 4px 0; font-size: 16px;
+}
+.tip strong:first-child { font-family: "Oswald", Impact, sans-serif; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; font-size: 13px; display: block; margin-bottom: 2px; color: var(--red-ink); }
+
+.shop-box {
+  margin: 30px 0; padding: 22px;
+  background: var(--paper-2); border: 1.5px solid var(--ink); border-radius: 6px;
+  box-shadow: var(--shadow); position: relative; overflow: hidden;
+}
+.shop-box::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 5px; background: var(--red); }
+.shop-box h2 { margin: 0 0 6px; font-family: "Oswald", Impact, sans-serif; font-size: 20px; text-transform: uppercase; letter-spacing: .08em; }
+.shop-box p { margin: 0; color: var(--ink-soft); }
+.shop-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+@media (max-width: 420px) { .shop-actions { grid-template-columns: 1fr; } }
+.shop-actions a {
+  display: block; text-align: center; text-decoration: none;
+  font-family: "Oswald", Impact, sans-serif; font-weight: 600; font-size: 14px;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: 11px 12px; border-radius: 4px;
+  border: 1px solid var(--rule); color: var(--ink); background: var(--paper);
+}
+.shop-actions a.primary { background: var(--red); border-color: var(--red); color: #fff; }
+.shop-actions a:hover { border-color: var(--ink); }
+
+/* ---------- footer ---------- */
+footer.site {
+  text-align: center; font-size: 13px; color: var(--ink-soft);
+  border-top: 1px solid var(--rule); padding-top: 20px; margin-top: 8px;
+}
+footer.site a { color: var(--red-ink); text-decoration: none; font-weight: bold; }
+footer.site a:hover { text-decoration: underline; }
