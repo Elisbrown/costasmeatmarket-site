@@ -237,3 +237,96 @@ footer.site {
 }
 footer.site a { color: var(--red-ink); text-decoration: none; font-weight: bold; }
 footer.site a:hover { text-decoration: underline; }
+
+/* ---------- brand mark ---------- */
+.brand-mark { display: block; width: 120px; height: auto; margin: 0 auto 6px; }
+@media (prefers-color-scheme: dark) { .brand-mark { filter: invert(1); } }
+
+/* ---------- wider layout for the blog index ---------- */
+.wrap.wide-wrap { max-width: 980px; }
+.section-title {
+  margin: 30px 0 12px;
+  font-family: "Oswald", Impact, sans-serif; font-weight: 600;
+  font-size: 15px; letter-spacing: .16em; text-transform: uppercase; color: var(--red-ink);
+}
+
+/* ---------- category chips ---------- */
+.chip {
+  display: inline-block;
+  font-family: "Oswald", Impact, sans-serif; font-weight: 500;
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--red-ink); background: var(--tag); text-decoration: none;
+  border-radius: 999px; padding: 5px 10px; line-height: 1.2;
+}
+a.chip:hover { color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 16px; }
+
+/* ---------- article cards ---------- */
+.cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.card a {
+  display: flex; flex-direction: column; height: 100%;
+  text-decoration: none; color: inherit;
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden;
+  transition: border-color .16s ease, transform .16s ease;
+}
+.card a:hover { border-color: var(--ink); transform: translateY(-2px); }
+.card img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: var(--tag); }
+.card-body { display: flex; flex-direction: column; gap: 6px; padding: 12px 14px 16px; }
+.card-body .chip { align-self: flex-start; }
+.card-title { font-family: "Oswald", Impact, sans-serif; font-weight: 600; font-size: 17px; line-height: 1.25; color: var(--ink); }
+.card-desc { font-size: 14px; color: var(--ink-soft); }
+.cards-featured { grid-template-columns: 1fr; }
+.card-featured a { display: grid; grid-template-columns: 1.2fr 1fr; }
+.card-featured img { height: 100%; aspect-ratio: auto; min-height: 220px; }
+.card-featured .card-title { font-size: 24px; }
+@media (max-width: 640px) {
+  .card-featured a { grid-template-columns: 1fr; }
+  .card-featured img { aspect-ratio: 16 / 9; min-height: 0; }
+}
+
+/* ---------- article hero, contents, recipe ---------- */
+article.post header .chip { margin-bottom: 6px; }
+figure.hero { margin: 0 0 22px; }
+figure.hero img { display: block; width: 100%; height: auto; border-radius: 6px; background: var(--tag); }
+figure.hero figcaption, .gallery figcaption { font-size: 13px; color: var(--ink-soft); margin-top: 6px; }
+.toc { margin: 0 0 24px; padding: 14px 18px; background: var(--paper-2); border: 1px solid var(--rule); border-radius: 4px; }
+.toc p { margin: 0 0 6px; font-family: "Oswald", Impact, sans-serif; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+.toc ol { margin: 0; padding-left: 20px; font-size: 15px; }
+.toc li { margin: 3px 0; }
+.post-body h2 { scroll-margin-top: 16px; }
+.recipe-card { margin: 26px 0; padding: 18px 20px; background: var(--paper-2); border: 1.5px solid var(--ink); border-radius: 6px; }
+.recipe-card h2 { margin-top: 0; }
+.recipe-meta { list-style: none; padding: 0; margin: 0 0 6px; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 15px; }
+.recipe-meta span { font-family: "Oswald", Impact, sans-serif; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); margin-right: 4px; }
+
+/* ---------- share row ---------- */
+.share { margin: 26px 0 8px; }
+.share h2 { margin: 0 0 10px; font-family: "Oswald", Impact, sans-serif; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+.share-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.share-row a, .share-row button {
+  font: inherit; font-size: 14px; font-weight: 700; cursor: pointer;
+  color: var(--ink); background: var(--paper-2); text-decoration: none;
+  border: 1px solid var(--rule); border-radius: 999px; padding: 8px 16px;
+}
+.share-row a:hover, .share-row button:hover { border-color: var(--ink); }
+
+/* ---------- related + gallery ---------- */
+.related { margin-top: 30px; }
+.gallery { margin-bottom: 24px; }
+.gallery figure { margin: 0 0 16px; }
+.gallery img { display: block; width: 100%; height: auto; border-radius: 6px; background: var(--tag); }
+
+/* ---------- hours ---------- */
+.hours-table { border-collapse: collapse; width: 100%; margin: 4px 0 8px; font-size: 15px; }
+.hours-table th, .hours-table td { text-align: left; padding: 6px 0; border-bottom: 1px dashed var(--rule); font-weight: 400; }
+.hours-table td { text-align: right; color: var(--ink); }
+.hours-table tr.today th, .hours-table tr.today td { font-weight: 700; color: var(--ink); }
+.hours-note { font-size: 13px; color: var(--ink-soft); }
+.open-now {
+  display: inline-block; margin: 0 0 8px; padding: 4px 10px; border-radius: 999px;
+  font-family: "Oswald", Impact, sans-serif; font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
+  background: var(--tag); color: var(--ink);
+}
+.open-now.is-open { background: #DDF3E4; color: #0B5B2A; }
+.open-now.is-closed { background: var(--tag); color: var(--red-ink); }
+@media (prefers-color-scheme: dark) { .open-now.is-open { background: #133D24; color: #9BE3B3; } }

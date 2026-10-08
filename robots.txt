@@ -1,14 +1,19 @@
 # ==============================================================================
 # Costa's Meat Market - robots.txt
+# Last updated: 2026-10-08 (refreshed weekly with the sitemap)
 # Permissive policy for all Search Engines, Scrapers, Web Crawlers, and AI Agents
 # ==============================================================================
 
 # Universal Access for All Crawlers & Search Engines
 User-agent: *
 Allow: /
+Disallow: /_build/
 
 # Explicit Access for AI Search Engines, LLM Scrapers, and Research Agents
 User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
@@ -17,10 +22,19 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
 User-agent: anthropic-ai
 Allow: /
 
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
 Allow: /
 
 User-agent: Google-Extended
@@ -53,7 +67,16 @@ Allow: /
 User-agent: FacebookBot
 Allow: /
 
+User-agent: facebookexternalhit
+Allow: /
+
 User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: WhatsApp
 Allow: /
 
 User-agent: Amazonbot
@@ -62,6 +85,10 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-# Sitemap & LLM Context References
+# Sitemaps (the blog RSS feeds also work as sitemaps) & LLM Context References
 Sitemap: https://costasmeatmarket.com/sitemap.xml
+Sitemap: https://costasmeatmarket.com/blog/feed.xml
+Sitemap: https://costasmeatmarket.com/es/blog/feed.xml
+Sitemap: https://costasmeatmarket.com/pt/blog/feed.xml
 LLMs: https://costasmeatmarket.com/llms.txt
+LLMs-Full: https://costasmeatmarket.com/llms-full.txt

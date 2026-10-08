@@ -168,7 +168,9 @@ class TestMultilingualSiteAndBlog(unittest.TestCase):
         ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
         cls.sitemap_locs = [elem.text for elem in root.findall("sm:url/sm:loc", ns)]
         cls.html_files = all_html_files()
-        cls.indexable = [f for f in cls.html_files if not f.startswith("go" + os.sep)]
+        cls.indexable = [f for f in cls.html_files if 'content="noindex' not in read(f)]
+        cls.posts = [f for f in cls.indexable
+                     if re.match(r"^((es|pt)/)?blog/[^/]+/index\.html$", f.replace(os.sep, "/"))]
 
     def test_home_page_exists_in_every_language(self):
         """English, Spanish and Portuguese home pages exist, declare their language and point at each other."""
@@ -210,9 +212,8 @@ class TestMultilingualSiteAndBlog(unittest.TestCase):
 
     def test_blog_posts_have_article_schema_in_the_page_language(self):
         """Blog posts carry BlogPosting schema whose language matches the page."""
-        posts = [f for f in self.indexable if re.match(r"^((es|pt)/)?blog/[^/]+/index\.html$", f.replace(os.sep, "/"))]
-        self.assertGreaterEqual(len(posts), 10)
-        for rel in posts:
+        self.assertGreaterEqual(len(self.posts), 84)
+        for rel in self.posts:
             page = read(rel)
             html_lang = re.search(r'<html lang="([^"]+)"', page).group(1)
             graph = json_ld_blocks(page)[0]["@graph"]
@@ -259,3 +260,207 @@ class TestMultilingualSiteAndBlog(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def jpeg_size(path):
+    """(width, height) of a baseline or progressive JPEG, read from its SOF marker."""
+    with open(path, "rb") as f:
+        data = f.read()
+    i = 2
+    while i < len(data):
+        if data[i] != 0xFF:
+            i += 1
+            continue
+        marker = data[i + 1]
+        if marker in (0xC0, 0xC1, 0xC2):
+            height = int.from_bytes(data[i + 5:i + 7], "big")
+            width = int.from_bytes(data[i + 7:i + 9], "big")
+            return width, height
+        i += 2 + int.from_bytes(data[i + 2:i + 4], "big")
+    return None
+
+
+class TestBlogContentAndTracking(unittest.TestCase):
+    """Every article in every language, share previews, images, recipes, feeds, redirects and analytics."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.html_files = all_html_files()
+        cls.indexable = [f for f in cls.html_files if 'content="noindex' not in read(f)]
+        cls.posts = [f for f in cls.indexable
+                     if re.match(r"^((es|pt)/)?blog/[^/]+/index\.html$", f.replace(os.sep, "/"))]
+
+    def test_google_analytics_and_clarity_on_every_page(self):
+        """GA4 (G-S4GM8NREGG) and Clarity load on every HTML page, including short links and the 404."""
+        for rel in self.html_files:
+            page = read(rel)
+            self.assertIn("https://www.googletagmanager.com/gtag/js?id=G-S4GM8NREGG", page, rel)
+            self.assertIn("gtag('config', 'G-S4GM8NREGG'", page, rel)
+            self.assertIn('"clarity", "script", "yjadt0p2o2"', page, rel)
+
+    def test_every_article_exists_in_all_three_languages(self):
+        """Each article links to an English, Spanish and Portuguese version, and the counts match."""
+        counts = {"en": 0, "es": 0, "pt": 0}
+        for rel in self.posts:
+            page = read(rel)
+            alts = alternates(page)
+            for lang in ("en", "es", "pt"):
+                self.assertIn(lang, alts, "%s has no %s version" % (rel, lang))
+            lang = re.search(r'<html lang="([a-z]{2})', page).group(1)
+            counts[lang] += 1
+        self.assertEqual(counts["en"], counts["es"])
+        self.assertEqual(counts["en"], counts["pt"])
+        self.assertGreaterEqual(counts["en"], 28)
+
+    def test_slugs_are_seo_friendly(self):
+        """Article URLs use lowercase ASCII words separated by hyphens."""
+        for rel in self.posts:
+            slug = rel.replace(os.sep, "/").split("/")[-2]
+            self.assertRegex(slug, r"^[a-z0-9]+(-[a-z0-9]+){2,}$", rel)
+
+    def test_each_article_has_its_own_share_preview(self):
+        """Open Graph and Twitter images are unique per article, exist, and are 1200x630 JPEGs."""
+        seen = {}
+        for rel in self.posts:
+            page = read(rel)
+            og = re.search(r'<meta property="og:image" content="([^"]+)">', page).group(1)
+            tw = re.search(r'<meta name="twitter:image" content="([^"]+)">', page).group(1)
+            self.assertEqual(og, tw, rel)
+            self.assertIn('<meta name="twitter:card" content="summary_large_image">', page, rel)
+            self.assertRegex(page, r'<meta property="og:image:alt" content=".{10,}">', rel)
+            self.assertNotIn(og, seen, "%s reuses the share image of %s" % (rel, seen.get(og)))
+            seen[og] = rel
+            path = os.path.join(BASE_DIR, url_to_file(og))
+            self.assertTrue(os.path.exists(path), og)
+            self.assertEqual(jpeg_size(path), (1200, 630), og)
+            self.assertLess(os.path.getsize(path), 300 * 1024, og + " is too heavy for link previews")
+
+    def test_every_image_has_alt_text_and_dimensions(self):
+        """All <img> tags have meaningful alt text and width/height (no layout shift)."""
+        for rel in self.html_files:
+            for tag in re.findall(r"<img\b[^>]*>", read(rel)):
+                self.assertRegex(tag, r'alt="[^"]{3,}"', rel + ": " + tag[:80])
+                self.assertRegex(tag, r'width="\d+"', rel)
+                self.assertRegex(tag, r'height="\d+"', rel)
+
+    def test_every_article_has_a_hero_photo(self):
+        """Each article shows a hero image that exists on disk."""
+        for rel in self.posts:
+            page = read(rel)
+            hero = re.search(r'<figure class="hero">\s*<img src="([^"]+)"', page)
+            self.assertIsNotNone(hero, rel)
+            self.assertTrue(os.path.exists(os.path.join(BASE_DIR, url_to_file(hero.group(1)))), hero.group(1))
+
+    def test_recipe_schema_is_complete(self):
+        """Recipe markup has the fields Google requires for recipe rich results."""
+        recipes = 0
+        for rel in self.posts:
+            for block in json_ld_blocks(read(rel)):
+                for item in block.get("@graph", []):
+                    if item.get("@type") == "Recipe":
+                        recipes += 1
+                        for field in ("name", "image", "recipeIngredient", "recipeInstructions", "recipeYield"):
+                            self.assertTrue(item.get(field), "%s recipe is missing %s" % (rel, field))
+        self.assertGreaterEqual(recipes, 30)
+
+    def test_feeds_list_every_article(self):
+        """Each language has a valid RSS feed listing all its articles, and robots.txt points to it."""
+        robots = read("robots.txt")
+        for lang, prefix in (("en", "blog"), ("es", "es/blog"), ("pt", "pt/blog")):
+            root = ET.fromstring(read(prefix + "/feed.xml"))
+            links = {item.findtext("link") for item in root.iter("item")}
+            mine = [f for f in self.posts if f.replace(os.sep, "/").startswith(prefix + "/")
+                    and f.replace(os.sep, "/").count("/") == prefix.count("/") + 2]
+            self.assertEqual(len(links), len(mine), prefix)
+            self.assertIn("Sitemap: https://costasmeatmarket.com/%s/feed.xml" % prefix, robots)
+
+    def test_old_store_redirects_point_to_real_pages(self):
+        """Redirects for the old Shopify URLs land on pages that exist."""
+        rules = [line.split() for line in read("_redirects").splitlines() if line and not line.startswith("#")]
+        self.assertGreaterEqual(len(rules), 60)
+        for source, destination, status in rules:
+            self.assertEqual(status, "301")
+            self.assertTrue(os.path.exists(os.path.join(BASE_DIR, url_to_file(destination))), destination)
+        vercel = json.loads(read("vercel.json"))
+        for rule in vercel["redirects"]:
+            if rule["destination"].startswith("/"):
+                self.assertTrue(os.path.exists(os.path.join(BASE_DIR, url_to_file(rule["destination"]))),
+                                rule["destination"])
+
+    def test_llms_txt_lists_every_article(self):
+        """llms.txt links every article so AI assistants can find them."""
+        llms = read("llms.txt")
+        for rel in self.posts:
+            url = SITE + "/" + rel.replace(os.sep, "/").replace("index.html", "")
+            self.assertIn(url, llms, rel)
+
+
+class TestSpeedAndFreshness(unittest.TestCase):
+    """WebP-only page images, honest dates, and the weekly refresh job."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.html_files = all_html_files()
+
+    def test_page_images_are_webp(self):
+        """Every image a page displays (src and srcset) is WebP."""
+        for rel in self.html_files:
+            page = read(rel)
+            for src in re.findall(r'<img\b[^>]*\bsrc="([^"]+)"', page):
+                self.assertTrue(src.endswith(".webp"), "%s shows a non-WebP image: %s" % (rel, src[:60]))
+            for srcset in re.findall(r'\bsrcset="([^"]+)"', page):
+                for candidate in srcset.split(","):
+                    self.assertTrue(candidate.strip().split(" ")[0].endswith(".webp"), rel)
+
+    def test_robots_and_sitemap_share_the_refresh_date(self):
+        """robots.txt carries a 'Last updated' date matching the home page lastmod in the sitemap."""
+        robots_date = re.search(r"# Last updated: (\d{4}-\d{2}-\d{2})", read("robots.txt")).group(1)
+        root = ET.fromstring(read("sitemap.xml"))
+        ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+        home = next(u for u in root.findall("sm:url", ns) if u.findtext("sm:loc", namespaces=ns) == SITE + "/")
+        self.assertEqual(home.findtext("sm:lastmod", namespaces=ns), robots_date)
+        self.assertIn("Last updated: " + robots_date, read("llms.txt"))
+
+    def test_article_dates_are_consistent(self):
+        """dateModified is never before datePublished, and matches the article:modified_time tag."""
+        for rel in all_html_files():
+            page = read(rel)
+            if 'property="og:type" content="article"' not in page:
+                continue
+            article = next(i for i in json_ld_blocks(page)[0]["@graph"] if i.get("@type") == "BlogPosting")
+            self.assertGreaterEqual(article["dateModified"], article["datePublished"], rel)
+            self.assertIn('<meta property="article:modified_time" content="%s">' % article["dateModified"], page)
+
+    def test_weekly_refresh_workflow(self):
+        """A scheduled GitHub Action rebuilds the site, runs these tests, then commits."""
+        workflow = read(os.path.join(".github", "workflows", "weekly-refresh.yml"))
+        self.assertIn("schedule:", workflow)
+        self.assertRegex(workflow, r'cron: "[^"]+"')
+        self.assertIn("python3 _build/build.py", workflow)
+        self.assertLess(workflow.index("python3 _build/build.py"), workflow.index("unittest test_seo_and_discovery"))
+        self.assertLess(workflow.index("unittest test_seo_and_discovery"), workflow.index("git push"))
+
+
+class TestHours(unittest.TestCase):
+    """Opening hours match the Google Business Profile everywhere they appear."""
+
+    def test_schema_has_opening_hours(self):
+        store = next(i for i in json_ld_blocks(read("index.html"))[0]["@graph"] if "ButcherShop" in i.get("@type", []))
+        spec = store["openingHoursSpecification"]
+        weekdays = next(s for s in spec if isinstance(s["dayOfWeek"], list))
+        sunday = next(s for s in spec if s["dayOfWeek"] == "Sunday")
+        self.assertEqual((weekdays["opens"], weekdays["closes"]), ("08:00", "20:00"))
+        self.assertEqual(len(weekdays["dayOfWeek"]), 6)
+        self.assertEqual((sunday["opens"], sunday["closes"]), ("08:00", "17:00"))
+
+    def test_hours_shown_on_home_pages_and_every_footer(self):
+        for rel in ("index.html", os.path.join("es", "index.html"), os.path.join("pt", "index.html")):
+            page = read(rel)
+            self.assertIn('class="hours-table"', page, rel)
+            self.assertIn("data-open-now=", page, rel)
+            self.assertIn('<script src="/assets/js/open-now.js" defer></script>', page, rel)
+        for rel in all_html_files():
+            page = read(rel)
+            if '<footer class="site">' in page:
+                self.assertRegex(page, r"8 am–8 pm|8 a\. m\. a 8 p\. m\.|das 8h às 20h", rel)
+        self.assertIn("Sunday 8:00 am–5:00 pm", read("llms.txt"))

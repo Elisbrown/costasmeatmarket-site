@@ -1,38 +1,52 @@
 # Costa's Meat Market: Local Search, Google Business & Social Playbook
 
-*Prepared October 8, 2026. Covers the website changes on branch `claude/youthful-maxwell-nn6lg9` and the steps that have to happen inside Google, Apple, Bing and the social apps.*
+*Prepared October 8, 2026 (updated the same day with Search Console and Clarity data). Covers the website changes on branch `claude/youthful-maxwell-nn6lg9` and the steps that have to happen inside Google, Apple, Bing and the social apps.*
 
 ---
 
 ## 0. Checklist, in order of impact
 
-**Already done on the website** (goes live once the branch is merged and deployed):
+**Already done on the website** (goes live once the branch is merged into `main` and deployed):
 
-- [x] Home page in **English (/), Spanish (/es/) and Portuguese (/pt/)**, with proper `hreflang` tags so Google shows each language to the right searchers. The old tags pointed Spanish and Portuguese at `/socials/`, which Google would have ignored.
-- [x] Language switcher on every page. Visitors whose phone is set to Spanish or Portuguese get a one-tap "see this page in your language" link. Nothing redirects, so Google can crawl all three versions.
-- [x] **Butcher's Blog**: 14 articles (8 English, 3 Spanish, 3 Portuguese), each written for a specific search (see section 1).
-- [x] FAQ sections with FAQ schema on the home pages and every article. Google's AI answers on Maps (see 2.7) and ChatGPT/Perplexity both pull from content like this.
-- [x] Tracking: every tap on call, directions, order online, WhatsApp, Instagram, TikTok, Facebook and "leave a review" is now logged in Microsoft Clarity, along with where the visitor came from. It also goes to Google Analytics 4 once you add an ID (section 4).
-- [x] Tracked short links for bios and printed QR codes: `costasmeatmarket.com/go/ig`, `/go/tt`, `/go/fb`, `/go/wa`, `/go/qr`.
-- [x] Sitemap, `llms.txt` and `llms-full.txt` updated; the social links in the business schema now include Instagram and TikTok.
+- [x] Home page in **English (/), Spanish (/es/) and Portuguese (/pt/)** with proper `hreflang`, a language switcher, a photo section ("Photos of Costa's Meat Market") and Haines City in the titles.
+- [x] **Butcher's Blog: 28 topics, each in English, Spanish and Portuguese (84 articles)**, chosen from your Search Console queries. Every article has its own canonical URL, a keyword slug in its language, a real store photo, a contents list, FAQ schema, and (for 12 topics) a recipe card with Recipe schema eligible for Google recipe results.
+- [x] **Custom share previews:** every article has its own 1200×630 card with its title, category, logo and photo, so links shared on WhatsApp, Facebook, X, iMessage and LinkedIn show a proper preview. Share buttons on each article add UTM tags, so shares show up as their own source.
+- [x] **Google Analytics 4 (G-S4GM8NREGG) and Microsoft Clarity on every page**, including the socials hub, short links and the 404 page. A test fails the build if any page is missing either one.
+- [x] Click tracking for call, directions, order online, WhatsApp, socials, review, language switch, blog clicks and shares; traffic-source tags for Google, Instagram, Facebook, WhatsApp, TikTok, QR codes and AI assistants (ChatGPT already sends you visits).
+- [x] **Old Shopify URLs redirected** (see section 6): about 40 old product pages still get Google impressions; each now redirects to the closest article.
+- [x] **Weekly refresh** (GitHub Action, every Monday): rotates featured articles, updates sitemap, robots.txt, llms.txt and RSS dates, runs all tests, then publishes (section 6).
+- [x] All on-page images are WebP; the socials page dropped from 81 KB to 35 KB.
+- [x] RSS feeds for each language, an image sitemap, and an updated `robots.txt`, `llms.txt` and `llms-full.txt`.
 
 **Your to-do list:**
 
-1. [ ] Merge and deploy the branch.
-2. [ ] Google Search Console: verify the site, submit the sitemap, request indexing (section 3).
-3. [ ] Google Business Profile: categories, description, **hours**, products, tracked website link, photos (section 2).
-4. [ ] Start asking every happy customer for a Google review (section 2.6). This is the single biggest local ranking factor you control.
-5. [ ] Claim **Apple Business Connect** and **Bing Places** (section 2.8). The socials page already sends iPhone users to Apple Maps.
-6. [ ] Update Instagram, TikTok and Facebook bios and links (section 5).
-7. [ ] In Buffer, change the timezone from **Africa/Douala** to **America/New_York**. Otherwise scheduled posts go out at the wrong time for Florida.
-8. [ ] Optional: create a Google Analytics 4 property and paste the ID into `assets/js/track.js` (section 4.2).
-9. [ ] **Send me your opening hours.** I'll add them to the site's business schema. Hours are one of the facts Google checks between your website and your Business Profile.
+1. [ ] **Merge the branch into `main`.** Nothing is live until then, and the weekly GitHub Action only runs from `main`.
+2. [ ] **Make `www.costasmeatmarket.com` redirect to `costasmeatmarket.com`** in your host's domain settings (section 6). Google currently splits your home page between the two.
+3. [x] ~~Send opening hours~~ Done: **Mon–Sat 8 am–8 pm, Sun 8 am–5 pm** are now in the business schema, a live "Open now" badge on the home pages, every page footer, the home FAQs ("What are your hours?", "Are you open on Sundays?"), the socials page and `llms.txt`. If your hours change, update `HOURS` in `_build/lib/site.py` and your Business Profile on the same day.
+4. [ ] Search Console: submit `sitemap.xml` and the three feeds, then request indexing for the home pages and the Haines City article (section 3).
+5. [ ] Google Business Profile: finish the items your profile flags under **Complete info** (section 2.8): food ordering link, products, services, exterior photo, tracked website link.
+6. [ ] Ask every happy customer for a Google review (section 2.6).
+7. [ ] Claim Apple Business Connect and Bing Places (section 2.9). 51% of your visitors use iPhone Safari.
+8. [ ] Update Instagram, TikTok and Facebook bios to the `/go/` links (section 5).
+9. [ ] In Buffer, change the timezone from **Africa/Douala** to **America/New_York**.
+10. [ ] **Send more photos, or allow Pexels** (section 6.4). Right now every article uses crops of your two full-size store photos.
 
 ---
 
+## What your Search Console and Clarity data says (Sept 9 – Oct 8, 2026)
+
+- **134 clicks, 1,871 impressions, average position about 6**; 80% of clicks are on mobile.
+- **Haines City is the biggest missed opportunity:** "meat market haines city" got 36 impressions at position 4.7 with **zero clicks**, plus "haines city meat market" and "meat store haines city". The new Haines City article and home page titles target these.
+- **Generic local searches already work:** "meat market near me" (64 impressions, 8 clicks), "butcher near me", "meat market davenport fl", "butcher davenport fl".
+- **"costa" alone** gets 184 impressions with 0 clicks (people looking for Costa Coffee and others). Nothing to fix; it's brand overlap.
+- **Specific cuts people search for:** oxtail, pot roast, filet mignon, picanha, pork belly, short ribs and tablitas, tomahawk, prime rib, skirt steak, chicken wing flats, linguiça. Each now has an article.
+- **Brazilian and Spanish searches:** pão de queijo mix, polvilho, almidón agrio, pão francês Panebras, acerola, "carniceria near me", "tienda brasileña", "supermercado brasileiro", "casa de carnes perto de mim". Covered by the Spanish and Portuguese pages and articles.
+- **"costa's meat market photos"** (14 impressions): the new photo section on the home pages targets it. Add more photos to Google Business too.
+- **Clarity:** 202 sessions/month, 172 users, 51% iPhone Safari, 56% tap an outbound link (order, directions, socials), 6 visits from ChatGPT. Interaction speed (INP 620 ms) is slow; the lighter socials page and WebP images help.
+
 ## 1. Keyword map
 
-I couldn't log into Search Console from this session, so this map comes from researching what Davenport-area customers search for. Search Console will show the real queries 4 to 6 weeks after the new pages are indexed. Use the regex filters in section 3.4 to check this map against them.
+The first version of this map came from web research; it's now confirmed and extended by your Search Console data above. Use the regex filters in section 3.4 to track each group. Add `haines` and `oxtail|rabada|rabo` as their own filters.
 
 **Why these keywords:** in web search results, independent butcher shops barely appear for Davenport, so local competition is thin. The area also has three large groups of potential customers:
 
@@ -126,7 +140,23 @@ For each product's button, use "Order online" (Heartland link) or "Learn more" l
 
 Google removed the Questions & Answers section from Business Profiles (announced December 2025). Its replacement, **Ask Maps**, is a Gemini-powered assistant that answers questions from your reviews, description, photos and website. That's why the new pages include FAQs about picanha, custom cuts, online ordering, deals and payment. Keep the description and hours accurate, and keep the reviews coming.
 
-### 2.8 Other maps and listings (keep the name, address and phone identical everywhere)
+### 2.8 What your profile shows right now (October 8)
+
+From your screenshot: **4.6 stars, 103 Google reviews**, category Butcher shop, address, phone and hours all correct, 2,403 customer interactions. Profile strength isn't complete yet. In order:
+
+1. **Website button:** set it to `https://costasmeatmarket.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp` so Business Profile visits show up as their own source in GA4 and Clarity.
+2. **Food ordering:** add the Heartland store link (`https://costasmeatmarket.hrpos.heartland.us/`) as your ordering link. This adds an "Order" button to your listing.
+3. **Edit products:** add the products from section 2.4, each with a photo and the Spanish and Portuguese names in the description.
+4. **Edit services:** add "Custom cuts", "Special orders (whole tenderloin, prime rib, tomahawk)", "Online ordering for pickup" and "Family meat bundles".
+5. **Add exterior photo:** the storefront photo you sent is ideal, with the Costa's flag and the Webb's Town Center sign.
+6. **"Add directions to your website":** done. The home pages now have an Hours & Location section with address, map link and phone, and the Haines City article explains how to find you.
+7. **Posts:** one or two a week (drafts in the appendix). Link them to the matching article with `?utm_source=google&utm_medium=organic&utm_campaign=gbp_post`.
+
+The Google result under your profile still shows the old title and description. That updates on its own a few days after the new site is live. To speed it up, request indexing for the home page in Search Console after you merge.
+
+**Why there are no star ratings in the site's schema:** Google doesn't show review stars for a business marking up its own reviews ("self-serving reviews"), and doing it anyway risks a manual action. Your stars come from the Business Profile. The site mentions "100+ reviews on Google" in text, and `llms.txt` gives AI assistants the 4.6 rating with its date.
+
+### 2.9 Other maps and listings (keep the name, address and phone identical everywhere)
 
 - **Apple Business Connect** (businessconnect.apple.com): Apple Maps is the default on iPhones, and the socials page already opens Apple Maps for iPhone users. Website: `https://costasmeatmarket.com/?utm_source=apple&utm_medium=organic&utm_campaign=apple_maps`.
 - **Bing Places** (bingplaces.com): can import directly from Google Business Profile. Bing powers Microsoft Copilot's local answers and is one of the sources other AI assistants draw on. Website: `?utm_source=bing&utm_medium=organic&utm_campaign=bing_places`.
@@ -193,12 +223,15 @@ Sessions with a call, directions, order or WhatsApp-group tap are flagged for re
 
 **Tags** (Clarity → Filters → Custom tags): `traffic_source` (for example `instagram / social`, `google / organic`, `qr_code / print`, `chatgpt / ai_assistant`), `utm_campaign`, `referrer`, `ai_assistant`, and `page_lang`. Combine them: "how many people from Instagram tapped Call?" or "do Spanish-page visitors ask for directions more?"
 
-### 4.2 Google Analytics 4 (optional, recommended)
+### 4.2 Google Analytics 4 (set up: G-S4GM8NREGG)
 
-1. analytics.google.com → Admin → **Create property** → Web data stream for `costasmeatmarket.com`.
-2. Copy the Measurement ID (`G-XXXXXXXXXX`) and paste it into `assets/js/track.js` on the line `var GA4_ID = "";`, or send it to me and I'll do it.
-3. In GA4 → Admin → **Key events**, mark `click_call`, `click_directions`, `click_order_online` and `click_whatsapp_group` as key events.
-4. Link GA4 with Search Console (3.1 step 5).
+The Google tag is on every page, with a `content_group` (home, blog/recipe, blog/local, and so on) and the page language, so you can compare sections in **Reports → Engagement → Pages and screens**. Three things to do in GA4:
+
+1. **Admin → Events:** after a day of traffic, mark `click_call`, `click_directions`, `click_order_online`, `click_whatsapp_group` and `share` as **key events**.
+2. **Admin → Custom definitions:** add a custom dimension for the event parameter `page_language`, and one for `link_section`, so you can see which part of a page drives taps.
+3. **Admin → Product links:** link Search Console, so search queries show up inside GA4.
+
+Also link Clarity to GA4 (Clarity → Settings → Setup → Google Analytics) to open session recordings straight from GA4 reports. If your Heartland online store settings let you add a Google Analytics ID, add the same ID there and set up cross-domain measurement in GA4 (Admin → Data streams → Configure tag settings → Configure your domains) so online orders count as conversions.
 
 ### 4.3 Links to use everywhere
 
@@ -285,12 +318,59 @@ Buffer is connected to Instagram (@costasmeat), TikTok (@costasmeat) and the Fac
 
 ---
 
-## 6. What I couldn't do from this session, and why
+## 6. Redirects, the `www.` domain, weekly refresh and photos
+
+### 6.1 Old Shopify URLs
+
+Before this site, costasmeatmarket.com was a Shopify store, and Google still shows about 40 of its old pages (`/products/pao-frances-panebras-french-bread`, `/pt/products/tenderloin-special-order`, `/es/products/polvilho-pq` and others). They now redirect with a permanent 301 to the closest article in the same language, and anything else under `/products/`, `/collections/` or `/pages/` goes to that language's home page.
+
+- **Netlify or Cloudflare Pages:** handled automatically by the `_redirects` file.
+- **Vercel:** handled automatically by `vercel.json`.
+- **Any other host:** `404.html` redirects visitors in the browser as a fallback.
+
+To change a mapping, edit `_build/content/redirects.py` and rebuild.
+
+### 6.2 Pick one domain
+
+Search Console shows Google splitting your home page between `https://www.costasmeatmarket.com/` (116 clicks) and `https://costasmeatmarket.com/` (18 clicks). The site's canonical tags and Clarity both use the version without `www.`. In your host's **Domains** settings, set `costasmeatmarket.com` as primary and make `www` redirect to it (Vercel: Domains → Edit `www` → Redirect to `costasmeatmarket.com`; Netlify: Domain management → Primary domain; Cloudflare: Redirect Rules). `vercel.json` already includes this rule for Vercel. Then, in Search Console, inspect `https://www.costasmeatmarket.com/` to confirm Google sees the redirect.
+
+### 6.3 Weekly refresh (GitHub Action)
+
+`.github/workflows/weekly-refresh.yml` runs every **Monday at 5:17 AM Eastern** (and on demand from the repo's **Actions** tab → *Weekly content refresh* → *Run workflow*). It:
+
+1. Rebuilds the site with that day's date.
+2. Rotates the featured articles on the three home pages and blog indexes (one pinned Haines City article plus three that change weekly).
+3. Updates the dates in `sitemap.xml`, `robots.txt`, `llms.txt`, `llms-full.txt` and the RSS feeds.
+4. Runs all tests, and commits and pushes only if they pass. Your host then redeploys automatically.
+
+**Why articles keep their real dates:** Google uses sitemap dates only when they're "consistently and verifiably accurate". If every article claimed a new date each week with no change, Google would learn to ignore your sitemap dates entirely, new articles included. So pages that genuinely change every week (home pages, blog indexes, llms files, robots) get the new date, and each article shows the date its text last changed, taken from git history. When you edit an article, its date updates by itself.
+
+If your `main` branch is protected, allow GitHub Actions to push (Settings → Rules) or the job will fail at the last step.
+
+### 6.4 Photos
+
+Every article uses a real photo of your store: crops of the meat case and storefront photos you sent. Stock-photo sites (Pexels, Unsplash and others) were blocked from this cloud session. To get a topic-specific photo on each article:
+
+- **Send more full-size photos** (counter, cuts, finished dishes, team, storefront). The three small interior photos you sent are only 141 px wide, too small to use.
+- **Or allow `images.pexels.com` and `www.pexels.com`** in this cloud environment's network settings (environment menu → Edit → Network access → Allowed domains), and ask me to swap in licensed Pexels photos.
+
+Either way it's a one-line change per article in `_build/content/meta.py`, then a rebuild.
+
+Share cards stay JPEG on purpose. Pages never load them (only WhatsApp, Facebook and LinkedIn do when a link is shared), so they don't affect speed, and JPEG is the one format every platform's link preview supports. Favicons stay `.ico`/`.png` because browsers and Apple devices require those formats.
+
+### 6.5 How to add or edit an article
+
+Each article is one file per language in `_build/content/posts/<en|es|pt>/<topic>.py`, and topics are listed in `_build/content/meta.py`. After editing, run `python3 _build/build.py` and `python3 -m unittest test_seo_and_discovery`, or just ask Claude to do it.
+
+---
+
+## 7. What I couldn't do from this session, and why
 
 - **Log into Search Console, Business Profile or the social apps:** this cloud session has no browser. To let me click through those dashboards next time, start a session from the Claude desktop app with Claude in Chrome enabled.
-- **Search volumes:** Search Console has no data until the pages are indexed, and I had no keyword tool connected. The map in section 1 is based on research into local demand and competition.
-- **Opening hours:** they aren't on the current site. Send them and I'll add them to the schema.
-- **Facts to double-check:** the articles only state things the existing site already says: picanha, ribeye, NY strip, skirt, short ribs, ground chuck, pork belly, whole chickens, wings, house-seasoned cuts, family bundles, custom cuts, online ordering, WhatsApp deals, 5% off for following, and cash/credit/debit. If any of these has changed, tell me and I'll update the pages.
+- **Search volumes:** I had no keyword tool connected. The keyword map now uses the Search Console export you sent; a keyword tool would add monthly volumes.
+- **Stock photos:** Pexels, Unsplash and other free-photo sites were blocked by this environment's network policy (section 6.4).
+- **Facts to double-check:** the articles only claim what your site, your old online store or your meat-case photo show: picanha, ribeye, NY strip, skirt, short ribs/costela, maminha, alcatra, coxão mole, ground beef, pork chops, pork belly, whole chickens and wings, house-made linguiça, seasoned picadinho, seasoned pork and wings, family bundles, custom cuts and special orders, charcoal and coarse salt, Brazilian groceries, online ordering, WhatsApp deals, 5% off for following, and cash/credit/debit. Oxtail, whole tenderloin, prime rib and tomahawk are written as "call to check or special order". If anything is wrong, tell me and I'll update every language at once.
+- **Spoken languages:** I didn't say your staff speak Spanish or Portuguese anywhere, because I couldn't confirm it. If they do, tell me and I'll add it; it's a strong reason for people to choose you.
 
 ---
 
@@ -308,4 +388,4 @@ Buffer is connected to Instagram (@costasmeat), TikTok (@costasmeat) and the Fac
 **Google Business Profile post (PT, link: `/pt/blog/quanto-de-carne-por-pessoa-churrasco/`)**
 > Quanto de carne por pessoa no churrasco? A conta do açougueiro, já em libras: de ¾ a 1 libra por adulto. Veja a tabela completa para 10, 20 e 30 pessoas e encomende com antecedência.
 
-Social captions for Instagram, TikTok and Facebook are saved as **Ideas in Buffer**, ready to schedule once the pages are live.
+Social captions for Instagram, TikTok and Facebook are saved as **Ideas in Buffer**, ready to schedule once the pages are live. Every article also has share buttons that tag the link (for example `?utm_source=whatsapp&utm_medium=social_share`), so those shares show up as their own traffic source in GA4 and Clarity.

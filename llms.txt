@@ -1,12 +1,14 @@
 # Costa's Meat Market
 
-> Davenport, Florida's premier neighborhood butcher shop, fresh meat market, and specialty grocery store. Real butchers, custom fresh cuts, picanha, family bundles, weekly specials, and authentic Latin & Brazilian cuts.
+> Davenport, Florida's neighborhood butcher shop, fresh meat market, and Brazilian and Latin specialty grocery, near Haines City and ChampionsGate. Real butchers, custom fresh cuts, picanha, house-seasoned meats, family bundles, weekly specials, and authentic Latin & Brazilian cuts.
 
 ## Business Details
 - **Name**: Costa's Meat Market
 - **Type**: Butcher Shop, Meat Market, Grocery Store
-- **Address**: 2169 Davenport Blvd, Davenport, FL 33837, United States
+- **Address**: 2169 Davenport Blvd, Davenport, FL 33837, United States (Webb's Town Center)
 - **Phone**: +1 (863) 422-2313
+- **Hours**: Monday–Saturday 8:00 am–8:00 pm; Sunday 8:00 am–5:00 pm (Eastern Time)
+- **Google rating**: 4.6 stars from 103 Google reviews (October 2026)
 - **Primary Website**: https://costasmeatmarket.com/
 - **Online Ordering**: https://costasmeatmarket.hrpos.heartland.us/
 - **Social Links & Community**: https://costasmeatmarket.com/socials/
@@ -16,28 +18,118 @@
 
 ## Offerings & Specialties
 - **Fresh Custom Meat Cuts**: Hand-trimmed beef, pork, poultry, and specialty meats by experienced butchers.
-- **Picanha & Specialty Cuts**: High-grade picanha drops, churrasco cuts, ribs, and Latin/Brazilian favorite cuts.
+- **Picanha & Specialty Cuts**: Picanha, maminha, alcatra, coxão mole, costela, ribeye, NY strip, and other Latin and Brazilian favorites.
+- **Ready-to-Cook Seasoned Meats**: House-made linguiça, seasoned picadinho, marinated pork, and seasoned chicken wings.
 - **Family Meat Bundles**: Cost-saving combo packages with assorted cuts for family meals and barbecues.
-- **Weekly Specials & Coupons**: Regular discount drops announced on WhatsApp community channels and social media.
-- **Butcher Counter Service**: Call ahead or order at the counter for custom thicknesses, marinades, and preparation.
+- **Weekly Specials & Coupons**: Discount codes and weekly specials announced in the WhatsApp group and channel; 5% off the next purchase for following and engaging on all socials (one coupon per customer).
+- **Butcher Counter Service**: Call ahead or order at the counter for custom thicknesses, marinades, preparation, and special orders.
+- **Brazilian & Latin Groceries**: Pantry staples alongside the butcher counter.
 
 ## Key Navigation Links
 - [Online Store / Pickup Orders](https://costasmeatmarket.hrpos.heartland.us/): Place orders online for easy counter pickup.
 - [Community Hub & Socials](https://costasmeatmarket.com/socials/): WhatsApp group, WhatsApp announcement channel, Instagram, TikTok, and Facebook.
 - [Directions on Google Maps](https://www.google.com/maps/dir/?api=1&destination=Costa%27s%20Meat%20Market%2C%202169%20Davenport%20Blvd%2C%20Davenport%2C%20FL%2033837): Navigation to 2169 Davenport Blvd, Davenport, FL 33837.
+- [Sitemap](https://costasmeatmarket.com/sitemap.xml) · [Full AI reference](https://costasmeatmarket.com/llms-full.txt) · [robots.txt](https://costasmeatmarket.com/robots.txt)
+
+Last updated: 2026-10-08
+
+## Featured This Week
+- [Looking for a Meat Market Near Haines City? Here's What You'll Find at Costa's](https://costasmeatmarket.com/blog/meat-market-near-haines-city-fl/)
+- [How to Grill Linguiça (Brazilian Sausage) So It Stays Juicy](https://costasmeatmarket.com/blog/how-to-grill-linguica-brazilian-sausage/)
+- [Picadinho: How to Make Brazil's Quick Diced Beef Stew](https://costasmeatmarket.com/blog/picadinho-brazilian-beef-stew-recipe/)
+- [Brazilian-Style Grilled Chicken Wings: Drumettes, Flats and a Garlic-Lime Marinade](https://costasmeatmarket.com/blog/brazilian-grilled-chicken-wings-recipe/)
 
 ## Languages
 - [English home](https://costasmeatmarket.com/): Butcher shop and meat market in Davenport, FL.
 - [Página en español](https://costasmeatmarket.com/es/): Carnicería en Davenport, FL.
 - [Página em português](https://costasmeatmarket.com/pt/): Açougue em Davenport, FL.
 
-## Butcher's Blog (guides from the counter)
-- [What Is Picanha? How to Buy, Cut, and Grill It](https://costasmeatmarket.com/blog/what-is-picanha/)
-- [Grilling at Your Vacation Rental Near Disney](https://costasmeatmarket.com/blog/vacation-rental-bbq-guide-davenport/): For visitors staying in Davenport, ChampionsGate and Four Corners rental homes.
-- [Latin and Brazilian Meat Cuts in English](https://costasmeatmarket.com/blog/latin-and-brazilian-meat-cuts-guide/): Spanish and Portuguese cut names with U.S. equivalents.
+## Butcher's Blog — English (https://costasmeatmarket.com/blog/, RSS: https://costasmeatmarket.com/blog/feed.xml)
+- [What Is Picanha? How to Buy, Cut, and Grill Brazil's Favorite Steak](https://costasmeatmarket.com/blog/what-is-picanha/)
+- [Looking for a Meat Market Near Haines City? Here's What You'll Find at Costa's](https://costasmeatmarket.com/blog/meat-market-near-haines-city-fl/)
+- [Costa's Meat Market Coupons and Deals: Every Way to Save at the Counter](https://costasmeatmarket.com/blog/costas-meat-market-coupons-and-deals/)
+- [Seasoned Meats Ready to Cook: How to Cook Our Linguiça, Picadinho, Pork and Wings](https://costasmeatmarket.com/blog/seasoned-marinated-meats-ready-to-cook/)
+- [Grilling at Your Vacation Rental Near Disney: A Davenport Butcher's Guide](https://costasmeatmarket.com/blog/vacation-rental-bbq-guide-davenport/)
+- [Latin and Brazilian Meat Cuts in English: The Butcher Counter Translation Guide](https://costasmeatmarket.com/blog/latin-and-brazilian-meat-cuts-guide/)
 - [How Much Meat Per Person for a BBQ or Churrasco](https://costasmeatmarket.com/blog/how-much-meat-per-person-bbq/)
-- [Butcher Shop vs. Grocery Store Meat](https://costasmeatmarket.com/blog/butcher-shop-vs-grocery-store-meat/)
-- [Ribeye vs. NY Strip vs. Picanha](https://costasmeatmarket.com/blog/ribeye-vs-ny-strip-vs-picanha/)
-- [Pork Belly 3 Ways: Torresmo, Grilled Panceta, Oven-Roasted](https://costasmeatmarket.com/blog/pork-belly-recipes-torresmo-panceta/)
-- [How to Save on Quality Meat in Davenport](https://costasmeatmarket.com/blog/save-money-on-meat-davenport/)
-- [Blog en español](https://costasmeatmarket.com/es/blog/) · [Blog em português](https://costasmeatmarket.com/pt/blog/)
+- [How to Host a Brazilian Churrasco at Home: The Menu, the Order, the Timeline](https://costasmeatmarket.com/blog/brazilian-churrasco-at-home-menu/)
+- [How to Cook Oxtail: A Fall-Off-the-Bone Braised Oxtail Recipe](https://costasmeatmarket.com/blog/how-to-cook-oxtail-braised-oxtail-recipe/)
+- [Pot Roast: The Best Cut to Buy and an Easy, Fork-Tender Recipe](https://costasmeatmarket.com/blog/pot-roast-best-cut-chuck-roast-recipe/)
+- [Filet Mignon and Whole Beef Tenderloin: How to Order, Trim, Cut and Cook It](https://costasmeatmarket.com/blog/filet-mignon-whole-beef-tenderloin-guide/)
+- [Prime Rib Roast and Tomahawk Steaks: How Much to Order and How to Cook Them](https://costasmeatmarket.com/blog/prime-rib-roast-and-tomahawk-steak-guide/)
+- [Beef Short Ribs 3 Ways: Classic Braised, Grilled Flanken (Tablitas) and Brazilian Costela](https://costasmeatmarket.com/blog/beef-short-ribs-flanken-tablitas-costela-recipes/)
+- [How to Grill Linguiça (Brazilian Sausage) So It Stays Juicy](https://costasmeatmarket.com/blog/how-to-grill-linguica-brazilian-sausage/)
+- [Picadinho: How to Make Brazil's Quick Diced Beef Stew](https://costasmeatmarket.com/blog/picadinho-brazilian-beef-stew-recipe/)
+- [Brazilian-Style Grilled Chicken Wings: Drumettes, Flats and a Garlic-Lime Marinade](https://costasmeatmarket.com/blog/brazilian-grilled-chicken-wings-recipe/)
+- [Pão de Queijo: How to Make Brazilian Cheese Bread with Polvilho (Tapioca Starch)](https://costasmeatmarket.com/blog/pao-de-queijo-recipe-brazilian-cheese-bread/)
+- [Brazilian Groceries in Davenport, FL: What to Look For (and What to Make with It)](https://costasmeatmarket.com/blog/brazilian-grocery-store-davenport-fl/)
+- [Feijoada: The Brazilian Black Bean Stew, and Which Meats to Buy in the U.S.](https://costasmeatmarket.com/blog/feijoada-recipe-which-meats-to-buy/)
+- [Pernil: Slow-Roasted Pork Shoulder with Crispy Skin (and How Big a Shoulder to Buy)](https://costasmeatmarket.com/blog/pernil-roast-pork-shoulder-recipe/)
+- [Carne Asada: The Best Cut to Buy and a Citrus-Garlic Marinade](https://costasmeatmarket.com/blog/carne-asada-best-cut-and-marinade/)
+- [Meat Temperature Chart: Steak Doneness, Pork, Chicken and Ground Meat (°F and °C)](https://costasmeatmarket.com/blog/steak-doneness-meat-temperature-chart/)
+- [Ribeye vs. NY Strip vs. Picanha: Which Steak Should You Buy?](https://costasmeatmarket.com/blog/ribeye-vs-ny-strip-vs-picanha/)
+- [Butcher Shop vs. Grocery Store Meat: What You Actually Get at the Counter](https://costasmeatmarket.com/blog/butcher-shop-vs-grocery-store-meat/)
+- [Pork Belly 3 Ways: Brazilian Torresmo, Grilled Panceta, and Crispy Oven-Roasted](https://costasmeatmarket.com/blog/pork-belly-recipes-torresmo-panceta/)
+- [Cheap Cuts of Meat That Taste Expensive, and Exactly How to Cook Each One](https://costasmeatmarket.com/blog/cheap-cuts-of-meat-that-taste-great/)
+- [One Family Meat Bundle, Seven Dinners: A Weekly Meal Plan That Saves Money](https://costasmeatmarket.com/blog/family-meat-bundle-weekly-meal-plan/)
+- [How to Save on Quality Meat in Davenport: Bundles, Specials, and WhatsApp Deals](https://costasmeatmarket.com/blog/save-money-on-meat-davenport/)
+
+## Butcher's Blog — Español (https://costasmeatmarket.com/es/blog/, RSS: https://costasmeatmarket.com/es/blog/feed.xml)
+- [¿Qué es la picanha? Cómo elegirla, cortarla y asarla](https://costasmeatmarket.com/es/blog/que-es-la-picanha/)
+- [¿Buscas una carnicería cerca de Haines City? Esto es lo que encuentras en Costa's](https://costasmeatmarket.com/es/blog/carniceria-cerca-de-haines-city-fl/)
+- [Cupones y ofertas de Costa's Meat Market: todas las formas de ahorrar](https://costasmeatmarket.com/es/blog/cupones-y-ofertas-costas-meat-market/)
+- [Carnes sazonadas listas para cocinar: cómo preparar nuestra linguiça, picadinho, cerdo y alitas](https://costasmeatmarket.com/es/blog/carnes-sazonadas-y-marinadas-listas-para-cocinar/)
+- [Parrillada en tu casa de vacaciones cerca de Disney: guía de una carnicería de Davenport](https://costasmeatmarket.com/es/blog/parrillada-en-casa-de-vacaciones-cerca-de-disney/)
+- [Cortes latinos en inglés: cómo pedir tu corte en una carnicería de EE. UU.](https://costasmeatmarket.com/es/blog/guia-de-cortes-latinos/)
+- [¿Cuánta carne por persona para una parrillada o asado?](https://costasmeatmarket.com/es/blog/cuanta-carne-por-persona-parrillada/)
+- [Cómo hacer un churrasco brasileño en casa: el menú, el orden y los tiempos](https://costasmeatmarket.com/es/blog/churrasco-brasileno-en-casa-menu-y-orden/)
+- [Cómo cocinar rabo de res: receta de rabo guisado que se despega del hueso](https://costasmeatmarket.com/es/blog/rabo-de-res-receta-como-cocinar/)
+- [Carne en olla: el mejor corte para comprar y una receta que se deshace](https://costasmeatmarket.com/es/blog/carne-en-olla-mejor-corte-y-receta/)
+- [Filete mignon y lomo de res entero: cómo pedirlo, limpiarlo, cortarlo y cocinarlo](https://costasmeatmarket.com/es/blog/filete-mignon-lomo-de-res-entero-como-limpiar-y-cortar/)
+- [Prime rib (costillar de res al horno) y tomahawk: cuánto pedir y cómo cocinarlos](https://costasmeatmarket.com/es/blog/prime-rib-asado-de-costilla-y-tomahawk-como-pedir-y-cocinar/)
+- [Costillas de res 3 maneras: tablitas a la parrilla, guisadas y costela brasileña](https://costasmeatmarket.com/es/blog/costillas-de-res-tablitas-como-cocinar/)
+- [Cómo asar linguiça (chorizo brasileño) a la parrilla para que quede jugosa](https://costasmeatmarket.com/es/blog/como-asar-linguica-y-chorizo-a-la-parrilla/)
+- [Picadinho: cómo hacer el guiso de carne en cubitos de Brasil](https://costasmeatmarket.com/es/blog/picadinho-receta-guiso-de-carne-brasileno/)
+- [Alitas de pollo a la parrilla estilo brasileño, con adobo de ajo y limón](https://costasmeatmarket.com/es/blog/alitas-de-pollo-a-la-parrilla-estilo-brasileno/)
+- [Pan de queso brasileño (pão de queijo): receta con almidón agrio de yuca](https://costasmeatmarket.com/es/blog/pan-de-queso-brasileno-con-almidon-agrio-receta/)
+- [Productos brasileños en Davenport, FL: qué buscar y qué cocinar con ellos](https://costasmeatmarket.com/es/blog/tienda-brasilena-en-davenport-fl-productos/)
+- [Feijoada: el guiso brasileño de frijoles negros y qué carnes comprar aquí](https://costasmeatmarket.com/es/blog/feijoada-receta-y-que-carnes-comprar/)
+- [Pernil al horno: receta con cuerito crujiente y cuánto pernil comprar](https://costasmeatmarket.com/es/blog/receta-de-pernil-al-horno-con-cuerito/)
+- [Carne asada: el mejor corte para comprar y una marinada de cítricos y ajo](https://costasmeatmarket.com/es/blog/carne-asada-mejor-corte-y-marinada/)
+- [Términos de la carne y tabla de temperaturas: res, cerdo, pollo y carne molida](https://costasmeatmarket.com/es/blog/terminos-de-la-carne-tabla-de-temperaturas/)
+- [Ribeye, New York o picanha: ¿cuál steak deberías comprar?](https://costasmeatmarket.com/es/blog/ribeye-vs-new-york-vs-picanha-cual-elegir/)
+- [Carnicería vs. supermercado: lo que de verdad obtienes en el mostrador](https://costasmeatmarket.com/es/blog/carniceria-vs-supermercado-diferencias/)
+- [Panceta de cerdo 3 maneras: chicharrón (torresmo), a la parrilla y crujiente al horno](https://costasmeatmarket.com/es/blog/panceta-de-cerdo-3-recetas-chicharron/)
+- [Cortes de carne económicos que saben a caros, y cómo cocinar cada uno](https://costasmeatmarket.com/es/blog/cortes-de-carne-economicos-y-sabrosos/)
+- [Un combo familiar de carne, siete cenas: menú semanal para ahorrar](https://costasmeatmarket.com/es/blog/menu-semanal-con-combo-familiar-de-carne/)
+- [Cómo ahorrar en carne de calidad en Davenport: combos, ofertas y descuentos por WhatsApp](https://costasmeatmarket.com/es/blog/como-ahorrar-en-carne-en-davenport/)
+
+## Butcher's Blog — Português (https://costasmeatmarket.com/pt/blog/, RSS: https://costasmeatmarket.com/pt/blog/feed.xml)
+- [Picanha nos EUA: como escolher, cortar e assar (e onde achar em Davenport)](https://costasmeatmarket.com/pt/blog/picanha-como-escolher-e-assar/)
+- [Procurando um açougue perto de Haines City? Veja o que você encontra no Costa's](https://costasmeatmarket.com/pt/blog/acougue-perto-de-haines-city-fl/)
+- [Cupons e promoções do Costa's Meat Market: todas as formas de economizar](https://costasmeatmarket.com/pt/blog/cupons-e-promocoes-costas-meat-market/)
+- [Carnes temperadas prontas: como preparar nossa linguiça, picadinho, lombo e coxinha da asa](https://costasmeatmarket.com/pt/blog/carnes-temperadas-prontas-para-preparar/)
+- [Churrasco na casa de férias perto da Disney: guia de um açougue brasileiro em Davenport](https://costasmeatmarket.com/pt/blog/churrasco-na-casa-de-ferias-perto-da-disney/)
+- [Nomes dos cortes de carne em inglês: como pedir no açougue americano](https://costasmeatmarket.com/pt/blog/nomes-dos-cortes-de-carne-em-ingles/)
+- [Quanto de carne por pessoa no churrasco? Tabela para 10, 20 e 30 pessoas](https://costasmeatmarket.com/pt/blog/quanto-de-carne-por-pessoa-churrasco/)
+- [Como fazer um churrasco brasileiro em casa nos EUA: cardápio, ordem das carnes e horários](https://costasmeatmarket.com/pt/blog/cardapio-de-churrasco-brasileiro-em-casa/)
+- [Rabada com agrião: como fazer (e como comprar oxtail nos EUA)](https://costasmeatmarket.com/pt/blog/rabada-receita-como-fazer/)
+- [Carne de panela: qual corte comprar nos EUA e receita na pressão](https://costasmeatmarket.com/pt/blog/carne-de-panela-melhor-corte-receita/)
+- [Filé mignon peça inteira: como encomendar, limpar, cortar e aproveitar tudo](https://costasmeatmarket.com/pt/blog/file-mignon-peca-inteira-como-limpar-e-cortar/)
+- [Prime rib (bife ancho com osso) e tomahawk: quanto encomendar e como assar](https://costasmeatmarket.com/pt/blog/prime-rib-e-tomahawk-como-encomendar-e-assar/)
+- [Costela bovina no forno e na churrasqueira: qual corte pedir nos EUA e receita](https://costasmeatmarket.com/pt/blog/costela-no-forno-e-na-churrasqueira/)
+- [Como assar linguiça na churrasqueira e deixar suculenta](https://costasmeatmarket.com/pt/blog/como-assar-linguica-na-churrasqueira/)
+- [Picadinho de carne: a receita rápida que lembra casa (e qual corte usar nos EUA)](https://costasmeatmarket.com/pt/blog/receita-de-picadinho-de-carne/)
+- [Coxinha da asa na churrasqueira: tempero de alho e limão e o tempo certo](https://costasmeatmarket.com/pt/blog/coxinha-da-asa-na-churrasqueira/)
+- [Pão de queijo caseiro nos EUA: receita com polvilho azedo e qual queijo usar](https://costasmeatmarket.com/pt/blog/pao-de-queijo-caseiro-polvilho-azedo-receita/)
+- [Mercado brasileiro em Davenport, FL: o que procurar e o que fazer com cada produto](https://costasmeatmarket.com/pt/blog/mercado-brasileiro-em-davenport-fl/)
+- [Feijoada nos EUA: quais carnes comprar, como pedir em inglês e a receita](https://costasmeatmarket.com/pt/blog/feijoada-nos-eua-quais-carnes-comprar/)
+- [Pernil assado para o Natal: receita suculenta e qual corte pedir nos EUA](https://costasmeatmarket.com/pt/blog/pernil-assado-receita-de-natal/)
+- [Carne asada mexicana: qual corte usar (fraldinha, diafragma ou vazio) e a marinada](https://costasmeatmarket.com/pt/blog/carne-asada-mexicana-corte-e-marinada/)
+- [Pontos da carne: tabela de temperatura para boi, porco, frango e carne moída](https://costasmeatmarket.com/pt/blog/pontos-da-carne-tabela-de-temperatura/)
+- [Ribeye, contrafilé ou picanha: qual bife comprar nos EUA?](https://costasmeatmarket.com/pt/blog/ribeye-contrafile-ou-picanha-qual-escolher/)
+- [Açougue ou supermercado nos EUA: o que você ganha comprando no balcão](https://costasmeatmarket.com/pt/blog/acougue-ou-supermercado-nos-eua/)
+- [Barriga de porco 3 jeitos: torresmo, panceta na churrasqueira e pururuca no forno](https://costasmeatmarket.com/pt/blog/barriga-de-porco-torresmo-receitas/)
+- [Cortes de carne baratos que parecem caros, e como preparar cada um](https://costasmeatmarket.com/pt/blog/cortes-de-carne-baratos-e-saborosos/)
+- [Um combo de carnes, sete jantares: cardápio da semana para economizar](https://costasmeatmarket.com/pt/blog/cardapio-semanal-com-combo-de-carnes/)
+- [Como economizar na carne em Davenport: combos, promoções e cupons no WhatsApp](https://costasmeatmarket.com/pt/blog/como-economizar-na-carne-em-davenport/)
