@@ -25,3 +25,19 @@
 - [Online Store / Pickup Orders](https://costasmeatmarket.hrpos.heartland.us/): Place orders online for easy counter pickup.
 - [Community Hub & Socials](https://costasmeatmarket.com/socials/): WhatsApp group, WhatsApp announcement channel, Instagram, TikTok, and Facebook.
 - [Directions on Google Maps](https://www.google.com/maps/dir/?api=1&destination=Costa%27s%20Meat%20Market%2C%202169%20Davenport%20Blvd%2C%20Davenport%2C%20FL%2033837): Navigation to 2169 Davenport Blvd, Davenport, FL 33837.
+
+## Languages
+- [English home](https://costasmeatmarket.com/): Butcher shop and meat market in Davenport, FL.
+- [Página en español](https://costasmeatmarket.com/es/): Carnicería en Davenport, FL.
+- [Página em português](https://costasmeatmarket.com/pt/): Açougue em Davenport, FL.
+
+## Butcher's Blog (guides from the counter)
+- [What Is Picanha? How to Buy, Cut, and Grill It](https://costasmeatmarket.com/blog/what-is-picanha/)
+- [Grilling at Your Vacation Rental Near Disney](https://costasmeatmarket.com/blog/vacation-rental-bbq-guide-davenport/): For visitors staying in Davenport, ChampionsGate and Four Corners rental homes.
+- [Latin and Brazilian Meat Cuts in English](https://costasmeatmarket.com/blog/latin-and-brazilian-meat-cuts-guide/): Spanish and Portuguese cut names with U.S. equivalents.
+- [How Much Meat Per Person for a BBQ or Churrasco](https://costasmeatmarket.com/blog/how-much-meat-per-person-bbq/)
+- [Butcher Shop vs. Grocery Store Meat](https://costasmeatmarket.com/blog/butcher-shop-vs-grocery-store-meat/)
+- [Ribeye vs. NY Strip vs. Picanha](https://costasmeatmarket.com/blog/ribeye-vs-ny-strip-vs-picanha/)
+- [Pork Belly 3 Ways: Torresmo, Grilled Panceta, Oven-Roasted](https://costasmeatmarket.com/blog/pork-belly-recipes-torresmo-panceta/)
+- [How to Save on Quality Meat in Davenport](https://costasmeatmarket.com/blog/save-money-on-meat-davenport/)
+- [Blog en español](https://costasmeatmarket.com/es/blog/) · [Blog em português](https://costasmeatmarket.com/pt/blog/)

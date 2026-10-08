@@ -37,6 +37,7 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "yjadt0p2o2");
 </script>
+<script src="/assets/js/track.js" defer></script>
 <style>
   :root{
     color-scheme:light dark;
@@ -525,6 +526,7 @@
       }
     };
     var LANG_TAG = { en: "en-US", es: "es", pt: "pt-BR" };
+    var HOME_URL = { en: "https://costasmeatmarket.com/", es: "https://costasmeatmarket.com/es/", pt: "https://costasmeatmarket.com/pt/" };
     var current = "en";
 
     function store(key, value) {
@@ -543,6 +545,8 @@
         if (dict[key]) nodes[i].textContent = dict[key];
       }
       document.documentElement.lang = LANG_TAG[current];
+      var website = document.getElementById("link-website");
+      if (website) website.href = HOME_URL[current];
       var buttons = document.querySelectorAll(".langbar button");
       for (var j = 0; j < buttons.length; j++) {
         buttons[j].setAttribute("aria-pressed", String(buttons[j].getAttribute("data-lang") === current));
@@ -551,6 +555,8 @@
     }
 
     function detect() {
+      var asked = /[?&]lang=(en|es|pt)\b/.exec(window.location.search);
+      if (asked) return asked[1];
       var saved = recall("cmm-lang");
       if (saved && COPY[saved]) return saved;
       var list = navigator.languages || [navigator.language || "en"];
@@ -565,7 +571,9 @@
 
     document.querySelector(".langbar").addEventListener("click", function (event) {
       var btn = event.target.closest("button[data-lang]");
-      if (btn) apply(btn.getAttribute("data-lang"));
+      if (!btn) return;
+      apply(btn.getAttribute("data-lang"));
+      if (window.cmmTrack) window.cmmTrack("select_language", { page_lang: current, link_section: "socials" });
     });
 
     var share = document.getElementById("sharePage");

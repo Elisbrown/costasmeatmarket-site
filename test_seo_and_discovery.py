@@ -121,5 +121,141 @@ class TestSeoAndDiscovery(unittest.TestCase):
         self.assertIn("Picanha", self.llms_txt)
 
 
+SITE = "https://costasmeatmarket.com"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
+def read(rel_path):
+    with open(os.path.join(BASE_DIR, rel_path), "r", encoding="utf-8") as f:
+        return f.read()
+
+
+def url_to_file(url):
+    """Map a site URL or root-relative path to the file that serves it."""
+    path = url.replace(SITE, "", 1).split("?")[0].split("#")[0] or "/"
+    rel = path.lstrip("/")
+    if path.endswith("/"):
+        rel = os.path.join(rel, "index.html")
+    return rel
+
+
+def all_html_files():
+    found = []
+    for root, dirs, files in os.walk(BASE_DIR):
+        dirs[:] = [d for d in dirs if not d.startswith(".") and d != "Claude outputs"]
+        for name in files:
+            if name.endswith(".html"):
+                found.append(os.path.relpath(os.path.join(root, name), BASE_DIR))
+    return sorted(found)
+
+
+def alternates(page_html):
+    return dict(re.findall(r'<link rel="alternate" hreflang="([a-zA-Z-]+)" href="([^"]+)">', page_html))
+
+
+def json_ld_blocks(page_html):
+    blocks = re.findall(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', page_html, re.DOTALL)
+    return [json.loads(block) for block in blocks]
+
+
+class TestMultilingualSiteAndBlog(unittest.TestCase):
+    """Language versions, blog posts, internal links, sitemap coverage, and tracking."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.sitemap_xml = read("sitemap.xml")
+        root = ET.fromstring(cls.sitemap_xml)
+        ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+        cls.sitemap_locs = [elem.text for elem in root.findall("sm:url/sm:loc", ns)]
+        cls.html_files = all_html_files()
+        cls.indexable = [f for f in cls.html_files if not f.startswith("go" + os.sep)]
+
+    def test_home_page_exists_in_every_language(self):
+        """English, Spanish and Portuguese home pages exist, declare their language and point at each other."""
+        expected = {"en": SITE + "/", "es": SITE + "/es/", "pt": SITE + "/pt/"}
+        for lang, url in expected.items():
+            page = read(url_to_file(url))
+            self.assertRegex(page, r'<html lang="%s' % lang)
+            self.assertIn('<link rel="canonical" href="%s">' % url, page)
+            alts = alternates(page)
+            for other, other_url in expected.items():
+                self.assertEqual(alts.get(other), other_url, "%s home must link to %s" % (lang, other))
+            self.assertEqual(alts.get("x-default"), SITE + "/")
+
+    def test_hreflang_links_are_reciprocal(self):
+        """Every hreflang alternate exists and links back to the page that references it."""
+        for rel in self.indexable:
+            page = read(rel)
+            canonical = re.search(r'<link rel="canonical" href="([^"]+)">', page)
+            alts = alternates(page)
+            if not alts:
+                continue
+            self.assertIsNotNone(canonical, rel)
+            self.assertIn(canonical.group(1), alts.values(), "%s must list itself in hreflang" % rel)
+            for lang, url in alts.items():
+                target = url_to_file(url)
+                self.assertTrue(os.path.exists(os.path.join(BASE_DIR, target)), "%s -> missing %s" % (rel, url))
+                self.assertIn(canonical.group(1), alternates(read(target)).values(),
+                              "%s (%s) does not link back to %s" % (url, lang, rel))
+
+    def test_every_indexable_page_has_core_seo_tags(self):
+        """Each public page has a title, description, canonical and valid JSON-LD."""
+        for rel in self.indexable:
+            page = read(rel)
+            self.assertRegex(page, r"<title>.{15,}</title>", rel)
+            self.assertRegex(page, r'<meta name="description" content=".{50,}">', rel)
+            self.assertRegex(page, r'<link rel="canonical" href="https://costasmeatmarket\.com/', rel)
+            for block in json_ld_blocks(page):
+                self.assertEqual(block.get("@context"), "https://schema.org", rel)
+
+    def test_blog_posts_have_article_schema_in_the_page_language(self):
+        """Blog posts carry BlogPosting schema whose language matches the page."""
+        posts = [f for f in self.indexable if re.match(r"^((es|pt)/)?blog/[^/]+/index\.html$", f.replace(os.sep, "/"))]
+        self.assertGreaterEqual(len(posts), 10)
+        for rel in posts:
+            page = read(rel)
+            html_lang = re.search(r'<html lang="([^"]+)"', page).group(1)
+            graph = json_ld_blocks(page)[0]["@graph"]
+            article = next(item for item in graph if item.get("@type") == "BlogPosting")
+            self.assertEqual(article["inLanguage"], html_lang, rel)
+            self.assertTrue(article["headline"], rel)
+            self.assertIn('property="og:type" content="article"', page, rel)
+
+    def test_internal_links_resolve(self):
+        """Every root-relative link and asset points at a file that exists."""
+        for rel in self.html_files:
+            page = read(rel)
+            for ref in re.findall(r'(?:href|src)="(/[^"]*)"', page):
+                if ref.startswith("//"):
+                    continue
+                target = url_to_file(ref)
+                self.assertTrue(os.path.exists(os.path.join(BASE_DIR, target)), "%s links to missing %s" % (rel, ref))
+
+    def test_sitemap_matches_pages(self):
+        """The sitemap lists every public page and nothing that doesn't exist."""
+        for loc in self.sitemap_locs:
+            self.assertTrue(os.path.exists(os.path.join(BASE_DIR, url_to_file(loc))), "sitemap lists missing " + loc)
+        listed = {url_to_file(loc) for loc in self.sitemap_locs}
+        for rel in self.indexable:
+            self.assertIn(rel.replace(os.sep, "/"), listed, rel + " is missing from sitemap.xml")
+        self.assertFalse([loc for loc in self.sitemap_locs if "/go/" in loc], "short links must stay out of the sitemap")
+
+    def test_short_links_are_noindex_and_tagged(self):
+        """The /go/ short links used in bios and QR codes carry UTM tags and stay out of the index."""
+        short_links = [f for f in self.html_files if f.startswith("go" + os.sep)]
+        self.assertGreaterEqual(len(short_links), 5)
+        for rel in short_links:
+            page = read(rel)
+            self.assertIn('content="noindex, follow"', page, rel)
+            self.assertRegex(page, r"utm_source=[a-z_]+&amp;utm_medium=[a-z]+&amp;utm_campaign=[a-z_]+", rel)
+
+    def test_tracking_is_on_every_public_page(self):
+        """Clarity and the click/source tracker load on every public page, including the socials hub."""
+        for rel in self.indexable:
+            page = read(rel)
+            self.assertIn('"clarity", "script", "yjadt0p2o2"', page, rel)
+            self.assertIn('<script src="/assets/js/track.js" defer></script>', page, rel)
+
+
 if __name__ == "__main__":
     unittest.main()

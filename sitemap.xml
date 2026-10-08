@@ -3,22 +3,193 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://costasmeatmarket.com/</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://costasmeatmarket.com/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://costasmeatmarket.com/socials/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://costasmeatmarket.com/socials/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://costasmeatmarket.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://costasmeatmarket.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costasmeatmarket.com/"/>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/es/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costasmeatmarket.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://costasmeatmarket.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://costasmeatmarket.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costasmeatmarket.com/"/>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/pt/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costasmeatmarket.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://costasmeatmarket.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://costasmeatmarket.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costasmeatmarket.com/"/>
   </url>
   <url>
     <loc>https://costasmeatmarket.com/socials/</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://costasmeatmarket.com/blog/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costasmeatmarket.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://costasmeatmarket.com/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://costasmeatmarket.com/pt/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costasmeatmarket.com/blog/"/>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/es/blog/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costasmeatmarket.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://costasmeatmarket.com/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://costasmeatmarket.com/pt/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costasmeatmarket.com/blog/"/>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/pt/blog/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costasmeatmarket.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://costasmeatmarket.com/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://costasmeatmarket.com/pt/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costasmeatmarket.com/blog/"/>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/blog/what-is-picanha/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costasmeatmarket.com/blog/what-is-picanha/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://costasmeatmarket.com/es/blog/que-es-la-picanha/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://costasmeatmarket.com/pt/blog/picanha-como-escolher-e-assar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costasmeatmarket.com/blog/what-is-picanha/"/>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/blog/vacation-rental-bbq-guide-davenport/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/blog/latin-and-brazilian-meat-cuts-guide/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costasmeatmarket.com/blog/latin-and-brazilian-meat-cuts-guide/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://costasmeatmarket.com/es/blog/guia-de-cortes-latinos/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://costasmeatmarket.com/pt/blog/nomes-dos-cortes-de-carne-em-ingles/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costasmeatmarket.com/blog/latin-and-brazilian-meat-cuts-guide/"/>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/blog/how-much-meat-per-person-bbq/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costasmeatmarket.com/blog/how-much-meat-per-person-bbq/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://costasmeatmarket.com/es/blog/cuanta-carne-por-persona-parrillada/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://costasmeatmarket.com/pt/blog/quanto-de-carne-por-pessoa-churrasco/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costasmeatmarket.com/blog/how-much-meat-per-person-bbq/"/>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/blog/butcher-shop-vs-grocery-store-meat/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/blog/ribeye-vs-ny-strip-vs-picanha/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/blog/pork-belly-recipes-torresmo-panceta/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/blog/save-money-on-meat-davenport/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/es/blog/que-es-la-picanha/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costasmeatmarket.com/blog/what-is-picanha/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://costasmeatmarket.com/es/blog/que-es-la-picanha/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://costasmeatmarket.com/pt/blog/picanha-como-escolher-e-assar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costasmeatmarket.com/blog/what-is-picanha/"/>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/es/blog/guia-de-cortes-latinos/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costasmeatmarket.com/blog/latin-and-brazilian-meat-cuts-guide/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://costasmeatmarket.com/es/blog/guia-de-cortes-latinos/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://costasmeatmarket.com/pt/blog/nomes-dos-cortes-de-carne-em-ingles/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costasmeatmarket.com/blog/latin-and-brazilian-meat-cuts-guide/"/>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/es/blog/cuanta-carne-por-persona-parrillada/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costasmeatmarket.com/blog/how-much-meat-per-person-bbq/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://costasmeatmarket.com/es/blog/cuanta-carne-por-persona-parrillada/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://costasmeatmarket.com/pt/blog/quanto-de-carne-por-pessoa-churrasco/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costasmeatmarket.com/blog/how-much-meat-per-person-bbq/"/>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/pt/blog/picanha-como-escolher-e-assar/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costasmeatmarket.com/blog/what-is-picanha/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://costasmeatmarket.com/es/blog/que-es-la-picanha/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://costasmeatmarket.com/pt/blog/picanha-como-escolher-e-assar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costasmeatmarket.com/blog/what-is-picanha/"/>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/pt/blog/nomes-dos-cortes-de-carne-em-ingles/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costasmeatmarket.com/blog/latin-and-brazilian-meat-cuts-guide/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://costasmeatmarket.com/es/blog/guia-de-cortes-latinos/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://costasmeatmarket.com/pt/blog/nomes-dos-cortes-de-carne-em-ingles/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costasmeatmarket.com/blog/latin-and-brazilian-meat-cuts-guide/"/>
+  </url>
+  <url>
+    <loc>https://costasmeatmarket.com/pt/blog/quanto-de-carne-por-pessoa-churrasco/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://costasmeatmarket.com/blog/how-much-meat-per-person-bbq/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://costasmeatmarket.com/es/blog/cuanta-carne-por-persona-parrillada/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://costasmeatmarket.com/pt/blog/quanto-de-carne-por-pessoa-churrasco/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://costasmeatmarket.com/blog/how-much-meat-per-person-bbq/"/>
+  </url>
+  <url>
     <loc>https://costasmeatmarket.com/llms.txt</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -28,5 +199,4 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
 </urlset>
