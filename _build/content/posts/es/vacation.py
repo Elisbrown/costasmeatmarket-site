@@ -26,6 +26,7 @@ POST = {
 
 <h2>Pide antes y recoge de regreso</h2>
 <p>Nadie quiere hacer fila en una carnicería después de 12 horas en un parque. Haz tu pedido en nuestra <a href="%%ORDER%%">tienda en línea</a> y recógelo en el mostrador de 2169 Davenport Blvd. ¿Lo quieres cortado de alguna forma, como steaks gruesos, una picanha entera o hamburguesas formadas? Llama antes al <a href="%%TEL%%">(863) 422-2313</a>.</p>
+<p>Abrimos todos los días: <strong>de lunes a sábado hasta las 8 p. m. y los domingos hasta las 5 p. m.</strong> Planea la recogida antes de volver de los parques.</p>
 
 <h2>Mantenla fría con el calor de Florida</h2>
 <p>El calor de Florida no perdona a la carne cruda. El USDA dice que los alimentos perecederos no deben estar fuera más de <strong>1 hora cuando hace más de 32&nbsp;&deg;C (90&nbsp;&deg;F)</strong>. Lleva una bolsa térmica en el carro, ve directo a la casa y mete todo al refrigerador.</p>

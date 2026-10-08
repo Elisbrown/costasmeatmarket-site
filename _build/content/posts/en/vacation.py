@@ -25,6 +25,7 @@ POST = {
 
 <h2>Order ahead, pick up on the way back</h2>
 <p>Nobody wants to wait at a meat counter after 12 hours at a theme park. Place your order in our <a href="%%ORDER%%">online store</a> and pick it up at the counter at 2169 Davenport Blvd. Want something cut a certain way, like thick steaks, a whole picanha, or burger patties? Call <a href="%%TEL%%">(863) 422-2313</a> ahead of time.</p>
+<p>We're open every day: <strong>Monday to Saturday until 8 pm and Sunday until 5 pm</strong>, so plan your pickup before you head back from the parks.</p>
 
 <h2>Keep it cold in the Florida heat</h2>
 <p>Florida heat is hard on raw meat. The USDA says perishable food shouldn't sit out for more than <strong>1 hour when it's above 90&nbsp;&deg;F</strong>. Bring a cooler bag for the car, head straight back to the house, and get everything into the fridge.</p>

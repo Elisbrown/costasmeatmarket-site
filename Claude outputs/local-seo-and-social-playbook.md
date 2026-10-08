@@ -22,11 +22,11 @@
 
 1. [ ] **Merge the branch into `main`.** Nothing is live until then, and the weekly GitHub Action only runs from `main`.
 2. [ ] **Make `www.costasmeatmarket.com` redirect to `costasmeatmarket.com`** in your host's domain settings (section 6). Google currently splits your home page between the two.
-3. [ ] **Send me your opening hours.** Searches like "meat market near me open now" and "open on sunday" need them on the site and in Google Business.
+3. [x] ~~Send opening hours~~ Done: **Mon–Sat 8 am–8 pm, Sun 8 am–5 pm** are now in the business schema, a live "Open now" badge on the home pages, every page footer, the home FAQs ("What are your hours?", "Are you open on Sundays?"), the socials page and `llms.txt`. If your hours change, update `HOURS` in `_build/lib/site.py` and your Business Profile on the same day.
 4. [ ] Search Console: submit `sitemap.xml` and the three feeds, then request indexing for the home pages and the Haines City article (section 3).
-5. [ ] Google Business Profile: categories, description, hours, products, tracked website link, photos (section 2).
+5. [ ] Google Business Profile: finish the items your profile flags under **Complete info** (section 2.8): food ordering link, products, services, exterior photo, tracked website link.
 6. [ ] Ask every happy customer for a Google review (section 2.6).
-7. [ ] Claim Apple Business Connect and Bing Places (section 2.8). 51% of your visitors use iPhone Safari.
+7. [ ] Claim Apple Business Connect and Bing Places (section 2.9). 51% of your visitors use iPhone Safari.
 8. [ ] Update Instagram, TikTok and Facebook bios to the `/go/` links (section 5).
 9. [ ] In Buffer, change the timezone from **Africa/Douala** to **America/New_York**.
 10. [ ] **Send more photos, or allow Pexels** (section 6.4). Right now every article uses crops of your two full-size store photos.
@@ -140,7 +140,23 @@ For each product's button, use "Order online" (Heartland link) or "Learn more" l
 
 Google removed the Questions & Answers section from Business Profiles (announced December 2025). Its replacement, **Ask Maps**, is a Gemini-powered assistant that answers questions from your reviews, description, photos and website. That's why the new pages include FAQs about picanha, custom cuts, online ordering, deals and payment. Keep the description and hours accurate, and keep the reviews coming.
 
-### 2.8 Other maps and listings (keep the name, address and phone identical everywhere)
+### 2.8 What your profile shows right now (October 8)
+
+From your screenshot: **4.6 stars, 103 Google reviews**, category Butcher shop, address, phone and hours all correct, 2,403 customer interactions. Profile strength isn't complete yet. In order:
+
+1. **Website button:** set it to `https://costasmeatmarket.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp` so Business Profile visits show up as their own source in GA4 and Clarity.
+2. **Food ordering:** add the Heartland store link (`https://costasmeatmarket.hrpos.heartland.us/`) as your ordering link. This adds an "Order" button to your listing.
+3. **Edit products:** add the products from section 2.4, each with a photo and the Spanish and Portuguese names in the description.
+4. **Edit services:** add "Custom cuts", "Special orders (whole tenderloin, prime rib, tomahawk)", "Online ordering for pickup" and "Family meat bundles".
+5. **Add exterior photo:** the storefront photo you sent is ideal, with the Costa's flag and the Webb's Town Center sign.
+6. **"Add directions to your website":** done. The home pages now have an Hours & Location section with address, map link and phone, and the Haines City article explains how to find you.
+7. **Posts:** one or two a week (drafts in the appendix). Link them to the matching article with `?utm_source=google&utm_medium=organic&utm_campaign=gbp_post`.
+
+The Google result under your profile still shows the old title and description. That updates on its own a few days after the new site is live. To speed it up, request indexing for the home page in Search Console after you merge.
+
+**Why there are no star ratings in the site's schema:** Google doesn't show review stars for a business marking up its own reviews ("self-serving reviews"), and doing it anyway risks a manual action. Your stars come from the Business Profile. The site mentions "100+ reviews on Google" in text, and `llms.txt` gives AI assistants the 4.6 rating with its date.
+
+### 2.9 Other maps and listings (keep the name, address and phone identical everywhere)
 
 - **Apple Business Connect** (businessconnect.apple.com): Apple Maps is the default on iPhones, and the socials page already opens Apple Maps for iPhone users. Website: `https://costasmeatmarket.com/?utm_source=apple&utm_medium=organic&utm_campaign=apple_maps`.
 - **Bing Places** (bingplaces.com): can import directly from Google Business Profile. Bing powers Microsoft Copilot's local answers and is one of the sources other AI assistants draw on. Website: `?utm_source=bing&utm_medium=organic&utm_campaign=bing_places`.
@@ -353,7 +369,6 @@ Each article is one file per language in `_build/content/posts/<en|es|pt>/<topic
 - **Log into Search Console, Business Profile or the social apps:** this cloud session has no browser. To let me click through those dashboards next time, start a session from the Claude desktop app with Claude in Chrome enabled.
 - **Search volumes:** I had no keyword tool connected. The keyword map now uses the Search Console export you sent; a keyword tool would add monthly volumes.
 - **Stock photos:** Pexels, Unsplash and other free-photo sites were blocked by this environment's network policy (section 6.4).
-- **Opening hours:** they aren't on the site. Send them and I'll add them to the schema and the home pages.
 - **Facts to double-check:** the articles only claim what your site, your old online store or your meat-case photo show: picanha, ribeye, NY strip, skirt, short ribs/costela, maminha, alcatra, coxão mole, ground beef, pork chops, pork belly, whole chickens and wings, house-made linguiça, seasoned picadinho, seasoned pork and wings, family bundles, custom cuts and special orders, charcoal and coarse salt, Brazilian groceries, online ordering, WhatsApp deals, 5% off for following, and cash/credit/debit. Oxtail, whole tenderloin, prime rib and tomahawk are written as "call to check or special order". If anything is wrong, tell me and I'll update every language at once.
 - **Spoken languages:** I didn't say your staff speak Spanish or Portuguese anywhere, because I couldn't confirm it. If they do, tell me and I'll add it; it's a strong reason for people to choose you.
 

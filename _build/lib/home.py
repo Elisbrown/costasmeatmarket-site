@@ -1,5 +1,7 @@
+import json
+
 from lib.site import (SITE, ORDER, MAPS, REVIEW, HOME, BLOG, SOCIALS, STORE_NODE, ARROW, LANGS, HTML_LANG, BUILD_DATE,
-                      esc, head, langbar, footer, week_index)
+                      HOURS, esc, head, langbar, footer, week_index)
 from lib.pages import card, picture, hero_image
 from lib import images
 from content.home_copy import COPY
@@ -114,6 +116,25 @@ def build_home(root, lang, posts):
           </div>
         </a>''')
     out.append("      </nav>\n")
+    labels = c["hour_labels"]
+    rows = []
+    for i, name in enumerate(c["days"]):
+        js_day = (i + 1) % 7  # Monday-first table, Sunday-first schedule
+        opens, closes = HOURS[js_day]
+        rows.append(f'''          <tr data-day="{js_day}"><th scope="row">{esc(name)}</th><td>{labels[opens]} – {labels[closes]}</td></tr>''')
+    badge = json.dumps({"hours": HOURS, "t": {str(k): v for k, v in labels.items()}, **c["open_now"]},
+                       ensure_ascii=False)
+    out.append(f'''      <section class="info-section hours" data-section="hours" aria-labelledby="hours-h">
+        <h2 id="hours-h">{esc(c["hours_h"])}</h2>
+        <p class="open-now" data-open-now="{esc(badge)}" hidden></p>
+        <table class="hours-table">
+{chr(10).join(rows)}
+        </table>
+        <p class="hours-note">{esc(c["hours_note"])}</p>
+        <p><strong>Costa's Meat Market</strong><br>2169 Davenport Blvd, Davenport, FL 33837 (Webb's Town Center)<br>
+        <a href="{esc(MAPS)}" target="_blank" rel="noopener" id="link-hours-directions">{esc(c["tiles"][1][0])}</a> · <a href="tel:+18634222313" id="link-hours-call">(863) 422-2313</a></p>
+      </section>
+''')
     figures = "\n".join(f'''        <figure>
           {picture(root, variant, lang, sizes="(max-width: 660px) 100vw, 620px")}
           <figcaption>{esc(caption)}</figcaption>

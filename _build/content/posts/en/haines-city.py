@@ -8,6 +8,7 @@ POST = {
     "body": """
 <h2>Where we are</h2>
 <p>Costa's Meat Market is at <strong>2169 Davenport Blvd, Davenport, FL 33837</strong>, inside Webb's Town Center. Davenport borders Haines City, so for most Haines City neighborhoods we're a short drive away. Look for the Costa's flag out front.</p>
+<p>We're open <strong>seven days a week</strong>: Monday to Saturday from 8 am to 8 pm, and Sunday from 8 am to 5 pm.</p>
 <p>Tap <a href="%%MAPS%%" target="_blank" rel="noopener">Get directions</a> to open the route on your phone, or call the counter at <a href="%%TEL%%">(863) 422-2313</a> if you need help finding us.</p>
 
 <h2>What's in the case</h2>

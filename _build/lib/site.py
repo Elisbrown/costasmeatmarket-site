@@ -69,6 +69,14 @@ LANG_LABEL = {"en": "EN", "es": "ES", "pt": "PT"}
 LANG_NAME = {"en": "English", "es": "Español", "pt": "Português"}
 SOCIALS = {"en": "/socials/", "es": "/socials/?lang=es", "pt": "/socials/?lang=pt"}
 
+# Opening hours (from the Google Business Profile, October 2026). Sunday first, 24-hour clock.
+HOURS = [(8, 17), (8, 20), (8, 20), (8, 20), (8, 20), (8, 20), (8, 20)]
+HOURS_TEXT = {
+    "en": "Mon–Sat 8 am–8 pm · Sun 8 am–5 pm",
+    "es": "Lunes a sábado de 8 a. m. a 8 p. m. · Domingo de 8 a. m. a 5 p. m.",
+    "pt": "Segunda a sábado, das 8h às 20h · Domingo, das 8h às 17h",
+}
+
 STORE_NODE = {
     "@type": ["ButcherShop", "GroceryStore", "LocalBusiness"],
     "@id": SITE + "/#store",
@@ -96,6 +104,13 @@ STORE_NODE = {
     },
     "geo": {"@type": "GeoCoordinates", "latitude": 28.1614, "longitude": -81.6017},
     "hasMap": MAPS,
+    "openingHours": ["Mo-Sa 08:00-20:00", "Su 08:00-17:00"],
+    "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification",
+         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+         "opens": "08:00", "closes": "20:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "08:00", "closes": "17:00"},
+    ],
     "areaServed": ["Davenport, FL", "Haines City, FL", "ChampionsGate, FL", "Four Corners, FL", "Poinciana, FL",
                    "Kissimmee, FL", "Winter Haven, FL", "Polk County, FL", "Osceola County, FL"],
     "knowsAbout": ["Picanha", "Brazilian beef cuts", "Latin American beef cuts", "Churrasco", "Custom butchery",
@@ -131,6 +146,7 @@ ICONS = ('<link rel="icon" href="/favicon.ico" sizes="any">\n'
 
 def analytics(content_group, lang):
     """Google Analytics 4 + Microsoft Clarity, then the shared click/source tracker."""
+    extra_js = '\n  <script src="/assets/js/open-now.js" defer></script>' if content_group == "home" else ""
     return f'''<!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={GA4_ID}"></script>
   <script>
@@ -149,7 +165,7 @@ def analytics(content_group, lang):
       }})(window, document, "clarity", "script", "{CLARITY_ID}");
   </script>
   <script src="/assets/js/track.js" defer></script>
-  <script src="/assets/js/lang.js" defer></script>'''
+  <script src="/assets/js/lang.js" defer></script>{extra_js}'''
 
 
 ARROW = ('<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
@@ -264,11 +280,11 @@ def langbar(lang, targets):
 
 
 FOOT = {
-    "en": {"est": "Est. 2024", "where": "In Webb's Town Center", "socials": "Social Links Hub", "order": "Order Online",
+    "en": {"est": "Est. 2024", "where": "In Webb's Town Center", "hours": "Open 7 days", "socials": "Social Links Hub", "order": "Order Online",
            "blog": "Butcher's Blog", "sitemap": "Sitemap", "llms": "LLMs Context", "rss": "RSS"},
-    "es": {"est": "Desde 2024", "where": "En Webb's Town Center", "socials": "Redes sociales", "order": "Pedir en línea",
+    "es": {"est": "Desde 2024", "where": "En Webb's Town Center", "hours": "Abierto todos los días", "socials": "Redes sociales", "order": "Pedir en línea",
            "blog": "Blog del carnicero", "sitemap": "Mapa del sitio", "llms": "Contexto para IA", "rss": "RSS"},
-    "pt": {"est": "Desde 2024", "where": "No Webb's Town Center", "socials": "Redes sociais", "order": "Pedir online",
+    "pt": {"est": "Desde 2024", "where": "No Webb's Town Center", "hours": "Aberto todos os dias", "socials": "Redes sociais", "order": "Pedir online",
            "blog": "Blog do açougueiro", "sitemap": "Mapa do site", "llms": "Contexto para IA", "rss": "RSS"},
 }
 
@@ -279,7 +295,8 @@ def footer(lang):
         f'<a href="{HOME[c]}" hreflang="{c}" lang="{c}">{LANG_NAME[c]}</a>' for c in LANGS)
     return f'''    <footer class="site">
       <p><strong>Costa's Meat Market · {f["est"]}</strong><br>
-      2169 Davenport Blvd, Davenport, FL 33837 · {f["where"]} | Tel: <a id="foot-call" href="tel:+18634222313">(863) 422-2313</a></p>
+      2169 Davenport Blvd, Davenport, FL 33837 · {f["where"]} | Tel: <a id="foot-call" href="tel:+18634222313">(863) 422-2313</a><br>
+      {f["hours"]}: {HOURS_TEXT[lang]}</p>
       <p><a id="foot-socials" href="{SOCIALS[lang]}">{f["socials"]}</a> · <a id="foot-order-online" href="{ORDER}">{f["order"]}</a> · <a id="foot-blog" href="{BLOG[lang]}">{f["blog"]}</a> · <a id="foot-rss" href="{FEED[lang]}">{f["rss"]}</a> · <a id="foot-sitemap" href="/sitemap.xml">{f["sitemap"]}</a> · <a id="foot-llms" href="/llms.txt">{f["llms"]}</a></p>
       <p>{langs}</p>
     </footer>'''

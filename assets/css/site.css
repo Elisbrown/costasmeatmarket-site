@@ -315,3 +315,18 @@ figure.hero figcaption, .gallery figcaption { font-size: 13px; color: var(--ink-
 .gallery { margin-bottom: 24px; }
 .gallery figure { margin: 0 0 16px; }
 .gallery img { display: block; width: 100%; height: auto; border-radius: 6px; background: var(--tag); }
+
+/* ---------- hours ---------- */
+.hours-table { border-collapse: collapse; width: 100%; margin: 4px 0 8px; font-size: 15px; }
+.hours-table th, .hours-table td { text-align: left; padding: 6px 0; border-bottom: 1px dashed var(--rule); font-weight: 400; }
+.hours-table td { text-align: right; color: var(--ink); }
+.hours-table tr.today th, .hours-table tr.today td { font-weight: 700; color: var(--ink); }
+.hours-note { font-size: 13px; color: var(--ink-soft); }
+.open-now {
+  display: inline-block; margin: 0 0 8px; padding: 4px 10px; border-radius: 999px;
+  font-family: "Oswald", Impact, sans-serif; font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
+  background: var(--tag); color: var(--ink);
+}
+.open-now.is-open { background: #DDF3E4; color: #0B5B2A; }
+.open-now.is-closed { background: var(--tag); color: var(--red-ink); }
+@media (prefers-color-scheme: dark) { .open-now.is-open { background: #133D24; color: #9BE3B3; } }

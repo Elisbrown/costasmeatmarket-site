@@ -26,6 +26,7 @@ POST = {
 
 <h2>Peça antes e retire na volta</h2>
 <p>Ninguém quer pegar fila no açougue depois de 12 horas de parque. Faça o pedido na nossa <a href="%%ORDER%%">loja online</a> e retire no balcão da 2169 Davenport Blvd. Quer a carne cortada de um jeito específico, como bifes grossos, picanha inteira ou hambúrguer já moldado? Ligue antes para <a href="%%TEL%%">(863) 422-2313</a>.</p>
+<p>Abrimos todos os dias: <strong>de segunda a sábado até as 20h e aos domingos até as 17h</strong>. Programe a retirada antes de voltar dos parques.</p>
 
 <h2>Calor da Flórida: mantenha a carne gelada</h2>
 <p>O calor da Flórida não perdoa carne crua. O USDA recomenda não deixar alimentos perecíveis fora da geladeira por mais de <strong>1 hora quando faz mais de 32&nbsp;&deg;C</strong>. Leve uma bolsa térmica no carro, vá direto para a casa e coloque tudo na geladeira.</p>

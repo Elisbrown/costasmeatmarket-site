@@ -105,6 +105,31 @@
         "longitude": -81.6017
       },
       "hasMap": "https://www.google.com/maps/dir/?api=1&destination=Costa%27s%20Meat%20Market%2C%202169%20Davenport%20Blvd%2C%20Davenport%2C%20FL%2033837",
+      "openingHours": [
+        "Mo-Sa 08:00-20:00",
+        "Su 08:00-17:00"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "08:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "08:00",
+          "closes": "17:00"
+        }
+      ],
       "areaServed": [
         "Davenport, FL",
         "Haines City, FL",
@@ -215,6 +240,22 @@
         },
         {
           "@type": "Question",
+          "name": "What are your hours?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Monday to Saturday 8 am to 8 pm, and Sunday 8 am to 5 pm. Holiday hours can change, so call (863) 422-2313 if you're coming on a holiday."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are you open on Sundays?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We're open every day, including Sunday from 8 am to 5 pm."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Is Costa's Meat Market near Haines City?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -286,6 +327,7 @@
   </script>
   <script src="/assets/js/track.js" defer></script>
   <script src="/assets/js/lang.js" defer></script>
+  <script src="/assets/js/open-now.js" defer></script>
 </head>
 <body>
   <div class="wrap">
@@ -344,7 +386,7 @@
         <a class="link-tile" id="link-review" href="https://g.page/r/CVkkR-S3RMu7EBE/review" target="_blank" rel="noopener">
           <div>
             <span class="title">Leave a Review</span>
-            <span class="desc">Takes 30 seconds on Google</span>
+            <span class="desc">100+ reviews on Google</span>
           </div>
         </a>
         <a class="link-tile" id="link-llms" href="/llms.txt">
@@ -354,6 +396,23 @@
           </div>
         </a>
       </nav>
+
+      <section class="info-section hours" data-section="hours" aria-labelledby="hours-h">
+        <h2 id="hours-h">Hours &amp; Location</h2>
+        <p class="open-now" data-open-now="{&quot;hours&quot;: [[8, 17], [8, 20], [8, 20], [8, 20], [8, 20], [8, 20], [8, 20]], &quot;t&quot;: {&quot;8&quot;: &quot;8 am&quot;, &quot;17&quot;: &quot;5 pm&quot;, &quot;20&quot;: &quot;8 pm&quot;}, &quot;open&quot;: &quot;Open now&quot;, &quot;closed&quot;: &quot;Closed now&quot;, &quot;closes&quot;: &quot;Closes at {t}&quot;, &quot;opens&quot;: &quot;Opens at {t}&quot;}" hidden></p>
+        <table class="hours-table">
+          <tr data-day="1"><th scope="row">Monday</th><td>8 am – 8 pm</td></tr>
+          <tr data-day="2"><th scope="row">Tuesday</th><td>8 am – 8 pm</td></tr>
+          <tr data-day="3"><th scope="row">Wednesday</th><td>8 am – 8 pm</td></tr>
+          <tr data-day="4"><th scope="row">Thursday</th><td>8 am – 8 pm</td></tr>
+          <tr data-day="5"><th scope="row">Friday</th><td>8 am – 8 pm</td></tr>
+          <tr data-day="6"><th scope="row">Saturday</th><td>8 am – 8 pm</td></tr>
+          <tr data-day="0"><th scope="row">Sunday</th><td>8 am – 5 pm</td></tr>
+        </table>
+        <p class="hours-note">Holiday hours may vary. Call ahead if you're coming on a holiday.</p>
+        <p><strong>Costa's Meat Market</strong><br>2169 Davenport Blvd, Davenport, FL 33837 (Webb's Town Center)<br>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Costa%27s%20Meat%20Market%2C%202169%20Davenport%20Blvd%2C%20Davenport%2C%20FL%2033837" target="_blank" rel="noopener" id="link-hours-directions">Get Directions</a> · <a href="tel:+18634222313" id="link-hours-call">(863) 422-2313</a></p>
+      </section>
 
       <section class="gallery" data-section="photos" aria-labelledby="photos-h">
         <h2 class="section-title" id="photos-h">Photos of Costa's Meat Market</h2>
@@ -440,6 +499,14 @@
           <p>We're at 2169 Davenport Blvd, Davenport, FL 33837, in Webb's Town Center. Tap Get Directions above for navigation, or call (863) 422-2313.</p>
         </details>
         <details>
+          <summary>What are your hours?</summary>
+          <p>Monday to Saturday 8 am to 8 pm, and Sunday 8 am to 5 pm. Holiday hours can change, so call (863) 422-2313 if you're coming on a holiday.</p>
+        </details>
+        <details>
+          <summary>Are you open on Sundays?</summary>
+          <p>Yes. We're open every day, including Sunday from 8 am to 5 pm.</p>
+        </details>
+        <details>
           <summary>Is Costa's Meat Market near Haines City?</summary>
           <p>Yes. Davenport borders Haines City, so we're a short drive away for customers in Haines City, ChampionsGate, Four Corners and Poinciana.</p>
         </details>
@@ -468,7 +535,8 @@
 
     <footer class="site">
       <p><strong>Costa's Meat Market · Est. 2024</strong><br>
-      2169 Davenport Blvd, Davenport, FL 33837 · In Webb's Town Center | Tel: <a id="foot-call" href="tel:+18634222313">(863) 422-2313</a></p>
+      2169 Davenport Blvd, Davenport, FL 33837 · In Webb's Town Center | Tel: <a id="foot-call" href="tel:+18634222313">(863) 422-2313</a><br>
+      Open 7 days: Mon–Sat 8 am–8 pm · Sun 8 am–5 pm</p>
       <p><a id="foot-socials" href="/socials/">Social Links Hub</a> · <a id="foot-order-online" href="https://costasmeatmarket.hrpos.heartland.us/">Order Online</a> · <a id="foot-blog" href="/blog/">Butcher's Blog</a> · <a id="foot-rss" href="/blog/feed.xml">RSS</a> · <a id="foot-sitemap" href="/sitemap.xml">Sitemap</a> · <a id="foot-llms" href="/llms.txt">LLMs Context</a></p>
       <p><a href="/" hreflang="en" lang="en">English</a> · <a href="/es/" hreflang="es" lang="es">Español</a> · <a href="/pt/" hreflang="pt" lang="pt">Português</a></p>
     </footer>

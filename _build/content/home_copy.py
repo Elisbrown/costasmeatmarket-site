@@ -21,9 +21,14 @@ COPY = {
             ("Get Directions", "2169 Davenport Blvd"),
             ("Call Counter", "863-422-2313"),
             ("Butcher's Blog", "Cut guides, recipes & deals"),
-            ("Leave a Review", "Takes 30 seconds on Google"),
+            ("Leave a Review", "100+ reviews on Google"),
             ("AI / LLM Guide", "Machine-readable data"),
         ],
+        "hours_h": "Hours & Location",
+        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "hour_labels": {8: "8 am", 17: "5 pm", 20: "8 pm"},
+        "open_now": {"open": "Open now", "closed": "Closed now", "closes": "Closes at {t}", "opens": "Opens at {t}"},
+        "hours_note": "Holiday hours may vary. Call ahead if you're coming on a holiday.",
         "photos_h": "Photos of Costa's Meat Market",
         "photos": [
             ("store-front", "Find us in Webb's Town Center at 2169 Davenport Blvd, Davenport, FL."),
@@ -58,6 +63,11 @@ COPY = {
             ("Where is Costa's Meat Market?",
              "We're at 2169 Davenport Blvd, Davenport, FL 33837, in Webb's Town Center. Tap Get Directions above for "
              "navigation, or call (863) 422-2313."),
+            ("What are your hours?",
+             "Monday to Saturday 8 am to 8 pm, and Sunday 8 am to 5 pm. Holiday hours can change, so call "
+             "(863) 422-2313 if you're coming on a holiday."),
+            ("Are you open on Sundays?",
+             "Yes. We're open every day, including Sunday from 8 am to 5 pm."),
             ("Is Costa's Meat Market near Haines City?",
              "Yes. Davenport borders Haines City, so we're a short drive away for customers in Haines City, "
              "ChampionsGate, Four Corners and Poinciana."),
@@ -98,9 +108,14 @@ COPY = {
             ("Cómo llegar", "2169 Davenport Blvd"),
             ("Llama al mostrador", "863-422-2313"),
             ("Blog del carnicero", "Cortes, recetas y ofertas"),
-            ("Déjanos una reseña", "Toma 30 segundos en Google"),
+            ("Déjanos una reseña", "Más de 100 reseñas en Google"),
             ("Guía para IA / LLM", "Datos legibles por máquinas"),
         ],
+        "hours_h": "Horario y ubicación",
+        "days": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
+        "hour_labels": {8: "8 a. m.", 17: "5 p. m.", 20: "8 p. m."},
+        "open_now": {"open": "Abierto ahora", "closed": "Cerrado ahora", "closes": "Cierra a las {t}", "opens": "Abre a las {t}"},
+        "hours_note": "En días festivos el horario puede cambiar. Llama antes si vienes un feriado.",
         "photos_h": "Fotos de Costa's Meat Market",
         "photos": [
             ("store-front", "Estamos en Webb's Town Center, 2169 Davenport Blvd, Davenport, FL."),
@@ -137,6 +152,11 @@ COPY = {
             ("¿Dónde está Costa's Meat Market?",
              "Estamos en 2169 Davenport Blvd, Davenport, FL 33837, en Webb's Town Center. Toca «Cómo llegar» arriba "
              "para abrir el mapa o llámanos al (863) 422-2313."),
+            ("¿Cuál es su horario?",
+             "De lunes a sábado de 8 a. m. a 8 p. m., y los domingos de 8 a. m. a 5 p. m. En días festivos el horario "
+             "puede cambiar; llama al (863) 422-2313 si vienes un feriado."),
+            ("¿Abren los domingos?",
+             "Sí. Abrimos todos los días; los domingos de 8 a. m. a 5 p. m."),
             ("¿Costa's Meat Market queda cerca de Haines City?",
              "Sí. Davenport colinda con Haines City, así que estamos a pocos minutos para quienes viven en Haines City, "
              "ChampionsGate, Four Corners y Poinciana."),
@@ -178,9 +198,14 @@ COPY = {
             ("Como chegar", "2169 Davenport Blvd"),
             ("Ligue para o balcão", "863-422-2313"),
             ("Blog do açougueiro", "Cortes, receitas e promoções"),
-            ("Deixe uma avaliação", "Leva 30 segundos no Google"),
+            ("Deixe uma avaliação", "Mais de 100 avaliações no Google"),
             ("Guia para IA / LLM", "Dados legíveis por máquinas"),
         ],
+        "hours_h": "Horário e endereço",
+        "days": ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"],
+        "hour_labels": {8: "8h", 17: "17h", 20: "20h"},
+        "open_now": {"open": "Aberto agora", "closed": "Fechado agora", "closes": "Fecha às {t}", "opens": "Abre às {t}"},
+        "hours_note": "Em feriados o horário pode mudar. Ligue antes se vier num feriado.",
         "photos_h": "Fotos do Costa's Meat Market",
         "photos": [
             ("store-front", "Estamos no Webb's Town Center, 2169 Davenport Blvd, Davenport, FL."),
@@ -217,6 +242,11 @@ COPY = {
             ("Onde fica o Costa's Meat Market?",
              "Na 2169 Davenport Blvd, Davenport, FL 33837, no Webb's Town Center. Toque em «Como chegar» acima para "
              "abrir o mapa ou ligue para (863) 422-2313."),
+            ("Qual o horário de funcionamento?",
+             "De segunda a sábado, das 8h às 20h, e aos domingos, das 8h às 17h. Em feriados o horário pode mudar; "
+             "ligue para (863) 422-2313 se vier num feriado."),
+            ("Vocês abrem aos domingos?",
+             "Sim. Abrimos todos os dias; aos domingos, das 8h às 17h."),
             ("O Costa's Meat Market fica perto de Haines City?",
              "Sim. Davenport faz divisa com Haines City, então ficamos a poucos minutos de quem mora em Haines City, "
              "ChampionsGate, Four Corners e Poinciana."),
