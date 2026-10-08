@@ -1,0 +1,585 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.costasmeatmarket.com"
+        }
+      ],
+      "destination": "https://costasmeatmarket.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/products/pao-frances-panebras-french-bread",
+      "destination": "/blog/brazilian-grocery-store-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/products/tenderloin-special-order",
+      "destination": "/blog/filet-mignon-whole-beef-tenderloin-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/products/polvilho-pq",
+      "destination": "/blog/pao-de-queijo-recipe-brazilian-cheese-bread/",
+      "permanent": true
+    },
+    {
+      "source": "/products/yoki-pol-azedo",
+      "destination": "/blog/pao-de-queijo-recipe-brazilian-cheese-bread/",
+      "permanent": true
+    },
+    {
+      "source": "/products/yoki-yellow",
+      "destination": "/blog/pao-de-queijo-recipe-brazilian-cheese-bread/",
+      "permanent": true
+    },
+    {
+      "source": "/products/cheese-bread-mix",
+      "destination": "/blog/pao-de-queijo-recipe-brazilian-cheese-bread/",
+      "permanent": true
+    },
+    {
+      "source": "/products/fini-jelly-kiss",
+      "destination": "/blog/brazilian-grocery-store-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/products/mel-de-portugal-honey-500gr",
+      "destination": "/blog/brazilian-grocery-store-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/products/polpa-acerola",
+      "destination": "/blog/brazilian-grocery-store-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/products/geleia-framboesa",
+      "destination": "/blog/brazilian-grocery-store-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/products/baton-ovo",
+      "destination": "/blog/brazilian-grocery-store-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/products/ouro-branco",
+      "destination": "/blog/brazilian-grocery-store-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/products/camil-black-beans",
+      "destination": "/blog/feijoada-recipe-which-meats-to-buy/",
+      "permanent": true
+    },
+    {
+      "source": "/products/rice-med-too-joao",
+      "destination": "/blog/brazilian-grocery-store-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/products/grao-de-campo",
+      "destination": "/blog/brazilian-grocery-store-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/products/oregano",
+      "destination": "/blog/brazilian-grocery-store-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/products/thick-barbecue-salt-sal-grosso-para-churrasco-lebre-32-27oz-1kg",
+      "destination": "/blog/what-is-picanha/",
+      "permanent": true
+    },
+    {
+      "source": "/products/chicken-skewers-5-skewers-vac-sealed",
+      "destination": "/blog/brazilian-grilled-chicken-wings-recipe/",
+      "permanent": true
+    },
+    {
+      "source": "/products/chicken-flats-pack",
+      "destination": "/blog/brazilian-grilled-chicken-wings-recipe/",
+      "permanent": true
+    },
+    {
+      "source": "/products/lombo-gd",
+      "destination": "/blog/seasoned-marinated-meats-ready-to-cook/",
+      "permanent": true
+    },
+    {
+      "source": "/products/veal-chop",
+      "destination": "/blog/ribeye-vs-ny-strip-vs-picanha/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/pao-frances-panebras-french-bread",
+      "destination": "/es/blog/tienda-brasilena-en-davenport-fl-productos/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/tenderloin-special-order",
+      "destination": "/es/blog/filete-mignon-lomo-de-res-entero-como-limpiar-y-cortar/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/polvilho-pq",
+      "destination": "/es/blog/pan-de-queso-brasileno-con-almidon-agrio-receta/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/yoki-pol-azedo",
+      "destination": "/es/blog/pan-de-queso-brasileno-con-almidon-agrio-receta/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/yoki-yellow",
+      "destination": "/es/blog/pan-de-queso-brasileno-con-almidon-agrio-receta/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/cheese-bread-mix",
+      "destination": "/es/blog/pan-de-queso-brasileno-con-almidon-agrio-receta/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/fini-jelly-kiss",
+      "destination": "/es/blog/tienda-brasilena-en-davenport-fl-productos/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/mel-de-portugal-honey-500gr",
+      "destination": "/es/blog/tienda-brasilena-en-davenport-fl-productos/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/polpa-acerola",
+      "destination": "/es/blog/tienda-brasilena-en-davenport-fl-productos/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/geleia-framboesa",
+      "destination": "/es/blog/tienda-brasilena-en-davenport-fl-productos/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/baton-ovo",
+      "destination": "/es/blog/tienda-brasilena-en-davenport-fl-productos/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/ouro-branco",
+      "destination": "/es/blog/tienda-brasilena-en-davenport-fl-productos/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/camil-black-beans",
+      "destination": "/es/blog/feijoada-receta-y-que-carnes-comprar/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/rice-med-too-joao",
+      "destination": "/es/blog/tienda-brasilena-en-davenport-fl-productos/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/grao-de-campo",
+      "destination": "/es/blog/tienda-brasilena-en-davenport-fl-productos/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/oregano",
+      "destination": "/es/blog/tienda-brasilena-en-davenport-fl-productos/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/thick-barbecue-salt-sal-grosso-para-churrasco-lebre-32-27oz-1kg",
+      "destination": "/es/blog/que-es-la-picanha/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/chicken-skewers-5-skewers-vac-sealed",
+      "destination": "/es/blog/alitas-de-pollo-a-la-parrilla-estilo-brasileno/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/chicken-flats-pack",
+      "destination": "/es/blog/alitas-de-pollo-a-la-parrilla-estilo-brasileno/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/lombo-gd",
+      "destination": "/es/blog/carnes-sazonadas-y-marinadas-listas-para-cocinar/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/veal-chop",
+      "destination": "/es/blog/ribeye-vs-new-york-vs-picanha-cual-elegir/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/pao-frances-panebras-french-bread",
+      "destination": "/pt/blog/mercado-brasileiro-em-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/tenderloin-special-order",
+      "destination": "/pt/blog/file-mignon-peca-inteira-como-limpar-e-cortar/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/polvilho-pq",
+      "destination": "/pt/blog/pao-de-queijo-caseiro-polvilho-azedo-receita/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/yoki-pol-azedo",
+      "destination": "/pt/blog/pao-de-queijo-caseiro-polvilho-azedo-receita/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/yoki-yellow",
+      "destination": "/pt/blog/pao-de-queijo-caseiro-polvilho-azedo-receita/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/cheese-bread-mix",
+      "destination": "/pt/blog/pao-de-queijo-caseiro-polvilho-azedo-receita/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/fini-jelly-kiss",
+      "destination": "/pt/blog/mercado-brasileiro-em-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/mel-de-portugal-honey-500gr",
+      "destination": "/pt/blog/mercado-brasileiro-em-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/polpa-acerola",
+      "destination": "/pt/blog/mercado-brasileiro-em-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/geleia-framboesa",
+      "destination": "/pt/blog/mercado-brasileiro-em-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/baton-ovo",
+      "destination": "/pt/blog/mercado-brasileiro-em-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/ouro-branco",
+      "destination": "/pt/blog/mercado-brasileiro-em-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/camil-black-beans",
+      "destination": "/pt/blog/feijoada-nos-eua-quais-carnes-comprar/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/rice-med-too-joao",
+      "destination": "/pt/blog/mercado-brasileiro-em-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/grao-de-campo",
+      "destination": "/pt/blog/mercado-brasileiro-em-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/oregano",
+      "destination": "/pt/blog/mercado-brasileiro-em-davenport-fl/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/thick-barbecue-salt-sal-grosso-para-churrasco-lebre-32-27oz-1kg",
+      "destination": "/pt/blog/picanha-como-escolher-e-assar/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/chicken-skewers-5-skewers-vac-sealed",
+      "destination": "/pt/blog/coxinha-da-asa-na-churrasqueira/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/chicken-flats-pack",
+      "destination": "/pt/blog/coxinha-da-asa-na-churrasqueira/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/lombo-gd",
+      "destination": "/pt/blog/carnes-temperadas-prontas-para-preparar/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/veal-chop",
+      "destination": "/pt/blog/ribeye-contrafile-ou-picanha-qual-escolher/",
+      "permanent": true
+    },
+    {
+      "source": "/search",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/products",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/products/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/collections",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/collections/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pages",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pages/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/account",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/account/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/cart",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/cart/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/policies",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/policies/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blogs",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/es/search",
+      "destination": "/es/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/:path*",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/collections",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/collections/:path*",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/pages",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/pages/:path*",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/account",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/account/:path*",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/cart",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/cart/:path*",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/checkout",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/checkout/:path*",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/policies",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/policies/:path*",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/blogs",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/es/blogs/:path*",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/search",
+      "destination": "/pt/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products",
+      "destination": "/pt/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/products/:path*",
+      "destination": "/pt/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/collections",
+      "destination": "/pt/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/collections/:path*",
+      "destination": "/pt/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/pages",
+      "destination": "/pt/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/pages/:path*",
+      "destination": "/pt/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/account",
+      "destination": "/pt/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/account/:path*",
+      "destination": "/pt/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/cart",
+      "destination": "/pt/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/cart/:path*",
+      "destination": "/pt/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/checkout",
+      "destination": "/pt/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/checkout/:path*",
+      "destination": "/pt/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/policies",
+      "destination": "/pt/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/policies/:path*",
+      "destination": "/pt/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/blogs",
+      "destination": "/pt/",
+      "permanent": true
+    },
+    {
+      "source": "/pt/blogs/:path*",
+      "destination": "/pt/",
+      "permanent": true
+    }
+  ]
+}

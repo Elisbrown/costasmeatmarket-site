@@ -1,18 +1,14 @@
 /*
- * Costa's Meat Market — click and traffic-source tracking.
+ * Costa's Meat Market — click, share and traffic-source tracking.
  *
- * Every page already loads Microsoft Clarity. This file adds:
- *   - Clarity custom events for the actions that matter (call, directions,
- *     order online, WhatsApp, socials, Google review, language switch).
- *   - Clarity custom tags for where the visit came from (UTM tags, short
- *     links, AI assistants, search engines) and the page language.
- *   - The same events in Google Analytics 4, once GA4_ID below is filled in.
- *
- * To turn on Google Analytics: create a GA4 property, copy the Measurement ID
- * (Admin > Data streams > Web, it looks like G-XXXXXXXXXX) and paste it here.
+ * Every page loads Google Analytics 4 (G-S4GM8NREGG) and Microsoft Clarity in <head>. This file adds:
+ *   - Events in both tools for the actions that matter: call, directions, order online, WhatsApp,
+ *     socials, Google review, language switch, blog clicks and article shares.
+ *   - Clarity tags for where the visit came from (UTM tags, short links, social apps, AI assistants,
+ *     search engines) and the page language. GA4 reads UTM tags and referrers on its own.
  */
 (function () {
-  var GA4_ID = "";
+  var GA4_ID = "G-S4GM8NREGG";
 
   var w = window;
   var d = document;
@@ -21,7 +17,8 @@
     if (typeof w.clarity === "function") w.clarity.apply(null, arguments);
   }
 
-  if (/^G-[A-Z0-9]+$/.test(GA4_ID)) {
+  // Pages load the Google tag in <head>; only inject it here if a page is missing it.
+  if (typeof w.gtag !== "function" && /^G-[A-Z0-9]+$/.test(GA4_ID)) {
     var tag = d.createElement("script");
     tag.async = true;
     tag.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_ID;
@@ -44,6 +41,14 @@
   }
 
   // ---------- where did this visit come from? ----------
+  var SOCIAL_HOSTS = {
+    "l.instagram.com": "instagram", "instagram.com": "instagram", "www.instagram.com": "instagram",
+    "l.facebook.com": "facebook", "lm.facebook.com": "facebook", "m.facebook.com": "facebook",
+    "www.facebook.com": "facebook", "facebook.com": "facebook",
+    "l.wl.co": "whatsapp", "wa.me": "whatsapp", "web.whatsapp.com": "whatsapp",
+    "www.tiktok.com": "tiktok", "tiktok.com": "tiktok", "t.co": "x", "x.com": "x",
+    "www.youtube.com": "youtube", "m.youtube.com": "youtube", "nextdoor.com": "nextdoor"
+  };
   var AI_HOSTS = {
     "chatgpt.com": "chatgpt", "chat.openai.com": "chatgpt",
     "perplexity.ai": "perplexity", "www.perplexity.ai": "perplexity",
@@ -65,6 +70,8 @@
       if (AI_HOSTS[host]) {
         source.ai_assistant = AI_HOSTS[host];
         if (!source.utm_source) { source.utm_source = AI_HOSTS[host]; source.utm_medium = "ai_assistant"; }
+      } else if (!source.utm_source && SOCIAL_HOSTS[host]) {
+        source.utm_source = SOCIAL_HOSTS[host]; source.utm_medium = "social";
       } else if (!source.utm_source && /(^|\.)google\./.test(host)) {
         source.utm_source = "google"; source.utm_medium = "organic";
       } else if (!source.utm_source && /(^|\.)(bing\.com|duckduckgo\.com|search\.yahoo\.com)$/.test(host)) {
@@ -135,13 +142,40 @@
     var name = classify(link);
     if (!name) return;
     var section = link.closest("[data-section]");
-    send(name, {
+    var params = {
       link_id: link.id || "",
       link_url: link.href,
       link_section: section ? section.getAttribute("data-section") : "",
       page_lang: lang()
-    });
+    };
+    if (name === "share") {
+      params.method = link.getAttribute("data-share") || "";
+      params.content_type = "article";
+      params.item_id = w.location.pathname;
+      clarity("event", "share_" + params.method);
+    }
+    send(name, params);
   }, true);
+
+  // "Copy link" share button: copies a UTM-tagged link so shares are traceable.
+  d.addEventListener("click", function (event) {
+    var button = event.target.closest ? event.target.closest("button[data-share-copy]") : null;
+    if (!button) return;
+    var url = button.getAttribute("data-share-copy");
+    var label = button.textContent;
+    send("share", { method: "copy_link", content_type: "article", item_id: w.location.pathname, page_lang: lang() });
+    clarity("event", "share_copy_link");
+    if (navigator.share && /Mobi|Android|iPhone|iPad/.test(navigator.userAgent || "")) {
+      navigator.share({ title: d.title, url: url }).catch(function () {});
+      return;
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function () {
+        button.textContent = button.getAttribute("data-copied") || label;
+        setTimeout(function () { button.textContent = label; }, 1800);
+      }, function () {});
+    }
+  });
 
   // Public hook for one-off events: window.cmmTrack("event_name", { any: "params" })
   w.cmmTrack = function (name, params) { send(name, params || {}); };
