@@ -29,7 +29,7 @@
 7. [ ] Claim Apple Business Connect and Bing Places (section 2.9). 51% of your visitors use iPhone Safari.
 8. [ ] Update Instagram, TikTok and Facebook bios to the `/go/` links (section 5).
 9. [ ] In Buffer, change the timezone from **Africa/Douala** to **America/New_York**.
-10. [ ] **Send more photos, or allow Pexels** (section 6.4). Right now every article uses crops of your two full-size store photos.
+10. [x] **One photo per article** (section 6.4): done, with 12 of your Business Profile photos and 16 credited stock photos. Next: shoot the counter shots listed in `image-credits.md` so your own photos can replace the stock ones.
 
 ---
 
@@ -370,12 +370,13 @@ If your `main` branch is protected, allow GitHub Actions to push (Settings → R
 
 ### 6.4 Photos
 
-Every article uses a real photo of your store: crops of the meat case and storefront photos you sent. Stock-photo sites (Pexels, Unsplash and others) were blocked from this cloud session. To get a topic-specific photo on each article:
+Every article now has its own photo, and no photo appears on two articles. A topic's English, Spanish and Portuguese versions share one. The full list, with photographers and licences, is in `Claude outputs/image-credits.md`.
 
-- **Send more full-size photos** (counter, cuts, finished dishes, team, storefront). The three small interior photos you sent are only 141 px wide, too small to use.
-- **Or allow `images.pexels.com` and `www.pexels.com`** in this cloud environment's network settings (environment menu → Edit → Network access → Allowed domains), and ask me to swap in licensed Pexels photos.
+- **12 articles use your own photos**, from the "By owner" tab of your Business Profile (picanha steaks, sliced picanha, the storefront and sign, the case, the rib rack, the linguiça sandwich, pão de queijo, the coffee shelves, the butcher slicing, the roast prep and the store aisle). Their caption says "Photo taken at Costa's Meat Market".
+- **16 articles use free licensed stock** from Pexels (15) and Unsplash (1), for dishes and cuts you don't have photos of yet (oxtail, feijoada, pot roast, wings and others). These licences allow commercial use without credit, but each caption credits the photographer anyway ("Photo: Snappr / Pexels") and never says it was taken at the store.
+- **No AI images.** Customer photos from Google aren't used, because they belong to the customers who took them.
 
-Either way it's a one-line change per article in `_build/content/meta.py`, then a rebuild.
+**To replace a stock photo with your own** (better for local search and trust), shoot it in landscape, at least 1600 px wide, and add it to your Business Profile so it helps there too. Then ask Claude to swap it in: it's one new entry in `_build/lib/images.py` and a one-word change in `_build/content/meta.py`, then a rebuild. The most useful ones to shoot are in the last section of `image-credits.md`: a family bundle laid out on the counter, the seasoned trays up close, your linguiça, wings and picadinho, and the steak cuts.
 
 Share cards stay JPEG on purpose. Pages never load them (only WhatsApp, Facebook and LinkedIn do when a link is shared), so they don't affect speed, and JPEG is the one format every platform's link preview supports. Favicons stay `.ico`/`.png` because browsers and Apple devices require those formats.
 
@@ -389,7 +390,6 @@ Each article is one file per language in `_build/content/posts/<en|es|pt>/<topic
 
 - **Log into Search Console, Business Profile or the social apps:** this cloud session has no browser. To let me click through those dashboards next time, start a session from the Claude desktop app with Claude in Chrome enabled.
 - **Search volumes:** I had no keyword tool connected. The keyword map now uses the Search Console export you sent; a keyword tool would add monthly volumes.
-- **Stock photos:** Pexels, Unsplash and other free-photo sites were blocked by this environment's network policy (section 6.4).
 - **Facts to double-check:** the articles only claim what your site, your old online store or your meat-case photo show: picanha, ribeye, NY strip, skirt, short ribs/costela, maminha, alcatra, coxão mole, ground beef, pork chops, pork belly, whole chickens and wings, house-made linguiça, seasoned picadinho, seasoned pork and wings, family bundles, custom cuts and special orders, charcoal and coarse salt, Brazilian groceries, online ordering, WhatsApp deals, 5% off for following, and cash/credit/debit. Oxtail, whole tenderloin, prime rib and tomahawk are written as "call to check or special order". If anything is wrong, tell me and I'll update every language at once.
 - **Spoken languages:** I didn't say your staff speak Spanish or Portuguese anywhere, because I couldn't confirm it. If they do, tell me and I'll add it; it's a strong reason for people to choose you.
 

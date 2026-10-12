@@ -105,6 +105,36 @@ def picture(root, variant, lang, *, sizes, priority=False, thumb=False):
             f'alt="{esc(alt)}" {loading}>')
 
 
+def caption(variant, lang):
+    """Hero caption: where the store's own photos were taken, or the photographer and licence for stock."""
+    v = images.VARIANTS[variant]
+    if v.get("owner"):
+        return esc(images.CAPTION[lang])
+    if v.get("ai"):
+        return esc(images.AI_CAPTION[lang])
+    c = v["credit"]
+    text = (f'{images.CREDIT[lang]}: <a href="{esc(c["source_url"])}" rel="noopener">'
+            f'{esc(c["author"])} / {images.source_site(c["source_url"])}</a>')
+    if images.needs_attribution(c):
+        text += (f' · <a href="{esc(c["license_url"])}" rel="license noopener">{esc(c["license"])}</a>'
+                 f' ({images.CROPPED[lang]})')
+    return text
+
+
+def image_credit(variant):
+    """schema.org ImageObject fields for who made the photo and under which licence."""
+    v = images.VARIANTS[variant]
+    if v.get("owner"):
+        return {"creditText": "Costa's Meat Market", "creator": {"@id": SITE + "/#store"},
+                "copyrightNotice": "Costa's Meat Market"}
+    if v.get("ai"):
+        return {"creditText": "AI-generated illustration"}
+    c = v["credit"]
+    return {"creditText": f'{c["author"]} / {images.source_site(c["source_url"])}',
+            "creator": {"@type": "Person", "name": c["author"]},
+            "license": c["license_url"], "acquireLicensePage": c["source_url"]}
+
+
 def iso_minutes(value):
     match = re.fullmatch(r"PT(?:(\d+)H)?(?:(\d+)M)?", value or "")
     if not match:
@@ -251,7 +281,7 @@ def post_page(root, post, posts):
             "image": [
                 {"@type": "ImageObject", "url": og["url"], "width": 1200, "height": 630},
                 {"@type": "ImageObject", "url": SITE + hero["url"], "width": hero["width"], "height": hero["height"],
-                 "caption": images.VARIANTS[post["image"]]["alt"][lang]},
+                 "caption": images.VARIANTS[post["image"]]["alt"][lang], **image_credit(post["image"])},
             ],
             "author": {"@type": "Organization", "name": "Costa's Meat Market", "url": SITE + "/"},
             "publisher": {"@id": SITE + "/#store"},
@@ -314,7 +344,7 @@ def post_page(root, post, posts):
 
         <figure class="hero">
           {picture(root, post["image"], lang, sizes="(max-width: 740px) 100vw, 700px", priority=True)}
-          <figcaption>{esc(images.CAPTION[lang])}</figcaption>
+          <figcaption>{caption(post["image"], lang)}</figcaption>
         </figure>
 ''')
     if len(toc) >= 3:

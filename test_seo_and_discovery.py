@@ -8,6 +8,7 @@ Costa's Meat Market.
 import json
 import os
 import re
+import sys
 import unittest
 import xml.etree.ElementTree as ET
 
@@ -501,6 +502,79 @@ class TestSpeedAndFreshness(unittest.TestCase):
         self.assertIn("python3 _build/build.py", workflow)
         self.assertLess(workflow.index("python3 _build/build.py"), workflow.index("unittest test_seo_and_discovery"))
         self.assertLess(workflow.index("unittest test_seo_and_discovery"), workflow.index("git push"))
+
+
+class TestBlogPhotos(unittest.TestCase):
+    """Every blog topic has its own photo, and every photo is the store's own or licensed and credited."""
+
+    # Source photos allowed below 1200 px wide, with the reason. Keep this empty if possible.
+    NARROW_OK = {}
+
+    @classmethod
+    def setUpClass(cls):
+        sys.path.insert(0, os.path.join(BASE_DIR, "_build"))
+        from content.meta import TOPICS
+        from lib import images
+        cls.images = images
+        cls.variants = images.VARIANTS
+        cls.topic_variants = [image for _group, _kind, image in TOPICS]
+
+    def test_no_two_topics_share_a_photo(self):
+        """No two topics use the same variant, or crops of the same source photo."""
+        self.assertEqual(len(self.topic_variants), len(set(self.topic_variants)), "two topics share a variant")
+        sources = [self.variants[v]["src"] for v in self.topic_variants]
+        shared = sorted({s for s in sources if sources.count(s) > 1})
+        self.assertFalse(shared, "source photos used by more than one topic: %s" % shared)
+
+    def test_every_photo_is_the_owners_or_credited(self):
+        """Stock photos carry author, source page and licence; only the store's own photos say Costa's."""
+        for name, v in self.variants.items():
+            if v.get("owner"):
+                self.assertNotIn("credit", v, name)
+                self.assertFalse(v.get("ai"), name)
+                continue
+            credit = v.get("credit", {})
+            for key in ("author", "source_url", "license", "license_url"):
+                self.assertTrue(credit.get(key), "%s is missing credit %s" % (name, key))
+            self.assertTrue(credit["source_url"].startswith("https://"), name)
+            self.images.source_site(credit["source_url"])  # raises for an unknown photo site
+            for lang, alt in v["alt"].items():
+                self.assertNotIn("Costa", alt, "%s (%s): stock alt text must not claim the store" % (name, lang))
+
+    def test_ai_images_are_at_most_5_percent(self):
+        ai = [v for v in self.topic_variants if self.variants[v].get("ai")]
+        self.assertLessEqual(len(ai), int(len(self.topic_variants) * 0.05), ai)
+
+    def test_topic_photos_are_wide_heroes(self):
+        """Source photos and crops are at least 1200 px wide (no upscaling) and roughly 16:9 to 3:2."""
+        from PIL import Image
+        for name in self.topic_variants:
+            v = self.variants[name]
+            with Image.open(os.path.join(BASE_DIR, "_build", "photos", v["src"])) as im:
+                width, height = im.size
+            left, top, right, bottom = v["box"]
+            self.assertTrue(0 <= left < right <= width and 0 <= top < bottom <= height, "%s crop is outside the photo" % name)
+            if v["src"] not in self.NARROW_OK:
+                self.assertGreaterEqual(width, 1200, "%s: %s is only %d px wide" % (name, v["src"], width))
+                self.assertGreaterEqual(right - left, 1200, "%s crop is only %d px wide" % (name, right - left))
+            self.assertTrue(1.45 <= (right - left) / (bottom - top) <= 1.85, "%s crop is not a wide hero" % name)
+
+    def test_captions_match_the_photo(self):
+        """Store photos say where they were taken; stock photos credit the photographer instead."""
+        for rel in all_html_files():
+            page = read(rel)
+            if 'property="og:type" content="article"' not in page:
+                continue
+            caption = re.search(r'<figure class="hero">.*?<figcaption>(.*?)</figcaption>', page, re.DOTALL).group(1)
+            hero = next(i for i in json_ld_blocks(page)[0]["@graph"] if i.get("@type") == "BlogPosting")["image"][1]
+            if hero["creditText"] == "Costa's Meat Market":
+                self.assertRegex(caption, r"^(Photo|Foto) (taken at|tomada en|feita no) Costa's Meat Market", rel)
+            elif hero["creditText"] == "AI-generated illustration":
+                self.assertRegex(caption, r"\b(AI|IA)\b", rel)
+            else:
+                self.assertRegex(caption, r"^(Photo|Foto): <a href=\"https://", rel)
+                self.assertNotIn("Costa", caption, rel)
+                self.assertTrue(hero["license"].startswith("https://"), rel)
 
 
 class TestHours(unittest.TestCase):

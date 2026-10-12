@@ -23,7 +23,8 @@ the site in English, Spanish and Portuguese), written as repeatable steps. "Refe
 - No browser, so Claude can't log into Search Console, Business Profile or social apps. Use Claude in Chrome
   from the desktop app for that, or write exact steps for the owner.
 - Stock-photo sites (Pexels, Unsplash, Wikimedia) and Instagram or Google image hosts may be blocked by the
-  network policy. Ask the owner to allow `images.pexels.com` and `www.pexels.com`, or to send photos.
+  network policy. Ask the owner to allow `images.pexels.com` and `www.pexels.com`, or to send photos. From the
+  desktop app with Claude in Chrome, the Business Profile's owner photos and the stock sites all work (§7).
 - Canva MCP can fail behind the proxy.
 - There's no keyword-volume tool unless one is connected. Search Console data is the primary source.
 
@@ -227,8 +228,25 @@ the site in English, Spanish and Portuguese), written as repeatable steps. "Refe
   `loading="lazy" decoding="async"`.
 - **File names are keyword slugs** (`fresh-ground-beef-carne-moida-costas-meat-market-1200.webp`). Alt text
   is localized and describes what's really in the photo.
-- **Real photos only, never AI images.** With few photos, define crop variants (`VARIANTS` boxes in
-  `images.py`) from the owner's full-size shots. Licensed stock (Pexels) is the fallback.
+- **Real photos only, never AI images.** Owner photos first: the "By owner" tab of the Google Business
+  Profile (on Maps, change an `lh3.googleusercontent.com` URL's size suffix to `=w2400` for full size), then the
+  owner's own Instagram/Facebook posts. Never customer photos. Fill gaps with free-licence stock (Pexels,
+  Unsplash, Pixabay; Wikimedia Commons CC0/PD, or CC BY with credit) that truthfully shows the topic, with no
+  other store's branding and no identifiable faces.
+- **One photo per topic.** Every topic gets its own `VARIANTS` entry, and no two topics share a source photo
+  (crops of one shot all look alike on the blog index). Crop to a wide hero (`box`, about 16:9) at least 1200 px
+  wide, and check it as a 1200x630 card, because the share card's headline covers the left 40% of the photo.
+- **Mark where every photo came from.** `"owner": True` for the business's photos; otherwise
+  `"credit": {"author", "source_url", "license", "license_url"}` (and `"ai": True` if one ever slips in). The
+  hero `<figcaption>` follows it: owner photos say where they were taken; stock says "Photo: {author} /
+  {site}" (localized), linked to the source, plus the licence link and "cropped" for CC BY. The article's
+  ImageObject gets `creditText`, `creator`, `license` and `acquireLicensePage` (Google Images shows the
+  "Licensable" badge from these). Stock alt text never mentions the business.
+- **Tests enforce it** (`TestBlogPhotos`): no shared variant or source, credit fields present, AI at most 5% of
+  topics, sources and crops at least 1200 px wide and wide-hero shaped, captions matching the photo type.
+  Keep a credits list for the owner (`Claude outputs/image-credits.md`).
+- **Source files:** save at most 2400 px wide with EXIF stripped (iPhone photos carry GPS). Pages still serve
+  only the generated WebP.
 - **Search results get 120×120 square thumbnails** (a few KB each), not the 640 px card images.
 - **Image manifest** (`_build/image-manifest.json`): a SHA-256 of each image's inputs. Rebuilds skip
   unchanged images, and outputs that are no longer used get deleted. Pin the Pillow version in CI
