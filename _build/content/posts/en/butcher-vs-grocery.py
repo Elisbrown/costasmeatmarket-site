@@ -37,6 +37,7 @@ POST = {
 <li>Ask what's fresh today or on special.</li>
 <li>For big or unusual orders, call ahead: <a href="%%TEL%%">(863) 422-2313</a>.</li>
 </ol>
+<p>Short on time? Our <a href="%%LINK:seasoned-meats%%">house-seasoned meats</a> are cut, marinated and ready to cook.</p>
 """,
     "faq": [
         ("Is butcher shop meat better than grocery store meat?",

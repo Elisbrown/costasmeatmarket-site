@@ -29,6 +29,7 @@ POST = {
 
 <h2>Con qué servirla</h2>
 <p>Tortillas de maíz calientitas, cebolla blanca y cilantro picados, limón, salsa verde o roja, cebollitas asadas y frijoles charros. Lo que sobre va perfecto en quesadillas. Para más sobre el punto de la carne, mira nuestra <a href="%%LINK:doneness%%">tabla de temperaturas</a>.</p>
+<p>¿Vas a alimentar a un grupo? Sirve la carne asada junto con picanha y linguiça con nuestra <a href="%%LINK:churrasco-menu%%">guía del menú de churrasco</a>.</p>
 """,
     "recipe": {
         "name": "Carne asada con naranja, limón y ajo",

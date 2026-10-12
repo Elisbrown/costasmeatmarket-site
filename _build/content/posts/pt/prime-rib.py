@@ -37,6 +37,7 @@ POST = {
 <li>Descanse 10 minutos, tire a carne do osso e corte em tiras grossas contra a fibra.</li>
 </ol>
 <p>Os números certinhos estão na nossa <a href="%%LINK:doneness%%">tabela de pontos da carne</a>. Para o resto da ceia, use a <a href="%%LINK:per-person%%">tabela de carne por pessoa</a>.</p>
+<p>Prefere bifes individuais? Compare ribeye, NY strip e picanha no nosso <a href="%%LINK:steaks%%">guia de bifes</a>.</p>
 """,
     "recipe": {
         "name": "Prime rib no forno (reverse sear)",

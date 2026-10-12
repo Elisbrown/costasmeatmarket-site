@@ -51,6 +51,7 @@ POST = {
 <li>Rest 10 minutes, then slice with a serrated knife.</li>
 </ol>
 <p>Pork is safe to eat at 145&nbsp;&deg;F, but pork belly is best cooked well past that so the fat renders and the meat turns tender. Need the Spanish or Portuguese name for another pork cut? See our <a href="%%LINK:cuts%%">cut translation guide</a>.</p>
+<p>Pork belly is also one of the classic meats in a Brazilian <a href="%%LINK:feijoada%%">feijoada</a>.</p>
 """,
     "faq": [
         ("What is pork belly called in Portuguese and Spanish?",

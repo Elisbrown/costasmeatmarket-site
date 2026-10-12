@@ -46,6 +46,7 @@ POST = {
 <p>Dora la grasa en una sartén de hierro bien caliente y luego hornea la picanha entera, con la grasa hacia arriba, a 200&nbsp;&deg;C (400&nbsp;&deg;F). Empieza a medir la temperatura a los 20 minutos y sácala cuando llegue a tu punto. Deja reposar 10 minutos y rebana fino.</p>
 
 <p>¿Vas a hacer un asado? Calcula <a href="%%LINK:per-person%%">cuánta carne comprar por persona</a>. ¿Buscas el nombre de otro corte en inglés? Mira nuestra <a href="%%LINK:cuts%%">guía de cortes latinos</a>.</p>
+<p>¿Dudas entre picanha, ribeye y NY strip? Compáralos en nuestra <a href="%%LINK:steaks%%">guía de steaks</a>.</p>
 """,
     "faq": [
         ("¿La picanha es lo mismo que el top sirloin?",

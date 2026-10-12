@@ -9,6 +9,9 @@ POST = {
 <p>Aqui a picanha é vendida como <strong>top sirloin cap</strong>, <em>rump cap</em> ou <em>coulotte</em>. É a mesma peça que você conhece: o músculo triangular que fica em cima da alcatra, coberto por uma capa grossa de gordura.</p>
 <p>O problema é que os supermercados americanos costumam cortar a alcatra inteira em "top sirloin steaks". Assim a picanha vai junto, partida no meio, e muitas vezes sem a gordura. Para levar a peça inteira, com a capa, você precisa de um açougue que separe a picanha do jeito brasileiro. Por isso ela é um dos primeiros pedidos no nosso balcão em Davenport.</p>
 
+<h2>Por que é difícil achar no supermercado</h2>
+<p>Nos EUA, as grandes redes cortam o miolo da alcatra inteiro em "top sirloin steaks" genéricos. Esse corte atravessa a picanha e muitas vezes tira a gordura. Para levar a picanha inteira com a capa de gordura, você precisa de um açougueiro que a separe de propósito. Por isso ela é um dos primeiros pedidos de clientes brasileiros e latinos no nosso balcão em Davenport.</p>
+
 <h2>Como escolher uma boa picanha</h2>
 <ul>
 <li><strong>Peso:</strong> uma picanha inteira costuma pesar entre 1 e 1,4&nbsp;kg (2 a 3 libras). Peças muito maiores geralmente vêm com parte do miolo da alcatra, que é mais magro e assa diferente.</li>
@@ -43,6 +46,7 @@ POST = {
 <p>Sele o lado da gordura numa frigideira de ferro bem quente e leve a peça inteira ao forno a 200&nbsp;&deg;C (400&nbsp;&deg;F), com a gordura para cima. Comece a medir a temperatura depois de uns 20 minutos e tire quando chegar no ponto. Descanse 10 minutos e fatie fino.</p>
 
 <p>Vai fazer churrasco para a galera? Veja <a href="%%LINK:per-person%%">quanto de carne comprar por pessoa</a>. Procurando o nome de outro corte em inglês? Confira <a href="%%LINK:cuts%%">nosso guia de cortes</a>.</p>
+<p>Na dúvida entre picanha, ribeye e NY strip? Compare no nosso <a href="%%LINK:steaks%%">guia de bifes</a>.</p>
 """,
     "faq": [
         ("Como se fala picanha em inglês?",

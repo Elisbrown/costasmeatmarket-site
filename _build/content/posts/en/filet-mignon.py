@@ -37,6 +37,7 @@ POST = {
 <h2>Roasting the whole tenderloin</h2>
 <p>For a party, tie the trimmed tenderloin every 2 inches so it cooks evenly, season it, and sear it on all sides. Roast at 425&nbsp;&deg;F, start checking after 20 minutes, and pull it at 125&ndash;130&nbsp;&deg;F for medium-rare (the USDA recommends 145&nbsp;&deg;F with a 3-minute rest). Rest 10 minutes before slicing.</p>
 <p>Not sure which steak to choose? Compare filet with others in our <a href="%%LINK:steaks%%">ribeye vs. NY strip vs. picanha guide</a>, and check exact doneness in our <a href="%%LINK:doneness%%">temperature chart</a>.</p>
+<p>Trimming a whole tenderloin leaves tips and smaller pieces. They make an excellent <a href="%%LINK:picadinho%%">picadinho</a>.</p>
 """,
     "recipe": {
         "name": "Pan-seared filet mignon with butter",

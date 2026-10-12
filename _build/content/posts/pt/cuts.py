@@ -73,6 +73,7 @@ POST = {
 <li>Pedido grande ou especial? Ligue antes: <a href="%%TEL%%">(863) 422-2313</a>.</li>
 </ul>
 <div class="tip"><strong>Dica do açougueiro</strong>Cada país corta o boi de um jeito e os nomes variam até dentro do Brasil. Na dúvida, fale o nome que você conhece e o que vai cozinhar, que a gente ajuda a encontrar o equivalente.</div>
+<p>Quer começar pela estrela do churrasco? Leia o nosso <a href="%%LINK:picanha%%">guia da picanha</a>.</p>
 """,
     "faq": [
         ("Como se fala fraldinha em inglês?",
