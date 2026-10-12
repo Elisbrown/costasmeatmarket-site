@@ -37,6 +37,7 @@ POST = {
 <h2>Lomo entero al horno</h2>
 <p>Para una fiesta, amarra el lomo limpio cada 5&nbsp;cm para que se cocine parejo, sazónalo y séllalo por todos lados. Hornea a 220&nbsp;&deg;C (425&nbsp;&deg;F), empieza a medir a los 20 minutos y sácalo a 52&ndash;54&nbsp;&deg;C (125&ndash;130&nbsp;&deg;F) para término medio rojo (el USDA recomienda 63&nbsp;&deg;C / 145&nbsp;&deg;F con 3 minutos de reposo). Deja reposar 10 minutos antes de rebanar.</p>
 <p>¿No sabes qué steak elegir? Compáralo en nuestra <a href="%%LINK:steaks%%">guía ribeye vs. New York vs. picanha</a> y revisa los términos en nuestra <a href="%%LINK:doneness%%">tabla de temperaturas</a>.</p>
+<p>Al limpiar un lomo entero quedan puntas y recortes, perfectos para un buen <a href="%%LINK:picadinho%%">picadinho</a>.</p>
 """,
     "recipe": {
         "name": "Filete mignon a la sartén con mantequilla",

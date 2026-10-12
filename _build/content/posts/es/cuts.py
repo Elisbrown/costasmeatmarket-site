@@ -67,6 +67,7 @@ POST = {
 <li><strong>Llama antes</strong> si es un pedido grande o especial: <a href="%%TEL%%">(863) 422-2313</a>.</li>
 </ol>
 <div class="tip"><strong>Consejo del carnicero</strong>Los nombres cambian de un país a otro y cada uno corta un poco distinto. Si no estás seguro, dinos el nombre que conoces y qué vas a cocinar, y te ayudamos a encontrar el equivalente.</div>
+<p>¿Quieres empezar por el corte estrella del churrasco? Lee nuestra <a href="%%LINK:picanha%%">guía de la picanha</a>.</p>
 """,
     "faq": [
         ("¿Cómo se dice arrachera o entraña en inglés?",

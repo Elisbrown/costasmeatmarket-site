@@ -43,6 +43,7 @@ POST = {
 <li>Check with a thermometer: about 125&nbsp;&deg;F for rare, 130&ndash;135&nbsp;&deg;F for medium-rare, 140&ndash;145&nbsp;&deg;F for medium. Pull a few degrees early, since the temperature keeps rising as it rests. The USDA recommends 145&nbsp;&deg;F with a 3-minute rest.</li>
 <li>Rest 5 minutes, then slice against the grain.</li>
 </ol>
+<p>To cook any of them exactly how you like it, use our <a href="%%LINK:doneness%%">steak doneness and temperature chart</a>.</p>
 """,
     "faq": [
         ("Which is more tender, ribeye or NY strip?",

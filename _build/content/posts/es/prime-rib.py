@@ -37,6 +37,7 @@ POST = {
 <li>Reposa 10 minutos, separa la carne del hueso y córtala en tiras gruesas en contra de la fibra.</li>
 </ol>
 <p>Los números exactos están en nuestra <a href="%%LINK:doneness%%">tabla de términos de la carne</a>. Para el resto del menú, usa nuestra <a href="%%LINK:per-person%%">guía de cuánta carne por persona</a>.</p>
+<p>¿Prefieres steaks individuales? Compara ribeye, NY strip y picanha en nuestra <a href="%%LINK:steaks%%">guía de steaks</a>.</p>
 """,
     "recipe": {
         "name": "Prime rib a la inversa (reverse sear)",

@@ -29,6 +29,7 @@ POST = {
 
 <h2>Serve it with</h2>
 <p>Warm corn tortillas, chopped white onion and cilantro, lime, salsa verde or roja, grilled green onions (cebollitas) and charro beans. Leftovers are great in quesadillas or a breakfast hash. For more on grilling thin cuts, see our <a href="%%LINK:doneness%%">temperature chart</a>.</p>
+<p>Feeding a crowd? Serve carne asada alongside picanha and linguiça with our <a href="%%LINK:churrasco-menu%%">churrasco menu guide</a>.</p>
 """,
     "recipe": {
         "name": "Citrus-garlic carne asada",

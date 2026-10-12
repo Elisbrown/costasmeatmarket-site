@@ -53,6 +53,7 @@ POST = {
 
 <h2>Where to find us</h2>
 <p>Costa's Meat Market is at <strong>2169 Davenport Blvd, Davenport, FL 33837</strong>, serving visitors staying across Davenport, ChampionsGate, Four Corners, Haines City, Poinciana, and the Kissimmee resort area. Use the directions button below to get there from your rental.</p>
+<p>Rental grills often run hot and uneven, so check steaks with a thermometer and our <a href="%%LINK:doneness%%">doneness chart</a>.</p>
 """,
     "faq": [
         ("Is there a butcher shop near the Disney vacation rentals in Davenport, FL?",

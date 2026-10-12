@@ -28,6 +28,13 @@ POST = {
 <li><strong>Agrião só no final</strong>, para continuar verdinho e com aquele amarguinho.</li>
 </ul>
 
+<h2>Três jeitos de variar</h2>
+<ul>
+<li><strong>Com polenta:</strong> sirva a rabada sobre polenta mole cremosa, com o agrião misturado só na hora.</li>
+<li><strong>Estilo caribenho:</strong> acrescente tomilho fresco, pimenta-da-jamaica, cebolinha e uma pimenta Scotch bonnet inteira (sem deixar estourar), e termine com feijão-manteiga.</li>
+<li><strong>Rabo encendido / rabo de toro:</strong> use vinho tinto como a maior parte do líquido e acrescente cenoura picada e um pouco de pimenta.</li>
+</ul>
+
 <h2>Com que servir</h2>
 <p>O clássico é <strong>polenta mole</strong> ou angu, mas arroz branco e purê também vão muito bem. Gosta de carne cozida devagar? Experimente nossa <a href="%%LINK:short-ribs%%">costela no forno</a> ou a <a href="%%LINK:pot-roast%%">carne de panela</a>.</p>
 """,

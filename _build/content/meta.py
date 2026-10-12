@@ -1,7 +1,7 @@
 """Blog topics in display order. Each topic has one article per language in content/posts/<lang>/<group>.py.
 
 kind  -> category label (KINDS)
-image -> photo variant in lib/images.py
+image -> photo variant in lib/images.py (each topic has its own photo)
 """
 
 KINDS = {
@@ -16,34 +16,34 @@ KINDS = {
 
 TOPICS = [
     # group,                kind,       image
-    ("picanha",             "cuts",     "case-raw-cuts"),
-    ("haines-city",         "local",    "store-front"),
-    ("coupons",             "savings",  "store-banner"),
-    ("seasoned-meats",      "tutorial", "case-seasoned"),
-    ("vacation",            "local",    "store-building"),
-    ("cuts",                "cuts",     "case-full"),
-    ("per-person",          "planning", "case-raw-cuts"),
-    ("churrasco-menu",      "planning", "case-seasoned"),
-    ("oxtail",              "recipe",   "case-steaks-ribs"),
-    ("pot-roast",           "recipe",   "case-raw-cuts"),
-    ("filet-mignon",        "cuts",     "case-raw-cuts"),
-    ("prime-rib",           "cuts",     "case-steaks-ribs"),
-    ("short-ribs",          "recipe",   "case-steaks-ribs"),
-    ("linguica",            "tutorial", "case-linguica-picadinho"),
-    ("picadinho",           "recipe",   "case-linguica-picadinho"),
-    ("wings",               "recipe",   "case-wings"),
-    ("pao-de-queijo",       "recipe",   "store-front"),
-    ("brazilian-groceries", "local",    "store-front"),
-    ("feijoada",            "recipe",   "case-lombo"),
-    ("pernil",              "recipe",   "case-lombo"),
-    ("carne-asada",         "recipe",   "case-raw-cuts"),
-    ("doneness",            "basics",   "case-steaks-ribs"),
-    ("steaks",              "cuts",     "case-steaks-ribs"),
-    ("butcher-vs-grocery",  "basics",   "case-ground-beef"),
-    ("pork-belly",          "recipe",   "case-lombo"),
-    ("cheap-cuts",          "savings",  "case-ground-beef"),
-    ("bundles",             "savings",  "case-full"),
-    ("save",                "savings",  "store-building"),
+    ("picanha",              "cuts",     "picanha-steaks"),
+    ("haines-city",          "local",    "store-front"),
+    ("coupons",              "savings",  "store-sign"),
+    ("seasoned-meats",       "tutorial", "linguica-sandwich"),
+    ("vacation",             "local",    "grill-burgers"),
+    ("cuts",                 "cuts",     "case-full"),
+    ("per-person",           "planning", "grill-steaks"),
+    ("churrasco-menu",       "planning", "churrasco-skewers"),
+    ("oxtail",               "recipe",   "oxtail-braised"),
+    ("pot-roast",            "recipe",   "pot-roast"),
+    ("filet-mignon",         "cuts",     "filet-grilled"),
+    ("prime-rib",            "cuts",     "rib-roast"),
+    ("short-ribs",           "recipe",   "rib-rack"),
+    ("linguica",             "tutorial", "linguica-sliced"),
+    ("picadinho",            "recipe",   "picadinho"),
+    ("wings",                "recipe",   "wings-skewers"),
+    ("pao-de-queijo",        "recipe",   "pao-de-queijo"),
+    ("brazilian-groceries",  "local",    "coffee-shelves"),
+    ("feijoada",             "recipe",   "feijoada"),
+    ("pernil",               "recipe",   "pork-roast"),
+    ("carne-asada",          "recipe",   "carne-asada"),
+    ("doneness",             "basics",   "sliced-picanha"),
+    ("steaks",               "cuts",     "strip-steaks"),
+    ("butcher-vs-grocery",   "basics",   "butcher-slicing"),
+    ("pork-belly",           "recipe",   "pork-belly"),
+    ("cheap-cuts",           "savings",  "ground-beef"),
+    ("bundles",              "savings",  "roast-prep"),
+    ("save",                 "savings",  "store-aisle"),
 ]
 
 # Home pages show HOME_PINNED first, then HOME_ROTATING articles that change every week

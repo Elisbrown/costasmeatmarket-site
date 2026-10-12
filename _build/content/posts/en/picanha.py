@@ -46,6 +46,7 @@ POST = {
 <p>Sear the fat side in a hot cast-iron skillet until golden, then roast the whole cap fat-side up at 400&nbsp;&deg;F. Start checking the temperature after about 20 minutes and pull it when it hits your target. Rest 10 minutes and slice thin against the grain.</p>
 
 <p>Want to compare picanha with other steaks? See <a href="%%LINK:steaks%%">ribeye vs. NY strip vs. picanha</a>. Planning a party? Use our <a href="%%LINK:per-person%%">meat-per-person table</a>.</p>
+<p>Looking for other Brazilian and Latin cuts by their English names? See our <a href="%%LINK:cuts%%">butcher counter translation guide</a>.</p>
 """,
     "faq": [
         ("Is picanha the same as top sirloin?",
