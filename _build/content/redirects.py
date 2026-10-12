@@ -28,5 +28,6 @@ OLD_PRODUCTS = {
     "veal-chop": "steaks",
 }
 
-# Old store sections without a specific match go to the home page (or blog, for search) of the same language.
+# Old store sections without a specific match go to the home page of the same language.
+# (/search is a real page now, so old Shopify /search?q= links land on live results.)
 OLD_SECTIONS = ["products", "collections", "pages", "account", "cart", "checkout", "policies", "blogs"]

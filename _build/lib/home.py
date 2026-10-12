@@ -1,7 +1,7 @@
 import json
 
 from lib.site import (SITE, ORDER, MAPS, REVIEW, HOME, BLOG, SOCIALS, STORE_NODE, ARROW, LANGS, HTML_LANG, BUILD_DATE,
-                      HOURS, esc, head, langbar, footer, week_index)
+                      HOURS, SEARCH_PATH, esc, head, langbar, footer, week_index)
 from lib.pages import card, picture, hero_image
 from lib import images
 from content.home_copy import COPY
@@ -42,6 +42,12 @@ def home_ld(lang, c, root):
                 "description": "Official website for Costa's Meat Market in Davenport, Florida.",
                 "inLanguage": ["en", "es", "pt-BR"],
                 "publisher": {"@id": SITE + "/#store"},
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {"@type": "EntryPoint",
+                               "urlTemplate": SITE + SEARCH_PATH[lang] + "?q={search_term_string}"},
+                    "query-input": "required name=search_term_string",
+                },
             },
             {
                 "@type": "WebPage",
@@ -175,7 +181,7 @@ def build_home(root, lang, posts):
           <p>{esc(a)}</p>
         </details>''' for q, a in c["faq"])
     out.append(f'''      <section class="info-section faq" data-section="faq">
-        <h2>{esc(c["faq_h"])}</h2>
+        <h2 id="faq">{esc(c["faq_h"])}</h2>
 {faq}
       </section>
     </main>

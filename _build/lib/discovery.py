@@ -47,6 +47,9 @@ def llms_txt(posts):
         f"- [Community Hub & Socials]({SITE}/socials/): WhatsApp group, WhatsApp announcement channel, Instagram, "
         "TikTok, and Facebook.",
         f"- [Directions on Google Maps]({MAPS}): Navigation to 2169 Davenport Blvd, Davenport, FL 33837.",
+        f"- [Site search]({SITE}/search/?q=picanha): Products, recipes, articles and store info. Use "
+        f"{SITE}/search/?q={{query}} (or /es/search/, /pt/search/); the per-language index is at "
+        f"{SITE}/assets/search/en.json (es.json, pt.json).",
         f"- [Sitemap]({SITE}/sitemap.xml) · [Full AI reference]({SITE}/llms-full.txt) · [robots.txt]({SITE}/robots.txt)",
         "",
         f"Last updated: {BUILD_DATE}",

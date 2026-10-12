@@ -46,6 +46,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/search.css?v=699a91515b">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
@@ -66,7 +67,7 @@
       "publisher": {
         "@id": "https://costasmeatmarket.com/#store"
       },
-      "dateModified": "2026-10-08",
+      "dateModified": "2026-10-12",
       "blogPost": [
         {
           "@type": "BlogPosting",
@@ -436,15 +437,19 @@
   </script>
   <script src="/assets/js/track.js" defer></script>
   <script src="/assets/js/lang.js" defer></script>
+  <script src="/assets/js/search.js?v=699a91515b" defer></script>
 </head>
 <body>
   <div class="wrap wide-wrap">
 
+    <div class="topbar">
     <nav class="langbar" aria-label="Language / Idioma / Idioma">
       <a href="/blog/" hreflang="en" lang="en">EN</a>
       <a href="/es/blog/" hreflang="es" lang="es">ES</a>
       <a href="/pt/blog/" hreflang="pt" lang="pt" aria-current="page">PT</a>
     </nav>
+    <a class="search-open" href="/pt/search/" data-search-open aria-label="Buscar" title="Buscar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg></a>
+    </div>
     <p class="lang-suggest" id="lang-suggest" hidden></p>
 
     <nav class="crumbs" aria-label="Breadcrumb">
@@ -457,6 +462,12 @@
       </div>
       <h1>Blog do açougueiro</h1>
       <p class="tagline">Guias de cortes, receitas, churrasco passo a passo e dicas para economizar direto do balcão do Costa's Meat Market em Davenport, FL.</p>
+      <form class="search-box search-inline" role="search" action="/pt/search/" method="get" data-search="inline">
+        <label class="sr-only" for="blog-q">Buscar</label>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        <input id="blog-q" type="search" name="q" placeholder="Busque no blog: picanha, rabada, cupom…" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search">
+        <button type="submit">Buscar</button>
+      </form>
       <nav class="chips" aria-label="Blog">
         <a class="chip" href="#local">Guia local</a>
         <a class="chip" href="#cuts">Guia de cortes</a>
@@ -473,12 +484,12 @@
         <h2 class="section-title">Comece por aqui</h2>
         <ul class="cards cards-featured">
           <li class="card card-featured">
-            <a href="/pt/blog/prime-rib-e-tomahawk-como-encomendar-e-assar/">
+            <a href="/pt/blog/costela-no-forno-e-na-churrasqueira/">
               <img src="/assets/img/blog/beef-steaks-and-ribs-costas-meat-market-1200.webp" srcset="/assets/img/blog/beef-steaks-and-ribs-costas-meat-market-1200.webp 600w" sizes="(max-width: 680px) 100vw, 640px" width="600" height="338" alt="Bifes com osso e costela bovina no balcão do Costa's Meat Market" loading="lazy" decoding="async">
               <span class="card-body">
-                <span class="chip">Guia de cortes</span>
-                <span class="card-title">Prime rib (bife ancho com osso) e tomahawk: quanto encomendar e como assar</span>
-                <span class="card-desc">Quanto prime rib encomendar por pessoa, o que é o tomahawk e uma receita infalível de prime rib no forno (reverse sear). Encomendas de fim de ano em Davenport, FL.</span>
+                <span class="chip">Receita</span>
+                <span class="card-title">Costela bovina no forno e na churrasqueira: qual corte pedir nos EUA e receita</span>
+                <span class="card-desc">Como pedir costela nos EUA (plate short ribs, flanken), receita de costela no forno com sal grosso que desmancha e dicas para a churrasqueira. Açougue em Davenport, FL.</span>
               </span>
             </a>
           </li>

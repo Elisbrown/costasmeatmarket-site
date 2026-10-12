@@ -63,7 +63,6 @@
 /pt/products/chicken-flats-pack                                                  /pt/blog/coxinha-da-asa-na-churrasqueira/                              301
 /pt/products/lombo-gd                                                            /pt/blog/carnes-temperadas-prontas-para-preparar/                      301
 /pt/products/veal-chop                                                           /pt/blog/ribeye-contrafile-ou-picanha-qual-escolher/                   301
-/search                                                                          /blog/                                                                 301
 /products                                                                        /                                                                      301
 /products/*                                                                      /                                                                      301
 /collections                                                                     /                                                                      301
@@ -80,7 +79,6 @@
 /policies/*                                                                      /                                                                      301
 /blogs                                                                           /                                                                      301
 /blogs/*                                                                         /                                                                      301
-/es/search                                                                       /es/blog/                                                              301
 /es/products                                                                     /es/                                                                   301
 /es/products/*                                                                   /es/                                                                   301
 /es/collections                                                                  /es/                                                                   301
@@ -97,7 +95,6 @@
 /es/policies/*                                                                   /es/                                                                   301
 /es/blogs                                                                        /es/                                                                   301
 /es/blogs/*                                                                      /es/                                                                   301
-/pt/search                                                                       /pt/blog/                                                              301
 /pt/products                                                                     /pt/                                                                   301
 /pt/products/*                                                                   /pt/                                                                   301
 /pt/collections                                                                  /pt/                                                                   301

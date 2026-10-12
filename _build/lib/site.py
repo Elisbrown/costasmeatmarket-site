@@ -68,6 +68,9 @@ FEED = {"en": "/blog/feed.xml", "es": "/es/blog/feed.xml", "pt": "/pt/blog/feed.
 LANG_LABEL = {"en": "EN", "es": "ES", "pt": "PT"}
 LANG_NAME = {"en": "English", "es": "Español", "pt": "Português"}
 SOCIALS = {"en": "/socials/", "es": "/socials/?lang=es", "pt": "/socials/?lang=pt"}
+SEARCH_PATH = {"en": "/search/", "es": "/es/search/", "pt": "/pt/search/"}
+SEARCH_LABEL = {"en": "Search", "es": "Buscar", "pt": "Buscar"}
+SEARCH_VERSION = ""  # set by lib.search.build_indexes() before any page is rendered
 
 # Opening hours (from the Google Business Profile, October 2026). Sunday first, 24-hour clock.
 HOURS = [(8, 17), (8, 20), (8, 20), (8, 20), (8, 20), (8, 20), (8, 20)]
@@ -165,7 +168,8 @@ def analytics(content_group, lang):
       }})(window, document, "clarity", "script", "{CLARITY_ID}");
   </script>
   <script src="/assets/js/track.js" defer></script>
-  <script src="/assets/js/lang.js" defer></script>{extra_js}'''
+  <script src="/assets/js/lang.js" defer></script>
+  <script src="/assets/js/search.js?v={SEARCH_VERSION}" defer></script>{extra_js}'''
 
 
 ARROW = ('<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
@@ -260,6 +264,7 @@ def head(*, lang, path, title, description, content_group, og_type="website", al
         "",
         "  " + FONTS,
         '  <link rel="stylesheet" href="/assets/css/site.css">',
+        f'  <link rel="stylesheet" href="/assets/css/search.css?v={SEARCH_VERSION}">',
         "  " + ICONS,
     ]
     if ld:
@@ -274,9 +279,23 @@ def langbar(lang, targets):
     for code in LANGS:
         current = ' aria-current="page"' if code == lang else ""
         links.append(f'<a href="{targets[code]}" hreflang="{code}" lang="{code}"{current}>{LANG_LABEL[code]}</a>')
-    return ('    <nav class="langbar" aria-label="Language / Idioma / Idioma">\n      '
+    return ('    <div class="topbar">\n'
+            '    <nav class="langbar" aria-label="Language / Idioma / Idioma">\n      '
             + "\n      ".join(links) + "\n    </nav>\n"
+            + search_button(lang) + "\n    </div>\n"
             '    <p class="lang-suggest" id="lang-suggest" hidden></p>')
+
+
+SEARCH_ICON = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" '
+               'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/>'
+               '<path d="m20 20-3.6-3.6"/></svg>')
+
+
+def search_button(lang):
+    """Top-right search icon. A plain link to the search page; search.js turns it into an instant overlay."""
+    label = SEARCH_LABEL[lang]
+    return (f'    <a class="search-open" href="{SEARCH_PATH[lang]}" data-search-open aria-label="{label}" '
+            f'title="{label}">{SEARCH_ICON}</a>')
 
 
 FOOT = {

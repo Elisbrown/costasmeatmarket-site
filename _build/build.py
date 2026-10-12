@@ -9,10 +9,14 @@ Source of truth:
   _build/content/redirects.py        old Shopify URLs to redirect
   _build/lib/images.py               photo crops and social share cards
 
-Generated (do not edit by hand): index.html, es/, pt/, blog/, es/blog/, pt/blog/, go/, 404.html,
-assets/img/blog/, assets/og/, sitemap.xml, llms.txt, llms-full.txt, robots.txt, _redirects, vercel.json.
+  _build/content/search_terms.py      products, store info and synonyms for the site search
+
+Generated (do not edit by hand): index.html, es/, pt/, blog/, es/blog/, pt/blog/, search/, es/search/,
+pt/search/, go/, 404.html, assets/img/blog/, assets/og/, assets/search/, sitemap.xml, llms.txt, llms-full.txt,
+robots.txt, _redirects, vercel.json.
 """
 import os
+import re
 import shutil
 import sys
 
@@ -24,7 +28,8 @@ from PIL import Image  # noqa: E402
 
 from lib.site import HOME, BLOG, FEED, LANGS  # noqa: E402
 from lib.content import load_posts  # noqa: E402
-from lib import pages, discovery, images  # noqa: E402
+from lib import pages, discovery, images, search  # noqa: E402
+from lib.site import SEARCH_PATH  # noqa: E402
 from lib.home import build_home  # noqa: E402
 
 GO = {
@@ -37,7 +42,7 @@ GO = {
 
 # Generated HTML is rebuilt from scratch; images are only re-rendered when their inputs change,
 # and images that are no longer used are removed.
-GENERATED_DIRS = ["blog", "es/blog", "pt/blog", "go"]
+GENERATED_DIRS = ["blog", "es/blog", "pt/blog", "go", "search", "es/search", "pt/search"]
 IMAGE_DIRS = ["assets/og", "assets/img/blog"]
 
 
@@ -62,6 +67,17 @@ def export_logo():
         mark.resize((size, size), Image.LANCZOS).save(out, "WEBP", quality=90, method=6)
 
 
+def sync_socials(version):
+    """The socials page is hand-written; keep its search script and stylesheet on the current version."""
+    path = os.path.join(ROOT, "socials", "index.html")
+    with open(path, encoding="utf-8") as fh:
+        text = fh.read()
+    updated = re.sub(r"(/assets/(?:js/search\.js|css/search\.css))\?v=[\w-]*", r"\1?v=" + version, text)
+    if updated != text:
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(updated)
+
+
 def remove_stale_images():
     for rel in IMAGE_DIRS:
         base = os.path.join(ROOT, rel)
@@ -77,6 +93,8 @@ def main():
         shutil.rmtree(os.path.join(ROOT, rel), ignore_errors=True)
     export_logo()
     posts = load_posts()
+    version = search.build_indexes(ROOT, posts)
+    sync_socials(version)
     for lang in LANGS:
         write(BLOG[lang], pages.index_page(ROOT, lang, posts))
         write(FEED[lang], pages.feed(lang, posts))
@@ -84,6 +102,8 @@ def main():
         write(post["path"], pages.post_page(ROOT, post, posts))
     for lang in LANGS:
         write(HOME[lang], build_home(ROOT, lang, posts))
+    for lang in LANGS:
+        write(SEARCH_PATH[lang], search.search_page(lang, posts))
     for code, target in GO.items():
         write(f"/go/{code}/", pages.go_page(code, target))
     rules = pages.redirect_rules(posts)
@@ -97,7 +117,7 @@ def main():
     remove_stale_images()
     images.save_manifest()
     print(f"Built {len(posts)} articles, {len(LANGS)} home pages, {len(LANGS)} blog indexes, {len(GO)} short links, "
-          f"{len(rules)} redirects. Build date {pages.BUILD_DATE}.")
+          f"{len(rules)} redirects, search index {version}. Build date {pages.BUILD_DATE}.")
 
 
 if __name__ == "__main__":

@@ -51,6 +51,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/search.css?v=699a91515b">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
@@ -282,15 +283,19 @@
   </script>
   <script src="/assets/js/track.js" defer></script>
   <script src="/assets/js/lang.js" defer></script>
+  <script src="/assets/js/search.js?v=699a91515b" defer></script>
 </head>
 <body>
   <div class="wrap article-wrap">
 
+    <div class="topbar">
     <nav class="langbar" aria-label="Language / Idioma / Idioma">
       <a href="/blog/costas-meat-market-coupons-and-deals/" hreflang="en" lang="en">EN</a>
       <a href="/es/blog/cupones-y-ofertas-costas-meat-market/" hreflang="es" lang="es" aria-current="page">ES</a>
       <a href="/pt/blog/cupons-e-promocoes-costas-meat-market/" hreflang="pt" lang="pt">PT</a>
     </nav>
+    <a class="search-open" href="/es/search/" data-search-open aria-label="Buscar" title="Buscar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg></a>
+    </div>
     <p class="lang-suggest" id="lang-suggest" hidden></p>
 
     <nav class="crumbs" aria-label="Breadcrumb">
@@ -351,7 +356,7 @@
         </div>
 
         <section class="info-section faq" data-section="faq">
-          <h2>Respuestas rápidas</h2>
+          <h2 id="faq">Respuestas rápidas</h2>
           <details>
             <summary>¿Costa's Meat Market tiene cupones?</summary>
             <p>Sí. Los códigos de descuento se comparten primero en nuestro grupo VIP de WhatsApp, y te llevas un 5% de descuento en tu próxima compra por seguirnos e interactuar en todas nuestras redes (un cupón por cliente).</p>

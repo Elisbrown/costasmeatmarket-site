@@ -258,6 +258,68 @@ class TestMultilingualSiteAndBlog(unittest.TestCase):
             self.assertIn('<script src="/assets/js/track.js" defer></script>', page, rel)
 
 
+class TestSiteSearch(unittest.TestCase):
+    """The search icon, search pages and per-language search indexes."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.indexes = {lang: json.loads(read(os.path.join("assets", "search", lang + ".json")))
+                       for lang in ("en", "es", "pt")}
+
+    def test_search_icon_on_every_page_with_a_language_bar(self):
+        for rel in all_html_files():
+            page = read(rel)
+            if 'class="langbar"' not in page:
+                continue
+            self.assertIn("data-search-open", page, rel)
+            self.assertRegex(page, r'<script src="/assets/js/search\.js\?v=[0-9a-f]+" defer></script>', rel)
+            self.assertRegex(page, r'<link rel="stylesheet" href="/assets/css/search\.css\?v=[0-9a-f]+">', rel)
+
+    def test_search_pages_exist_noindex_with_tracking(self):
+        for path, lang in (("search", "en"), ("es/search", "es"), ("pt/search", "pt")):
+            page = read(os.path.join(path, "index.html"))
+            self.assertRegex(page, r'<html lang="%s' % lang)
+            self.assertIn('content="noindex, follow"', page, path)
+            self.assertIn('data-search="page"', page, path)
+            self.assertIn('id="search-results"', page, path)
+            self.assertIn("gtag('config', 'G-S4GM8NREGG'", page, path)
+            self.assertIn('"clarity", "script", "yjadt0p2o2"', page, path)
+        self.assertNotIn(SITE + "/search/", read("sitemap.xml"))
+
+    def test_blog_indexes_have_a_search_box(self):
+        for path in ("blog", "es/blog", "pt/blog"):
+            self.assertIn('data-search="inline"', read(os.path.join(path, "index.html")), path)
+
+    def test_indexes_cover_every_article_and_all_categories(self):
+        articles = [f for f in all_html_files() if re.match(r"^((es|pt)/)?blog/[^/]+/index\.html$", f.replace(os.sep, "/"))]
+        for lang, index in self.indexes.items():
+            self.assertEqual(index["lang"], lang)
+            cats = {doc["c"] for doc in index["docs"]}
+            self.assertEqual(cats, {"p", "r", "b", "g"}, lang)
+            mine = [f for f in articles if (f.startswith(lang + os.sep) if lang != "en" else f.startswith("blog" + os.sep))]
+            urls = {doc["u"] for doc in index["docs"] if doc["c"] in ("b", "r")}
+            self.assertEqual(len(urls), len(mine), lang)
+            for doc in index["docs"]:
+                if doc["u"].startswith("/"):
+                    self.assertTrue(os.path.exists(os.path.join(BASE_DIR, url_to_file(doc["u"]))), doc["u"])
+                if doc.get("i"):
+                    self.assertTrue(doc["i"].endswith(".webp"), doc["i"])
+                    self.assertTrue(os.path.exists(os.path.join(BASE_DIR, doc["i"].lstrip("/"))), doc["i"])
+                for anchor in [h[1] for h in doc.get("h", [])]:
+                    self.assertIn('id="%s"' % anchor, read(url_to_file(doc["u"])), doc["u"])
+            self.assertLess(len(json.dumps(index)), 200000, "keep the %s index small" % lang)
+
+    def test_old_shopify_search_is_not_redirected(self):
+        self.assertNotRegex(read("_redirects"), r"(?m)^/(es/|pt/)?search\s")
+        self.assertFalse([r for r in json.loads(read("vercel.json"))["redirects"] if r["source"].endswith("/search")])
+
+    def test_website_schema_has_search_action(self):
+        site_node = next(i for i in json_ld_blocks(read("index.html"))[0]["@graph"] if i.get("@type") == "WebSite")
+        action = site_node["potentialAction"]
+        self.assertEqual(action["@type"], "SearchAction")
+        self.assertEqual(action["target"]["urlTemplate"], SITE + "/search/?q={search_term_string}")
+
+
 if __name__ == "__main__":
     unittest.main()
 

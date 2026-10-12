@@ -327,11 +327,6 @@
       "permanent": true
     },
     {
-      "source": "/search",
-      "destination": "/blog/",
-      "permanent": true
-    },
-    {
       "source": "/products",
       "destination": "/",
       "permanent": true
@@ -412,11 +407,6 @@
       "permanent": true
     },
     {
-      "source": "/es/search",
-      "destination": "/es/blog/",
-      "permanent": true
-    },
-    {
       "source": "/es/products",
       "destination": "/es/",
       "permanent": true
@@ -494,11 +484,6 @@
     {
       "source": "/es/blogs/:path*",
       "destination": "/es/",
-      "permanent": true
-    },
-    {
-      "source": "/pt/search",
-      "destination": "/pt/blog/",
       "permanent": true
     },
     {

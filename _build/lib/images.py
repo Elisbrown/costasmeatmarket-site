@@ -179,6 +179,17 @@ def save_heroes(root, variant):
     return results
 
 
+def save_thumb(root, variant, size=120):
+    """Small square WebP for search results (a few KB instead of the 640px card image)."""
+    v = VARIANTS[variant]
+    url = f"/assets/img/blog/{v['file']}-sq{size}.webp"
+    if not fresh(root, url, ["thumb", v["src"], _source_hash(v["src"]), list(v["box"]), size]):
+        path = os.path.join(root, url.lstrip("/"))
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        cover(crop(variant), (size, size)).save(path, "WEBP", quality=72, method=6)
+    return url
+
+
 def logo(color, size):
     mark = Image.open(os.path.join(PHOTOS, "costas-logo.png")).convert("LA")
     alpha = mark.split()[1]
