@@ -248,13 +248,34 @@ Also link Clarity to GA4 (Clarity → Settings → Setup → Google Analytics) t
 
 Want a separate link for a partner, such as a vacation-rental manager's welcome book or a church bulletin? Ask me for a new `/go/` link so each partner's traffic shows up separately.
 
-### 4.4 Monthly scorecard
+### 4.4 Site search: what people look for
+
+Every page has a search icon at the top right (it also opens with `/` or Ctrl+K). The blog has its own search box, and `/search/?q=…` is the full results page in each language (`/es/search/`, `/pt/search/`). Results update with each letter typed and come in four groups: Products, Recipes, Blog and General (hours, directions, phone, coupons, WhatsApp, reviews, FAQs). Search ignores accents, completes the word being typed, forgives small typos ("pecanha" finds picanha) and understands cut names across languages ("rabada" or "rabo de res" finds oxtail). If someone types in another language, it offers results in that language.
+
+**What it tells you:**
+
+| Event (GA4 and Clarity) | Parameters | Use it for |
+|---|---|---|
+| `search` (GA4's standard search event) | `search_term`, `results_count`, `search_surface` (overlay, inline, page), `page_lang` | What customers want that the menu doesn't show |
+| `search_no_results` | same | **Your content to-do list.** Each term here is a product to stock, a word to add, or an article to write |
+| `search_select` | `search_term`, `result_category`, `result_position` | Which results people actually open |
+
+Clarity also gets a `search_term` tag, so you can watch recordings of people who searched for something specific.
+
+**In GA4:** Admin → Custom definitions → add event-scoped dimensions for `search_term`, `results_count` and `search_surface`. Then build an Explore table of `search_no_results` by `search_term` and check it monthly. GA4's built-in "site search" report also picks up the `q` parameter on the `/search/` pages.
+
+**To add a product or a word people use:** edit `_build/content/search_terms.py` (products, store info, and synonym groups such as "oxtail rabo rabada"), then rebuild. Old Shopify links like `/search?q=picanha` now open live results instead of redirecting.
+
+The home pages also carry `SearchAction` markup pointing at `/search/?q=`. Google retired its sitelinks search box in 2024, so this no longer adds a box in Google results. It does tell AI assistants and other agents how to search the site.
+
+### 4.5 Monthly scorecard
 
 | Source | Numbers to log |
 |---|---|
 | Google Business Profile → Performance | searches, profile views, calls, direction requests, website clicks |
 | Search Console | clicks and impressions per keyword cluster (3.4) |
 | Clarity | sessions by `traffic_source`; count of each `click_*` event |
+| GA4 site search | top `search_term`s and every `search_no_results` term |
 | Google reviews | total count and average rating |
 | WhatsApp | group members and channel followers |
 | Heartland | online orders (compare with `click_order_online`) |

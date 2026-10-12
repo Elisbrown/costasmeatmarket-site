@@ -6,6 +6,7 @@
   <title>Page not found | Costa's Meat Market</title>
   <meta name="robots" content="noindex, follow">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/search.css?v=699a91515b">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4GM8NREGG"></script>
@@ -24,6 +25,8 @@
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "yjadt0p2o2");
   </script>
+  <script src="/assets/js/track.js" defer></script>
+  <script src="/assets/js/search.js?v=699a91515b" defer></script>
   <script>
     (function () {
       var exact = {
@@ -90,7 +93,6 @@
       '/pt/products/chicken-flats-pack': '/pt/blog/coxinha-da-asa-na-churrasqueira/',
       '/pt/products/lombo-gd': '/pt/blog/carnes-temperadas-prontas-para-preparar/',
       '/pt/products/veal-chop': '/pt/blog/ribeye-contrafile-ou-picanha-qual-escolher/',
-      '/search': '/blog/',
       '/products': '/',
       '/collections': '/',
       '/pages': '/',
@@ -99,7 +101,6 @@
       '/checkout': '/',
       '/policies': '/',
       '/blogs': '/',
-      '/es/search': '/es/blog/',
       '/es/products': '/es/',
       '/es/collections': '/es/',
       '/es/pages': '/es/',
@@ -108,7 +109,6 @@
       '/es/checkout': '/es/',
       '/es/policies': '/es/',
       '/es/blogs': '/es/',
-      '/pt/search': '/pt/blog/',
       '/pt/products': '/pt/',
       '/pt/collections': '/pt/',
       '/pt/pages': '/pt/',
@@ -121,9 +121,10 @@
       var path = window.location.pathname.replace(/\/+$/, "");
       var lang = (/^\/(es|pt)(\/|$)/.exec(path) || [])[1] || "";
       var dest = exact[path];
-      if (!dest && /^\/(es\/|pt\/)?(products|collections|pages|account|cart|checkout|policies|blogs|search)(\/|$)/.test(path)) {
-        dest = /\/search$/.test(path) ? (lang ? "/" + lang + "/blog/" : "/blog/") : (lang ? "/" + lang + "/" : "/");
+      if (!dest && /^\/(es\/|pt\/)?(products|collections|pages|account|cart|checkout|policies|blogs)(\/|$)/.test(path)) {
+        dest = lang ? "/" + lang + "/" : "/";
       }
+      document.documentElement.setAttribute("data-search-lang", lang || "en");
       gtag('event', 'page_not_found', { page_path: window.location.pathname, page_referrer: document.referrer, redirected_to: dest || '' });
       if (dest) window.location.replace(dest);
     })();
@@ -136,6 +137,12 @@
       <h1>404</h1>
     </header>
     <main>
+      <form class="search-box search-inline" role="search" action="/search/" method="get" data-search="inline">
+        <label class="sr-only" for="nf-q">Search</label>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        <input id="nf-q" type="search" name="q" placeholder="Search · Buscar" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search">
+        <button type="submit">Search</button>
+      </form>
       <section class="info-section" lang="en">
         <h2>We couldn't find that page.</h2>
         <p>Our old online shop pages have moved. Try one of these:</p>

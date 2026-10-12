@@ -8,7 +8,8 @@ from lib.site import (SITE, ORDER, MAPS, TEL, WA_GROUP, PUBLISHED, BUILD_DATE, L
                       LANG_NAME, STORE_NODE, GA4_ID, CLARITY_ID, esc, head, langbar, footer, strip_tags, git_date,
                       human_date, week_index)
 from lib.content import fill, add_heading_ids
-from lib import images
+from lib import images, site
+from lib.search import search_box, UI as SEARCH_UI
 from content.meta import TOPICS, KINDS
 
 UI = {
@@ -213,15 +214,20 @@ def related_posts(post, posts):
     return same[:3]
 
 
-def post_page(root, post, posts):
-    lang, ui = post["lang"], UI[post["lang"]]
+def article_body(post, posts):
+    """Article HTML with links resolved, the recipe card in place and ids on every <h2>: (body, toc)."""
     body = post["body"]
     recipe = post.get("recipe")
     if recipe:
-        card_html = recipe_card(recipe, lang)
+        card_html = recipe_card(recipe, post["lang"])
         body = body.replace("%%RECIPE%%", card_html) if "%%RECIPE%%" in body else body.rstrip() + "\n" + card_html
-    body = fill(body, lang, posts).strip()
-    body, toc = add_heading_ids(body)
+    return add_heading_ids(fill(body, post["lang"], posts).strip())
+
+
+def post_page(root, post, posts):
+    lang, ui = post["lang"], UI[post["lang"]]
+    recipe = post.get("recipe")
+    body, toc = article_body(post, posts)
     words = len(strip_tags(body + " " + post["lede"]).split())
     minutes = max(3, math.ceil(words / 200))
     hero = hero_image(root, post["image"])
@@ -330,7 +336,7 @@ def post_page(root, post, posts):
             <p>{esc(a)}</p>
           </details>''' for q, a in faq)
         out.append(f'''        <section class="info-section faq" data-section="faq">
-          <h2>{ui["faq"]}</h2>
+          <h2 id="faq">{ui["faq"]}</h2>
 {items}
         </section>
 ''')
@@ -416,6 +422,7 @@ def index_page(root, lang, posts):
       </div>
       <h1>{esc(c["h1"])}</h1>
       <p class="tagline">{esc(c["tagline"])}</p>
+      {search_box(lang, box_id="blog-q", mode="inline", placeholder=SEARCH_UI[lang]["blog_placeholder"])}
       <nav class="chips" aria-label="{ui["blog"]}">
 {chips}
       </nav>
@@ -540,8 +547,11 @@ def not_found_page(redirect_map):
   <title>Page not found | Costa's Meat Market</title>
   <meta name="robots" content="noindex, follow">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/search.css?v={site.SEARCH_VERSION}">
   <link rel="icon" href="/favicon.ico" sizes="any">
   {tracking_snippet(content_group="404")}
+  <script src="/assets/js/track.js" defer></script>
+  <script src="/assets/js/search.js?v={site.SEARCH_VERSION}" defer></script>
   <script>
     (function () {{
       var exact = {{
@@ -550,9 +560,10 @@ def not_found_page(redirect_map):
       var path = window.location.pathname.replace(/\\/+$/, "");
       var lang = (/^\\/(es|pt)(\\/|$)/.exec(path) || [])[1] || "";
       var dest = exact[path];
-      if (!dest && /^\\/(es\\/|pt\\/)?(products|collections|pages|account|cart|checkout|policies|blogs|search)(\\/|$)/.test(path)) {{
-        dest = /\\/search$/.test(path) ? (lang ? "/" + lang + "/blog/" : "/blog/") : (lang ? "/" + lang + "/" : "/");
+      if (!dest && /^\\/(es\\/|pt\\/)?(products|collections|pages|account|cart|checkout|policies|blogs)(\\/|$)/.test(path)) {{
+        dest = lang ? "/" + lang + "/" : "/";
       }}
+      document.documentElement.setAttribute("data-search-lang", lang || "en");
       gtag('event', 'page_not_found', {{ page_path: window.location.pathname, page_referrer: document.referrer, redirected_to: dest || '' }});
       if (dest) window.location.replace(dest);
     }})();
@@ -565,6 +576,7 @@ def not_found_page(redirect_map):
       <h1>404</h1>
     </header>
     <main>
+      {search_box("en", box_id="nf-q", mode="inline", placeholder="Search · Buscar")}
 {chr(10).join(blocks)}
     </main>
   </div>
@@ -582,7 +594,6 @@ def redirect_rules(posts):
         for product, group in OLD_PRODUCTS.items():
             rules.append((f"{prefix[lang]}/products/{product}", posts[(group, lang)]["path"]))
     for lang in LANGS:
-        rules.append((f"{prefix[lang]}/search", BLOG[lang]))
         for section in OLD_SECTIONS:
             rules.append((f"{prefix[lang]}/{section}", HOME[lang]))
             rules.append((f"{prefix[lang]}/{section}/*", HOME[lang]))

@@ -29,15 +29,16 @@
 - [Online Store / Pickup Orders](https://costasmeatmarket.hrpos.heartland.us/): Place orders online for easy counter pickup.
 - [Community Hub & Socials](https://costasmeatmarket.com/socials/): WhatsApp group, WhatsApp announcement channel, Instagram, TikTok, and Facebook.
 - [Directions on Google Maps](https://www.google.com/maps/dir/?api=1&destination=Costa%27s%20Meat%20Market%2C%202169%20Davenport%20Blvd%2C%20Davenport%2C%20FL%2033837): Navigation to 2169 Davenport Blvd, Davenport, FL 33837.
+- [Site search](https://costasmeatmarket.com/search/?q=picanha): Products, recipes, articles and store info. Use https://costasmeatmarket.com/search/?q={query} (or /es/search/, /pt/search/); the per-language index is at https://costasmeatmarket.com/assets/search/en.json (es.json, pt.json).
 - [Sitemap](https://costasmeatmarket.com/sitemap.xml) · [Full AI reference](https://costasmeatmarket.com/llms-full.txt) · [robots.txt](https://costasmeatmarket.com/robots.txt)
 
-Last updated: 2026-10-08
+Last updated: 2026-10-12
 
 ## Featured This Week
 - [Looking for a Meat Market Near Haines City? Here's What You'll Find at Costa's](https://costasmeatmarket.com/blog/meat-market-near-haines-city-fl/)
-- [How to Grill Linguiça (Brazilian Sausage) So It Stays Juicy](https://costasmeatmarket.com/blog/how-to-grill-linguica-brazilian-sausage/)
-- [Picadinho: How to Make Brazil's Quick Diced Beef Stew](https://costasmeatmarket.com/blog/picadinho-brazilian-beef-stew-recipe/)
-- [Brazilian-Style Grilled Chicken Wings: Drumettes, Flats and a Garlic-Lime Marinade](https://costasmeatmarket.com/blog/brazilian-grilled-chicken-wings-recipe/)
+- [Pão de Queijo: How to Make Brazilian Cheese Bread with Polvilho (Tapioca Starch)](https://costasmeatmarket.com/blog/pao-de-queijo-recipe-brazilian-cheese-bread/)
+- [Brazilian Groceries in Davenport, FL: What to Look For (and What to Make with It)](https://costasmeatmarket.com/blog/brazilian-grocery-store-davenport-fl/)
+- [Feijoada: The Brazilian Black Bean Stew, and Which Meats to Buy in the U.S.](https://costasmeatmarket.com/blog/feijoada-recipe-which-meats-to-buy/)
 
 ## Languages
 - [English home](https://costasmeatmarket.com/): Butcher shop and meat market in Davenport, FL.

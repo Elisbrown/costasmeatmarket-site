@@ -46,6 +46,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/search.css?v=699a91515b">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
@@ -66,7 +67,7 @@
       "publisher": {
         "@id": "https://costasmeatmarket.com/#store"
       },
-      "dateModified": "2026-10-08",
+      "dateModified": "2026-10-12",
       "blogPost": [
         {
           "@type": "BlogPosting",
@@ -436,15 +437,19 @@
   </script>
   <script src="/assets/js/track.js" defer></script>
   <script src="/assets/js/lang.js" defer></script>
+  <script src="/assets/js/search.js?v=699a91515b" defer></script>
 </head>
 <body>
   <div class="wrap wide-wrap">
 
+    <div class="topbar">
     <nav class="langbar" aria-label="Language / Idioma / Idioma">
       <a href="/blog/" hreflang="en" lang="en" aria-current="page">EN</a>
       <a href="/es/blog/" hreflang="es" lang="es">ES</a>
       <a href="/pt/blog/" hreflang="pt" lang="pt">PT</a>
     </nav>
+    <a class="search-open" href="/search/" data-search-open aria-label="Search" title="Search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg></a>
+    </div>
     <p class="lang-suggest" id="lang-suggest" hidden></p>
 
     <nav class="crumbs" aria-label="Breadcrumb">
@@ -457,6 +462,12 @@
       </div>
       <h1>The Butcher's Blog</h1>
       <p class="tagline">Cut guides, recipes, grilling how-tos and money-saving tips from the counter at Costa's Meat Market in Davenport, FL.</p>
+      <form class="search-box search-inline" role="search" action="/search/" method="get" data-search="inline">
+        <label class="sr-only" for="blog-q">Search</label>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        <input id="blog-q" type="search" name="q" placeholder="Search the blog: picanha, oxtail, coupons…" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search">
+        <button type="submit">Search</button>
+      </form>
       <nav class="chips" aria-label="Blog">
         <a class="chip" href="#local">Local guide</a>
         <a class="chip" href="#cuts">Cut guide</a>
@@ -473,12 +484,12 @@
         <h2 class="section-title">Start here</h2>
         <ul class="cards cards-featured">
           <li class="card card-featured">
-            <a href="/blog/prime-rib-roast-and-tomahawk-steak-guide/">
+            <a href="/blog/beef-short-ribs-flanken-tablitas-costela-recipes/">
               <img src="/assets/img/blog/beef-steaks-and-ribs-costas-meat-market-1200.webp" srcset="/assets/img/blog/beef-steaks-and-ribs-costas-meat-market-1200.webp 600w" sizes="(max-width: 680px) 100vw, 640px" width="600" height="338" alt="Bone-in steaks and beef ribs in the butcher case at Costa's Meat Market" loading="lazy" decoding="async">
               <span class="card-body">
-                <span class="chip">Cut guide</span>
-                <span class="card-title">Prime Rib Roast and Tomahawk Steaks: How Much to Order and How to Cook Them</span>
-                <span class="card-desc">How big a prime rib roast to order per person, what a tomahawk steak is, and a foolproof reverse-sear prime rib recipe. Holiday special orders in Davenport, FL.</span>
+                <span class="chip">Recipe</span>
+                <span class="card-title">Beef Short Ribs 3 Ways: Classic Braised, Grilled Flanken (Tablitas) and Brazilian Costela</span>
+                <span class="card-desc">English-cut vs. flanken (tablitas) vs. plate short ribs, which to buy for each recipe, and a classic red-wine braised short ribs recipe. From a Davenport, FL butcher.</span>
               </span>
             </a>
           </li>
