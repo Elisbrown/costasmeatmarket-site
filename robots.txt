@@ -1,6 +1,6 @@
 # ==============================================================================
 # Costa's Meat Market - robots.txt
-# Last updated: 2026-10-12 (refreshed weekly with the sitemap)
+# Last updated: 2026-10-19 (refreshed weekly with the sitemap)
 # Permissive policy for all Search Engines, Scrapers, Web Crawlers, and AI Agents
 # ==============================================================================
 
