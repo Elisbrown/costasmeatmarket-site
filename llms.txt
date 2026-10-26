@@ -32,13 +32,13 @@
 - [Site search](https://costasmeatmarket.com/search/?q=picanha): Products, recipes, articles and store info. Use https://costasmeatmarket.com/search/?q={query} (or /es/search/, /pt/search/); the per-language index is at https://costasmeatmarket.com/assets/search/en.json (es.json, pt.json).
 - [Sitemap](https://costasmeatmarket.com/sitemap.xml) · [Full AI reference](https://costasmeatmarket.com/llms-full.txt) · [robots.txt](https://costasmeatmarket.com/robots.txt)
 
-Last updated: 2026-10-19
+Last updated: 2026-10-26
 
 ## Featured This Week
 - [Looking for a Meat Market Near Haines City? Here's What You'll Find at Costa's](https://costasmeatmarket.com/blog/meat-market-near-haines-city-fl/)
-- [Pernil: Slow-Roasted Pork Shoulder with Crispy Skin (and How Big a Shoulder to Buy)](https://costasmeatmarket.com/blog/pernil-roast-pork-shoulder-recipe/)
-- [Carne Asada: The Best Cut to Buy and a Citrus-Garlic Marinade](https://costasmeatmarket.com/blog/carne-asada-best-cut-and-marinade/)
-- [Meat Temperature Chart: Steak Doneness, Pork, Chicken and Ground Meat (°F and °C)](https://costasmeatmarket.com/blog/steak-doneness-meat-temperature-chart/)
+- [Ribeye vs. NY Strip vs. Picanha: Which Steak Should You Buy?](https://costasmeatmarket.com/blog/ribeye-vs-ny-strip-vs-picanha/)
+- [Butcher Shop vs. Grocery Store Meat: What You Actually Get at the Counter](https://costasmeatmarket.com/blog/butcher-shop-vs-grocery-store-meat/)
+- [Pork Belly 3 Ways: Brazilian Torresmo, Grilled Panceta, and Crispy Oven-Roasted](https://costasmeatmarket.com/blog/pork-belly-recipes-torresmo-panceta/)
 
 ## Languages
 - [English home](https://costasmeatmarket.com/): Butcher shop and meat market in Davenport, FL.
