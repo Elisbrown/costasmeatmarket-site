@@ -20,7 +20,7 @@ def llms_txt(posts):
         "- **Type**: Butcher Shop, Meat Market, Grocery Store",
         "- **Address**: 2169 Davenport Blvd, Davenport, FL 33837, United States (Webb's Town Center)",
         "- **Phone**: +1 (863) 422-2313",
-        "- **Hours**: Monday–Saturday 8:00 am–8:00 pm; Sunday 8:00 am–5:00 pm (Eastern Time)",
+        "- **Hours**: Monday–Saturday 8:00 am–8:00 pm; Sunday 8:00 am–2:00 pm (Eastern Time)",
         "- **Google rating**: 4.6 stars from 103 Google reviews (October 2026)",
         f"- **Primary Website**: {SITE}/",
         f"- **Online Ordering**: {ORDER}",
@@ -86,7 +86,7 @@ def llms_full_txt(posts):
         "- **ZIP Code**: 33837",
         "- **Country**: United States (US)",
         "- **Telephone**: +1-863-422-2313",
-        "- **Hours**: Monday through Saturday 8:00 am to 8:00 pm; Sunday 8:00 am to 5:00 pm (Eastern Time). Open "
+        "- **Hours**: Monday through Saturday 8:00 am to 8:00 pm; Sunday 8:00 am to 2:00 pm (Eastern Time). Open "
         "seven days a week; holiday hours may vary.",
         "- **Google rating**: 4.6 stars from 103 Google reviews (October 2026)",
         f"- **Primary Domain**: {SITE}/",
@@ -134,7 +134,7 @@ def llms_full_txt(posts):
         "customer).",
         "- **Payment:** Cash, credit cards, and debit cards.",
         "- **Near Haines City?** Yes. Davenport borders Haines City.",
-        "- **Open on Sundays?** Yes, 8 am to 5 pm. Monday to Saturday 8 am to 8 pm.",
+        "- **Open on Sundays?** Yes, 8 am to 2 pm. Monday to Saturday 8 am to 8 pm.",
         "",
         f"Last updated: {BUILD_DATE}",
     ]

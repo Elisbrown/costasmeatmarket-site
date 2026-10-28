@@ -17,7 +17,7 @@ UI = {
            "by": "By the butchers at Costa's Meat Market", "toc": "In this article", "faq": "Quick answers",
            "shop_h": "Shop the counter at Costa's",
            "shop_p": "2169 Davenport Blvd, Davenport, FL, in Webb's Town Center. Open Mon–Sat 8 am–8 pm and Sun "
-                     "8 am–5 pm. Order online for pickup, call for custom cuts, or join the WhatsApp group for weekly "
+                     "8 am–2 pm. Order online for pickup, call for custom cuts, or join the WhatsApp group for weekly "
                      "specials.",
            "order": "Order online", "call": "Call the counter", "directions": "Get directions",
            "whatsapp": "WhatsApp deals", "related": "Keep reading", "share": "Share this article",
@@ -29,7 +29,7 @@ UI = {
            "by": "Por los carniceros de Costa's Meat Market", "toc": "En este artículo", "faq": "Respuestas rápidas",
            "shop_h": "Visita el mostrador de Costa's",
            "shop_p": "2169 Davenport Blvd, Davenport, FL, en Webb's Town Center. Abierto de lunes a sábado de 8 a. m. "
-                     "a 8 p. m. y domingos de 8 a. m. a 5 p. m. Pide en línea y recoge, llama para cortes a la medida "
+                     "a 8 p. m. y domingos de 8 a. m. a 2 p. m. Pide en línea y recoge, llama para cortes a la medida "
                      "o únete al grupo de WhatsApp para las ofertas de la semana.",
            "order": "Pedir en línea", "call": "Llamar al mostrador", "directions": "Cómo llegar",
            "whatsapp": "Ofertas por WhatsApp", "related": "Sigue leyendo", "share": "Comparte este artículo",
@@ -41,7 +41,7 @@ UI = {
            "by": "Pelos açougueiros do Costa's Meat Market", "toc": "Neste artigo", "faq": "Respostas rápidas",
            "shop_h": "Venha ao balcão do Costa's",
            "shop_p": "2169 Davenport Blvd, Davenport, FL, no Webb's Town Center. Aberto de segunda a sábado, das 8h "
-                     "às 20h, e domingo, das 8h às 17h. Peça online e retire, ligue para cortes sob medida ou entre no "
+                     "às 20h, e domingo, das 8h às 14h. Peça online e retire, ligue para cortes sob medida ou entre no "
                      "grupo do WhatsApp para as promoções da semana.",
            "order": "Pedir online", "call": "Ligar para o balcão", "directions": "Como chegar",
            "whatsapp": "Promoções no WhatsApp", "related": "Continue lendo", "share": "Compartilhe este artigo",

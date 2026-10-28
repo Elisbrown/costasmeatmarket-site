@@ -72,12 +72,12 @@ SEARCH_PATH = {"en": "/search/", "es": "/es/search/", "pt": "/pt/search/"}
 SEARCH_LABEL = {"en": "Search", "es": "Buscar", "pt": "Buscar"}
 SEARCH_VERSION = ""  # set by lib.search.build_indexes() before any page is rendered
 
-# Opening hours (from the Google Business Profile, October 2026). Sunday first, 24-hour clock.
-HOURS = [(8, 17), (8, 20), (8, 20), (8, 20), (8, 20), (8, 20), (8, 20)]
+# Opening hours (confirmed by the owner, October 2026). Sunday first, 24-hour clock.
+HOURS = [(8, 14), (8, 20), (8, 20), (8, 20), (8, 20), (8, 20), (8, 20)]
 HOURS_TEXT = {
-    "en": "Mon–Sat 8 am–8 pm · Sun 8 am–5 pm",
-    "es": "Lunes a sábado de 8 a. m. a 8 p. m. · Domingo de 8 a. m. a 5 p. m.",
-    "pt": "Segunda a sábado, das 8h às 20h · Domingo, das 8h às 17h",
+    "en": "Mon–Sat 8 am–8 pm · Sun 8 am–2 pm",
+    "es": "Lunes a sábado de 8 a. m. a 8 p. m. · Domingo de 8 a. m. a 2 p. m.",
+    "pt": "Segunda a sábado, das 8h às 20h · Domingo, das 8h às 14h",
 }
 
 STORE_NODE = {
@@ -107,12 +107,12 @@ STORE_NODE = {
     },
     "geo": {"@type": "GeoCoordinates", "latitude": 28.1614, "longitude": -81.6017},
     "hasMap": MAPS,
-    "openingHours": ["Mo-Sa 08:00-20:00", "Su 08:00-17:00"],
+    "openingHours": ["Mo-Sa 08:00-20:00", "Su 08:00-14:00"],
     "openingHoursSpecification": [
         {"@type": "OpeningHoursSpecification",
          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
          "opens": "08:00", "closes": "20:00"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "08:00", "closes": "17:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "08:00", "closes": "14:00"},
     ],
     "areaServed": ["Davenport, FL", "Haines City, FL", "ChampionsGate, FL", "Four Corners, FL", "Poinciana, FL",
                    "Kissimmee, FL", "Winter Haven, FL", "Polk County, FL", "Osceola County, FL"],

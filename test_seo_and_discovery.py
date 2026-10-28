@@ -587,7 +587,7 @@ class TestHours(unittest.TestCase):
         sunday = next(s for s in spec if s["dayOfWeek"] == "Sunday")
         self.assertEqual((weekdays["opens"], weekdays["closes"]), ("08:00", "20:00"))
         self.assertEqual(len(weekdays["dayOfWeek"]), 6)
-        self.assertEqual((sunday["opens"], sunday["closes"]), ("08:00", "17:00"))
+        self.assertEqual((sunday["opens"], sunday["closes"]), ("08:00", "14:00"))
 
     def test_hours_shown_on_home_pages_and_every_footer(self):
         for rel in ("index.html", os.path.join("es", "index.html"), os.path.join("pt", "index.html")):
@@ -599,4 +599,4 @@ class TestHours(unittest.TestCase):
             page = read(rel)
             if '<footer class="site">' in page:
                 self.assertRegex(page, r"8 am–8 pm|8 a\. m\. a 8 p\. m\.|das 8h às 20h", rel)
-        self.assertIn("Sunday 8:00 am–5:00 pm", read("llms.txt"))
+        self.assertIn("Sunday 8:00 am–2:00 pm", read("llms.txt"))

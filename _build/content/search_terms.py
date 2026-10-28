@@ -184,9 +184,9 @@ PRODUCTS = [
 GENERAL = [
     ("hours",
      ("Opening hours", "Horario", "Horário de funcionamento"),
-     ("Mon–Sat 8 am–8 pm · Sun 8 am–5 pm. Open 7 days.",
-      "Lunes a sábado de 8 a. m. a 8 p. m. · Domingo de 8 a. m. a 5 p. m.",
-      "Segunda a sábado, das 8h às 20h · Domingo, das 8h às 17h."),
+     ("Mon–Sat 8 am–8 pm · Sun 8 am–2 pm. Open 7 days.",
+      "Lunes a sábado de 8 a. m. a 8 p. m. · Domingo de 8 a. m. a 2 p. m.",
+      "Segunda a sábado, das 8h às 20h · Domingo, das 8h às 14h."),
      ("/#hours-h", "/es/#hours-h", "/pt/#hours-h"),
      "hours open opening times close closing today sunday horario horarios abierto abren cierran domingo "
      "horario funcionamento aberto abre fecha domingo hoje"),
