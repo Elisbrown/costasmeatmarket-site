@@ -7,7 +7,7 @@
 - **Type**: Butcher Shop, Meat Market, Grocery Store
 - **Address**: 2169 Davenport Blvd, Davenport, FL 33837, United States (Webb's Town Center)
 - **Phone**: +1 (863) 422-2313
-- **Hours**: Monday–Saturday 8:00 am–8:00 pm; Sunday 8:00 am–2:00 pm (Eastern Time)
+- **Hours**: Monday–Saturday 8:00 am–8:00 pm; Sunday 8:00 am–5:00 pm (Eastern Time)
 - **Google rating**: 4.6 stars from 103 Google reviews (October 2026)
 - **Primary Website**: https://costasmeatmarket.com/
 - **Online Ordering**: https://costasmeatmarket.hrpos.heartland.us/
@@ -32,13 +32,13 @@
 - [Site search](https://costasmeatmarket.com/search/?q=picanha): Products, recipes, articles and store info. Use https://costasmeatmarket.com/search/?q={query} (or /es/search/, /pt/search/); the per-language index is at https://costasmeatmarket.com/assets/search/en.json (es.json, pt.json).
 - [Sitemap](https://costasmeatmarket.com/sitemap.xml) · [Full AI reference](https://costasmeatmarket.com/llms-full.txt) · [robots.txt](https://costasmeatmarket.com/robots.txt)
 
-Last updated: 2026-10-28
+Last updated: 2026-11-02
 
 ## Featured This Week
 - [Looking for a Meat Market Near Haines City? Here's What You'll Find at Costa's](https://costasmeatmarket.com/blog/meat-market-near-haines-city-fl/)
-- [Ribeye vs. NY Strip vs. Picanha: Which Steak Should You Buy?](https://costasmeatmarket.com/blog/ribeye-vs-ny-strip-vs-picanha/)
-- [Butcher Shop vs. Grocery Store Meat: What You Actually Get at the Counter](https://costasmeatmarket.com/blog/butcher-shop-vs-grocery-store-meat/)
-- [Pork Belly 3 Ways: Brazilian Torresmo, Grilled Panceta, and Crispy Oven-Roasted](https://costasmeatmarket.com/blog/pork-belly-recipes-torresmo-panceta/)
+- [Cheap Cuts of Meat That Taste Expensive, and Exactly How to Cook Each One](https://costasmeatmarket.com/blog/cheap-cuts-of-meat-that-taste-great/)
+- [One Family Meat Bundle, Seven Dinners: A Weekly Meal Plan That Saves Money](https://costasmeatmarket.com/blog/family-meat-bundle-weekly-meal-plan/)
+- [How to Save on Quality Meat in Davenport: Bundles, Specials, and WhatsApp Deals](https://costasmeatmarket.com/blog/save-money-on-meat-davenport/)
 
 ## Languages
 - [English home](https://costasmeatmarket.com/): Butcher shop and meat market in Davenport, FL.
