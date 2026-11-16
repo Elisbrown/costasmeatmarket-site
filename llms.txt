@@ -32,13 +32,13 @@
 - [Site search](https://costasmeatmarket.com/search/?q=picanha): Products, recipes, articles and store info. Use https://costasmeatmarket.com/search/?q={query} (or /es/search/, /pt/search/); the per-language index is at https://costasmeatmarket.com/assets/search/en.json (es.json, pt.json).
 - [Sitemap](https://costasmeatmarket.com/sitemap.xml) · [Full AI reference](https://costasmeatmarket.com/llms-full.txt) · [robots.txt](https://costasmeatmarket.com/robots.txt)
 
-Last updated: 2026-11-09
+Last updated: 2026-11-16
 
 ## Featured This Week
 - [Looking for a Meat Market Near Haines City? Here's What You'll Find at Costa's](https://costasmeatmarket.com/blog/meat-market-near-haines-city-fl/)
-- [What Is Picanha? How to Buy, Cut, and Grill Brazil's Favorite Steak](https://costasmeatmarket.com/blog/what-is-picanha/)
-- [Costa's Meat Market Coupons and Deals: Every Way to Save at the Counter](https://costasmeatmarket.com/blog/costas-meat-market-coupons-and-deals/)
-- [Seasoned Meats Ready to Cook: How to Cook Our Linguiça, Picadinho, Pork and Wings](https://costasmeatmarket.com/blog/seasoned-marinated-meats-ready-to-cook/)
+- [Grilling at Your Vacation Rental Near Disney: A Davenport Butcher's Guide](https://costasmeatmarket.com/blog/vacation-rental-bbq-guide-davenport/)
+- [Latin and Brazilian Meat Cuts in English: The Butcher Counter Translation Guide](https://costasmeatmarket.com/blog/latin-and-brazilian-meat-cuts-guide/)
+- [How Much Meat Per Person for a BBQ or Churrasco](https://costasmeatmarket.com/blog/how-much-meat-per-person-bbq/)
 
 ## Languages
 - [English home](https://costasmeatmarket.com/): Butcher shop and meat market in Davenport, FL.
